@@ -6,7 +6,7 @@ var pitch = 0
 func _input(ie):
 	pass
 	
-funch _fixed_process(delta):
+func _fixed_process(delta):
 	pass
 	
 func _ready():
