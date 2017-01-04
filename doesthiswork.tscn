@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MeshInstance.tscn" type="PackedScene" id=2]
+[ext_resource path="res://placeholder house.msh" type="Mesh" id=3]
+
+[node name="World" type="WorldEnvironment"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+environment = null
+
+[node name="FirstPerson" parent="." instance=ExtResource( 1 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.26666, 0 )
+
+[node name="Spatial" type="MeshInstance" parent="." instance=ExtResource( 2 )]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.09728, 0 )
+layers = 1
+geometry/visible = true
+geometry/material_override = null
+geometry/cast_shadow = 1
+geometry/receive_shadows = true
+geometry/range_begin = 0.0
+geometry/range_end = 0.0
+geometry/extra_cull_margin = 0.0
+geometry/billboard = false
+geometry/billboard_y = false
+geometry/depth_scale = false
+geometry/visible_in_all_rooms = false
+geometry/use_baked_light = false
+geometry/baked_light_tex_id = 0
+mesh/mesh = ExtResource( 3 )
+mesh/skeleton = NodePath(".")
+material/0 = null
+
+
