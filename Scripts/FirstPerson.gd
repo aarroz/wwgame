@@ -6,8 +6,6 @@ var Y = 0.00
 var speed = 0.05 #Player speed
 var sprint = 0.08
 var height = 0.1
-const JUMP_SPEED = 2
-var on_floor = false
 var vel = Vector3()
 
 func _fixed_process(delta):
@@ -24,13 +22,6 @@ func _fixed_process(delta):
 		translate(Vector3(speed, 0, 0))
 	if Input.is_key_pressed(KEY_SPACE):
 		translate(Vector3(0, height, 0))
-#	if (Input.is_key_pressed(KEY_SPACE)):
-#		set_linear_velocity(Vector3(0, JUMP_SPEED, 0))
-#	if (on_floor and Input.is_key_pressed(KEY_SPACE)):
-#		vel.y = JUMP_SPEED
-	#Exit Function
-#	if (Input.is_key_pressed(KEY_Q))
-#		
 
 func _input(event):
 	#Camera motion
