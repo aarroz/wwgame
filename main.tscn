@@ -1,18 +1,57 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=9 format=1]
 
-[ext_resource path="res://Models/placeholder house.msh" type="Mesh" id=1]
-[ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Models/box.msh" type="Mesh" id=3]
+[ext_resource path="res://Models/housewithtexture.msh" type="Mesh" id=1]
+[ext_resource path="res://Images/Building.png" type="Texture" id=2]
+[ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Models/box.msh" type="Mesh" id=4]
 
-[sub_resource type="BoxShape" id=1]
+[sub_resource type="FixedMaterial" id=1]
 
-extents = Vector3( 8.02024, 0.801135, 7.99611 )
+flags/visible = true
+flags/double_sided = false
+flags/invert_faces = false
+flags/unshaded = false
+flags/on_top = false
+flags/lightmap_on_uv2 = true
+flags/colarray_is_srgb = true
+params/blend_mode = 0
+params/depth_draw = 1
+params/line_width = 0.0
+fixed_flags/use_alpha = false
+fixed_flags/use_color_array = false
+fixed_flags/use_point_size = false
+fixed_flags/discard_alpha = false
+fixed_flags/use_xy_normalmap = false
+params/diffuse = Color( 1, 1, 1, 1 )
+params/specular = Color( 0, 0, 0, 1 )
+params/emission = Color( 0, 0, 0, 1 )
+params/specular_exp = 40
+params/detail_mix = 1.0
+params/normal_depth = 1
+params/shader = 0
+params/shader_param = 0.5
+params/glow = 0
+params/point_size = 1.0
+uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+textures/diffuse = ExtResource( 2 )
+textures/diffuse_tc = 0
+textures/detail_tc = 0
+textures/specular_tc = 0
+textures/emission_tc = 0
+textures/specular_exp_tc = 0
+textures/glow_tc = 0
+textures/normal_tc = 0
+textures/shade_param_tc = 0
 
 [sub_resource type="BoxShape" id=2]
 
-extents = Vector3( 1, 5.96579, 7.98675 )
+extents = Vector3( 8.02024, 0.801135, 7.99611 )
 
 [sub_resource type="BoxShape" id=3]
+
+extents = Vector3( 1, 5.96579, 7.98675 )
+
+[sub_resource type="BoxShape" id=4]
 
 extents = Vector3( 1, 1, 1 )
 
@@ -24,7 +63,6 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="terrain" type="Spatial" parent="World"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="House" type="MeshInstance" parent="World/terrain"]
@@ -46,7 +84,7 @@ geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
 mesh/mesh = ExtResource( 1 )
 mesh/skeleton = NodePath("..")
-material/0 = null
+material/0 = SubResource( 1 )
 
 [node name="StaticBody" type="StaticBody" parent="World/terrain/House"]
 
@@ -54,19 +92,19 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = true
 input/capture_on_drag = false
 shape_count = 5
-shapes/0/shape = SubResource( 1 )
+shapes/0/shape = SubResource( 2 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256786, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 2 )
+shapes/1/shape = SubResource( 3 )
 shapes/1/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43521, 1.02967, 0 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 2 )
+shapes/2/shape = SubResource( 3 )
 shapes/2/transform = Transform( 0.00551634, 0, -0.999985, 0, 1, 0, 0.999985, 0, 0.00551634, 0.0221506, 1.02967, 8.4596 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 2 )
+shapes/3/shape = SubResource( 3 )
 shapes/3/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48424, 1.02967, 0 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 2 )
+shapes/4/shape = SubResource( 3 )
 shapes/4/transform = Transform( 0.00551634, 0, -0.999985, 0, 1, 0, 0.999985, 0, 0.00551634, -0.0711828, 1.02967, -8.4596 )
 shapes/4/trigger = false
 collision/layers = 1
@@ -80,7 +118,7 @@ constant_angular_velocity = Vector3( 0, 0, 0 )
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256786, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 0
 
@@ -88,7 +126,7 @@ _update_shape_index = 0
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43521, 1.02967, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 1
 
@@ -96,7 +134,7 @@ _update_shape_index = 1
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 0.00551634, 0, -0.999985, 0, 1, 0, 0.999985, 0, 0.00551634, 0.0221506, 1.02967, 8.4596 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 2
 
@@ -104,7 +142,7 @@ _update_shape_index = 2
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.48424, 1.02967, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 3
 
@@ -112,14 +150,14 @@ _update_shape_index = 3
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 0.00551634, 0, -0.999985, 0, 1, 0, 0.999985, 0, 0.00551634, -0.0711828, 1.02967, -8.4596 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 4
 
 [node name="OmniLight" type="OmniLight" parent="World/terrain"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.94178, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0552, 0 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -138,7 +176,7 @@ operator = 0
 params/radius = 9.36297
 params/attenuation = 1.0
 
-[node name="FirstPerson" parent="World" instance=ExtResource( 2 )]
+[node name="FirstPerson" parent="World" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.67332, 0 )
@@ -146,7 +184,6 @@ velocity/linear = Vector3( 0, -1, 0 )
 
 [node name="Props" type="Spatial" parent="World"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Box" type="RigidBody" parent="World/Props"]
@@ -157,7 +194,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00258, 3.55623, 0 )
 input/ray_pickable = true
 input/capture_on_drag = false
 shape_count = 1
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -197,14 +234,14 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 3 )
+mesh/mesh = ExtResource( 4 )
 mesh/skeleton = NodePath("..")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="World/Props/Box"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
@@ -216,7 +253,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00258, 5.86324, 0 )
 input/ray_pickable = true
 input/capture_on_drag = false
 shape_count = 1
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -256,14 +293,14 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 3 )
+mesh/mesh = ExtResource( 4 )
 mesh/skeleton = NodePath("..")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="World/Props/Box1"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 
@@ -275,7 +312,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00258, 5.86324, -4.269
 input/ray_pickable = true
 input/capture_on_drag = false
 shape_count = 1
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -315,14 +352,14 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 3 )
+mesh/mesh = ExtResource( 4 )
 mesh/skeleton = NodePath("..")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="World/Props/Box2"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 trigger = false
 _update_shape_index = 0
 

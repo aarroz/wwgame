@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
-[ext_resource path="res://placeholder house.msh" type="Mesh" id=2]
+[ext_resource path="res://Models/placeholder house.msh" type="Mesh" id=2]
 
 [node name="FirstPerson" instance=ExtResource( 1 )]
 
