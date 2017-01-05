@@ -40,6 +40,8 @@ func _input(event):
 		#Show mouse
 		if Input.is_key_pressed(KEY_ESCAPE):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if Input.is_key_pressed(KEY_Q):
+		get_tree().quit()
 			
 func _ready():
 	#Hide and capture mouse
