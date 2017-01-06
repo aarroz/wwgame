@@ -2,55 +2,67 @@
 extends RigidBody
 
 # Improved Jumping and Object Interaction, thanks to Karroffel
+# Values for speed, sprint, and height are in meters/second
 
+# These variables set the camera rotation.
 var X = 0.00
 var Y = 0.00
-var speed = 0.05 #Player speed
-var sprint = 0.08
-var height = 0.1
+# These variables set the speed of character movement
+var speed = 3 # m/s #Player speed
+var sprint = 5 #m/s
+var height = 2 #m/s
+# The variables below set the jump velocity and floor detection
 var vel = Vector3()
 var interactable = false
-var JUMP_VELOCITY = 5
+var JUMP_VELOCITY = 8
 var jumping = false
+# The onready vars below define the points of interest for the actions.
 onready var ray = get_node("Camera/ray")
 onready var position = get_node("Camera/playerpoint")
 onready var playerfeet = get_node("playerfeet")
 
+#Section of code below controls the player's movement, vars in the begining set the ground detection up for jump.
 func _fixed_process(delta):
 	var is_on_ground = playerfeet.is_colliding()
 	if (is_on_ground):
 		jumping = false
-		print("hey, it works!")
+		#print("hey, it works!")
 	#Player movement
 	if (Input.is_key_pressed(KEY_SHIFT) and Input.is_key_pressed(KEY_W)):
-		translate(Vector3(0, 0, -sprint))
+		translate(Vector3(0, 0, -sprint*delta))
 	if Input.is_key_pressed(KEY_W):
-		translate(Vector3(0, 0, -speed))
+		translate(Vector3(0, 0, -speed*delta))
 	if Input.is_key_pressed(KEY_S):
-		translate(Vector3(0, 0, speed))
+		translate(Vector3(0, 0, speed*delta))
 	if Input.is_key_pressed(KEY_A):
-		translate(Vector3(-speed, 0, 0))
+		translate(Vector3(-speed*delta, 0, 0))
 	if Input.is_key_pressed(KEY_D):
-		translate(Vector3(speed, 0, 0))
+		translate(Vector3(speed*delta, 0, 0))
+	# Section below controls the use of Jump
 	if (Input.is_key_pressed(KEY_SPACE) and not jumping):
 		var velocity = get_linear_velocity()
 		velocity.y = JUMP_VELOCITY
 		set_linear_velocity(velocity)
 		jumping = true
 
-	
+	# This section below controls the object interaction between the player and rigidbody with the node "moveable"
 	if ray.is_colliding():
 		var object = ray.get_collider()
-		if (object.is_in_group("moveable")):
-			print("hi")
+		#if (object.is_in_group("moveable")):
+			#print("hi")
 			#object.set_translation(ray.get_cast_to())
 		if (object.is_in_group("moveable") and Input.is_mouse_button_pressed(1)):
 			#print("grab")
 			var trans = position.get_global_transform()
 			object.set_global_transform(trans)
 			object.set_linear_velocity(Vector3(0, 0, 0))
-
-#note somebody will find. Expression = value. Statement != value.
+		if (object.is_in_group("moveable") and Input.is_mouse_button_pressed(2)):
+			var velocity = get_global_transform().origin
+			print(vel)
+			object.set_linear_velocity(Vector3(20, 0, 0).rotated(Vector3(1, 0, 0), Y*5))
+			#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
+			
+	#note somebody will find. Expression = value. Statement != value.
 func _input(event):
 	#Camera motion
 	if event.type == InputEvent.MOUSE_MOTION:
@@ -65,7 +77,7 @@ func _input(event):
 			get_node("Camera").set_rotation(Vector3(-Y,0,0))
 		else:
 			Y = -1.5
-		#Show mouse
+	#Show mouse
 	if Input.is_key_pressed(KEY_ESCAPE):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
