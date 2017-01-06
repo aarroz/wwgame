@@ -38,8 +38,13 @@ func _input(event):
 		else:
 			Y = -1.5
 		#Show mouse
-		if Input.is_key_pressed(KEY_ESCAPE):
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	if Input.is_key_pressed(KEY_ESCAPE):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		
+	if Input.is_key_pressed(KEY_G):
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	#Quit Function
 	if Input.is_key_pressed(KEY_Q):
 		get_tree().quit()
