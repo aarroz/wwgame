@@ -1,6 +1,8 @@
 
 extends RigidBody
 
+# Improved Jumping and Object Interaction, thanks to Karroffel
+
 var X = 0.00
 var Y = 0.00
 var speed = 0.05 #Player speed
@@ -8,10 +10,17 @@ var sprint = 0.08
 var height = 0.1
 var vel = Vector3()
 var interactable = false
+var JUMP_VELOCITY = 5
+var jumping = false
 onready var ray = get_node("Camera/ray")
 onready var position = get_node("Camera/playerpoint")
+onready var playerfeet = get_node("playerfeet")
 
 func _fixed_process(delta):
+	var is_on_ground = playerfeet.is_colliding()
+	if (is_on_ground):
+		jumping = false
+		print("hey, it works!")
 	#Player movement
 	if (Input.is_key_pressed(KEY_SHIFT) and Input.is_key_pressed(KEY_W)):
 		translate(Vector3(0, 0, -sprint))
@@ -23,8 +32,12 @@ func _fixed_process(delta):
 		translate(Vector3(-speed, 0, 0))
 	if Input.is_key_pressed(KEY_D):
 		translate(Vector3(speed, 0, 0))
-	if Input.is_key_pressed(KEY_SPACE):
-		translate(Vector3(0, height, 0))
+	if (Input.is_key_pressed(KEY_SPACE) and not jumping):
+		var velocity = get_linear_velocity()
+		velocity.y = JUMP_VELOCITY
+		set_linear_velocity(velocity)
+		jumping = true
+
 	
 	if ray.is_colliding():
 		var object = ray.get_collider()
@@ -32,10 +45,12 @@ func _fixed_process(delta):
 			print("hi")
 			#object.set_translation(ray.get_cast_to())
 		if (object.is_in_group("moveable") and Input.is_mouse_button_pressed(1)):
-			print("grab")
+			#print("grab")
 			var trans = position.get_global_transform()
 			object.set_global_transform(trans)
+			object.set_linear_velocity(Vector3(0, 0, 0))
 
+#note somebody will find. Expression = value. Statement != value.
 func _input(event):
 	#Camera motion
 	if event.type == InputEvent.MOUSE_MOTION:
