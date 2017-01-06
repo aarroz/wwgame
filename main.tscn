@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=1]
 
-[ext_resource path="res://Models/housewithtexture.msh" type="Mesh" id=1]
-[ext_resource path="res://Models/Props/Level 1.tscn" type="PackedScene" id=2]
-[ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=3]
+[ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Level 2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Models/housewithtexture.msh" type="Mesh" id=3]
 [ext_resource path="res://Models/Props/Box.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
@@ -23,9 +23,19 @@ extents = Vector3( 1, 5.96579, 1.48438 )
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
+[node name="FirstPerson" parent="World" instance=ExtResource( 1 )]
+
+editor/display_folded = true
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.67332, 0 )
+velocity/linear = Vector3( 0, -1, 0 )
+
 [node name="terrain" type="Spatial" parent="World"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
+[node name="Level 2" parent="World/terrain" instance=ExtResource( 2 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.117396, 13.8862 )
 
 [node name="House" type="MeshInstance" parent="World/terrain"]
 
@@ -45,7 +55,7 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 1 )
+mesh/mesh = ExtResource( 3 )
 mesh/skeleton = NodePath("..")
 material/0 = null
 
@@ -59,7 +69,7 @@ shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.256786, 0 )
 shapes/0/trigger = false
 shapes/1/shape = SubResource( 1 )
-shapes/1/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262127, 8.51086, 0.00162697 )
+shapes/1/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262127, 15.2354, 0.00162697 )
 shapes/1/trigger = true
 shapes/2/shape = SubResource( 2 )
 shapes/2/transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.43521, 1.02967, 0 )
@@ -94,7 +104,7 @@ _update_shape_index = 0
 [node name="CollisionShape1" type="CollisionShape" parent="World/terrain/House/StaticBody"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262127, 8.51086, 0.00162697 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0262127, 15.2354, 0.00162697 )
 shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 1
@@ -161,23 +171,10 @@ operator = 0
 params/radius = 9.36297
 params/attenuation = 1.0
 
-[node name="Level 1" parent="World/terrain" instance=ExtResource( 2 )]
-
-editor/display_folded = true
-transform/local = Transform( -5.24537e-08, 0, -1.2, 0, 1.2, 0, 1.2, 0, -5.24537e-08, -3.4228, 1.03817, 17.1692 )
-
-[node name="MeshInstance" parent="World/terrain/Level 1"]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.98465e-08 )
-
-[node name="CollisionShape" parent="World/terrain/Level 1"]
-
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.62774, 2.98658e-08 )
-
-[node name="DirectionalLight" type="SpotLight" parent="World/terrain"]
+[node name="OmniLight1" type="OmniLight" parent="World/terrain"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.809261, -0.491217, 0.322186, 0.11219, 0.667586, 0.736031, -0.576637, -0.559495, 0.595361, -4.84935, 5.18831, 17.0083 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.36962, 8.52598, 28.0934 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -187,22 +184,14 @@ colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
 shadow/shadow = false
 shadow/darkening = 0.0
-shadow/z_offset = 0.05
+shadow/z_offset = 0.001
 shadow/z_slope_scale = 0.0
 shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 5.95472
+params/radius = 9.36297
 params/attenuation = 1.0
-params/spot_angle = 30.0
-params/spot_attenuation = 1.0
-
-[node name="FirstPerson" parent="World" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.67332, 0 )
-velocity/linear = Vector3( 0, -1, 0 )
 
 [node name="Props" type="Spatial" parent="World"]
 
@@ -258,5 +247,4 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 6.4518, -2.2858
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 6.4518, -2.28589 )
 
 
-[editable path="World/terrain/Level 1"]
 [editable path="World/FirstPerson"]
