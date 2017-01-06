@@ -45,7 +45,7 @@ textures/glow_tc = 0
 textures/normal_tc = 0
 textures/shade_param_tc = 0
 
-[node name="Box" type="RigidBody"]
+[node name="Box" type="RigidBody" groups=[ "moveable" ]]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = true

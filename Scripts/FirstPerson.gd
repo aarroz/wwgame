@@ -7,6 +7,9 @@ var speed = 0.05 #Player speed
 var sprint = 0.08
 var height = 0.1
 var vel = Vector3()
+var interactable = false
+onready var ray = get_node("Camera/ray")
+onready var position = get_node("Camera/playerpoint")
 
 func _fixed_process(delta):
 	#Player movement
@@ -22,6 +25,16 @@ func _fixed_process(delta):
 		translate(Vector3(speed, 0, 0))
 	if Input.is_key_pressed(KEY_SPACE):
 		translate(Vector3(0, height, 0))
+	
+	if ray.is_colliding():
+		var object = ray.get_collider()
+		if (object.is_in_group("moveable")):
+			print("hi")
+			#object.set_translation(ray.get_cast_to())
+		if (object.is_in_group("moveable") and Input.is_mouse_button_pressed(1)):
+			print("grab")
+			var trans = position.get_global_transform()
+			object.set_global_transform(trans)
 
 func _input(event):
 	#Camera motion

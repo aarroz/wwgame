@@ -147,13 +147,8 @@ params/attenuation = 1.0
 
 [node name="FirstPerson" parent="World" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.67332, 0 )
+transform/local = Transform( 0.0998816, 0, 0.994999, 0, 1, 0, -0.994999, 0, 0.0998816, 0, 4.67332, 0 )
 velocity/linear = Vector3( 0, -1, 0 )
-
-[node name="Camera" parent="World/FirstPerson"]
-
-editor/display_folded = true
 
 [node name="Props" type="Spatial" parent="World"]
 

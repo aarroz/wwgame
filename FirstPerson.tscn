@@ -100,4 +100,18 @@ params/spot_angle = 30.0
 params/spot_attenuation = 1.0
 script/script = ExtResource( 2 )
 
+[node name="ray" type="RayCast" parent="Camera"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, -0.563665 )
+enabled = true
+cast_to = Vector3( 0, -3, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="playerpoint" type="Position3D" parent="Camera"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.54142 )
+
 
