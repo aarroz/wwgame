@@ -14,7 +14,7 @@ var height = 2 #m/s
 # The variables below set the jump velocity and floor detection
 var vel = Vector3()
 var interactable = false
-var JUMP_VELOCITY = 8
+var JUMP_VELOCITY = 12
 var jumping = false
 # The onready vars below define the points of interest for the actions.
 onready var ray = get_node("Camera/ray")
@@ -51,17 +51,19 @@ func _fixed_process(delta):
 		#if (object.is_in_group("moveable")):
 			#print("hi")
 			#object.set_translation(ray.get_cast_to())
-		if (object.is_in_group("moveable") and Input.is_mouse_button_pressed(1)):
-			#print("grab")
-			var trans = position.get_global_transform()
-			object.set_global_transform(trans)
-			object.set_linear_velocity(Vector3(0, 0, 0))
-		if (object.is_in_group("moveable") and Input.is_mouse_button_pressed(2)):
-			var velocity = get_global_transform().origin
-			print(vel)
-			object.set_linear_velocity(Vector3(20, 0, 0).rotated(Vector3(1, 0, 0), Y*5))
-			#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
-			
+		#if (object.is_in_group("moveable") and object.is_allowed_to_move()):
+		if (object.is_in_group("moveable")):
+				print("not colliding")
+				if (Input.is_mouse_button_pressed(1)):
+					var trans = position.get_global_transform()
+					object.set_global_transform(trans)
+					object.set_linear_velocity(Vector3(0, 0, 0))
+				if (Input.is_mouse_button_pressed(2)):
+					var velocity = get_global_transform().origin
+					print(vel)
+					object.set_linear_velocity(Vector3(20, 0, 0).rotated(Vector3(1, 0, 0), Y*5))
+					#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
+
 	#note somebody will find. Expression = value. Statement != value.
 func _input(event):
 	#Camera motion

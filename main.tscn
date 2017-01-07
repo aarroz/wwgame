@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://FirstPerson.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Level 2.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Models/housewithtexture.msh" type="Mesh" id=3]
-[ext_resource path="res://Models/Props/Box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/mouse.gd" type="Script" id=2]
+[ext_resource path="res://Level 2.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Models/housewithtexture.msh" type="Mesh" id=4]
+[ext_resource path="res://Models/Props/Box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Chair.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -25,15 +27,18 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="FirstPerson" parent="World" instance=ExtResource( 1 )]
 
-editor/display_folded = true
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.67332, 0 )
 velocity/linear = Vector3( 0, -1, 0 )
+
+[node name="playerpoint" parent="World/FirstPerson/Camera"]
+
+script/script = ExtResource( 2 )
 
 [node name="terrain" type="Spatial" parent="World"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="Level 2" parent="World/terrain" instance=ExtResource( 2 )]
+[node name="Level 2" parent="World/terrain" instance=ExtResource( 3 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.117396, 13.8862 )
 
@@ -55,7 +60,7 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 3 )
+mesh/mesh = ExtResource( 4 )
 mesh/skeleton = NodePath("..")
 material/0 = null
 
@@ -152,7 +157,51 @@ _update_shape_index = 6
 [node name="OmniLight" type="OmniLight" parent="World/terrain"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.0552, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01292, 6.95205, 3.49322 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 9.36297
+params/attenuation = 1.0
+
+[node name="OmniLight2" type="OmniLight" parent="World/terrain"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35022, 6.95205, -4.93071 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 9.36297
+params/attenuation = 1.0
+
+[node name="OmniLight3" type="OmniLight" parent="World/terrain"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35022, 8.01202, 14.1534 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -195,56 +244,59 @@ params/attenuation = 1.0
 
 [node name="Props" type="Spatial" parent="World"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="Box" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 2.19409, 1.19337 )
 
-[node name="Box4 2" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box4 2" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 2.19409, 1.19337 )
 
-[node name="Box3 2" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box3 2" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 2.19409, -2.28589 )
 
-[node name="Box33" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box33" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 2.19409, -2.28589 )
 
-[node name="Box1" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box1" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 4.35986, 1.19337 )
 
-[node name="Box4" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box4" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 4.35986, 1.19337 )
 
-[node name="Box3" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box3" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 4.35986, -2.28589 )
 
-[node name="Box4 3" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box4 3" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 4.35986, -2.28589 )
 
-[node name="Box2" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box2" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 6.4518, 1.19337 )
 
-[node name="Box4 4" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box4 4" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 6.4518, 1.19337 )
 
-[node name="Box3 3" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box3 3" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.25463, 6.4518, -2.28589 )
 
-[node name="Box34" parent="World/Props" instance=ExtResource( 4 )]
+[node name="Box34" parent="World/Props" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17238, 6.4518, -2.28589 )
+
+[node name="Chair" parent="World/Props" instance=ExtResource( 6 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23248, -3.16501 )
 
 
 [editable path="World/FirstPerson"]
