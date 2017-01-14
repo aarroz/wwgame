@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Models/Props/Flesh Wall.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Models/Props/Pillar.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Models/Props/Stone_Floor.tscn" type="PackedScene" id=3]
+
+[node name="Assets" type="Node"]
+
+[node name="Flesh Wall" parent="." instance=ExtResource( 1 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.31501, 0, 0 )
+
+[node name="Pillar" parent="." instance=ExtResource( 2 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3, 0, -4.04972 )
+
+[node name="Stone_Floor" parent="." instance=ExtResource( 3 )]
+
+

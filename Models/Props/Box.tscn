@@ -8,7 +8,7 @@
 
 extents = Vector3( 1, 1, 1 )
 
-[sub_resource type="FixedMaterial" id=3]
+[sub_resource type="FixedMaterial" id=2]
 
 flags/visible = true
 flags/double_sided = false
@@ -81,7 +81,7 @@ _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0097723, -0.0142212, 0.0137663 )
 layers = 1
 geometry/visible = true
-geometry/material_override = SubResource( 3 )
+geometry/material_override = SubResource( 2 )
 geometry/cast_shadow = 1
 geometry/receive_shadows = true
 geometry/range_begin = 0.0
