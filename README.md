@@ -5,6 +5,10 @@ Currently the project is focused on interactive player mechanics for a singlepla
 The objective of this project is for me to make a base for interactable FPS games using Godot.
 I hope to make a good game using this base that's a work in progress.
 
+This is currently what the project looks like.
+
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/5QnmKe-QImE" frameborder="0" allowfullscreen></iframe>
+
 Stay Tuned,
 - Rice
 
