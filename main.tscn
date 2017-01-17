@@ -153,7 +153,7 @@ shape = SubResource( 2 )
 trigger = false
 _update_shape_index = 6
 
-[node name="OmniLight" type="OmniLight" parent="World/terrain"]
+[node name="OmniLight" type="OmniLight" parent="World/terrain/House"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01292, 6.95205, 3.49322 )
@@ -175,7 +175,7 @@ operator = 0
 params/radius = 9.36297
 params/attenuation = 1.0
 
-[node name="OmniLight2" type="OmniLight" parent="World/terrain"]
+[node name="OmniLight2" type="OmniLight" parent="World/terrain/House"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35022, 6.95205, -4.93071 )
@@ -195,72 +195,6 @@ shadow/blur_passes = 1.0
 projector = null
 operator = 0
 params/radius = 9.36297
-params/attenuation = 1.0
-
-[node name="OmniLight3" type="OmniLight" parent="World/terrain"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35022, 6.32648, 14.1534 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 1, 1, 1, 1 )
-colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.001
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-params/radius = 9.36297
-params/attenuation = 1.0
-
-[node name="OmniLight1" type="OmniLight" parent="World/terrain"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.329, 5.83237, 27.1517 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 1, 1, 1, 1 )
-colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.001
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-params/radius = 9.36297
-params/attenuation = 1.0
-
-[node name="OmniLight4" type="OmniLight" parent="World/terrain"]
-
-_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 0.992973, -0.118341, 0, 0.118341, 0.992973, 0, 0, 0, 1, -6.49339, 9.25238, 28.3557 )
-layers = 1
-params/enabled = true
-params/editor_only = false
-params/bake_mode = 0
-params/energy = 1.0
-colors/diffuse = Color( 1, 1, 1, 1 )
-colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
-shadow/darkening = 0.0
-shadow/z_offset = 0.001
-shadow/z_slope_scale = 0.0
-shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
-projector = null
-operator = 0
-params/radius = 16.3271
 params/attenuation = 1.0
 
 [node name="Level 3" type="Spatial" parent="World/terrain"]
@@ -443,6 +377,72 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 7, 26 )
 [node name="Pillar36" parent="World/terrain/Level 3" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7, 26 )
+
+[node name="OmniLight4" type="OmniLight" parent="World/terrain/Level 3"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 0.992973, -0.118341, 0, 0.118341, 0.992973, 0, 0, 0, 1, -6.49339, 9.25238, 28.3557 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 16.3271
+params/attenuation = 1.0
+
+[node name="OmniLight1" type="OmniLight" parent="World/terrain/Level 3"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.329, 5.83237, 27.1517 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 9.36297
+params/attenuation = 1.0
+
+[node name="OmniLight3" type="OmniLight" parent="World/terrain/Level 3"]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35022, 6.32648, 14.1534 )
+layers = 1
+params/enabled = true
+params/editor_only = false
+params/bake_mode = 0
+params/energy = 1.0
+colors/diffuse = Color( 1, 1, 1, 1 )
+colors/specular = Color( 1, 1, 1, 1 )
+shadow/shadow = false
+shadow/darkening = 0.0
+shadow/z_offset = 0.001
+shadow/z_slope_scale = 0.0
+shadow/esm_multiplier = 60.0
+shadow/blur_passes = 1.0
+projector = null
+operator = 0
+params/radius = 9.36297
+params/attenuation = 1.0
 
 [node name="Props" type="Spatial" parent="World"]
 
