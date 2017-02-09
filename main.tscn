@@ -40,7 +40,6 @@ script/script = ExtResource( 2 )
 
 [node name="terrain" type="Spatial" parent="World"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="House" type="MeshInstance" parent="World/terrain"]
@@ -157,7 +156,7 @@ _update_shape_index = 6
 [node name="OmniLight" type="OmniLight" parent="World/terrain/House"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01292, 6.95205, 3.49322 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61188, 6.95205, 3.37662 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -165,12 +164,12 @@ params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
+shadow/shadow = true
 shadow/darkening = 0.0
 shadow/z_offset = 0.001
 shadow/z_slope_scale = 0.0
 shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
+shadow/blur_passes = 4.0
 projector = null
 operator = 0
 params/radius = 9.36297
@@ -179,7 +178,7 @@ params/attenuation = 1.0
 [node name="OmniLight2" type="OmniLight" parent="World/terrain/House"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.35022, 6.95205, -4.93071 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43917, 6.95205, -4.93071 )
 layers = 1
 params/enabled = true
 params/editor_only = false
@@ -187,12 +186,12 @@ params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
+shadow/shadow = true
 shadow/darkening = 0.0
 shadow/z_offset = 0.001
 shadow/z_slope_scale = 0.0
 shadow/esm_multiplier = 60.0
-shadow/blur_passes = 1.0
+shadow/blur_passes = 4.0
 projector = null
 operator = 0
 params/radius = 9.36297
@@ -200,6 +199,7 @@ params/attenuation = 1.0
 
 [node name="Level 3" type="Spatial" parent="World/terrain"]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Stone_Floor" parent="World/terrain/Level 3" instance=ExtResource( 4 )]
@@ -389,7 +389,7 @@ params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
+shadow/shadow = true
 shadow/darkening = 0.0
 shadow/z_offset = 0.001
 shadow/z_slope_scale = 0.0
@@ -411,7 +411,7 @@ params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
+shadow/shadow = true
 shadow/darkening = 0.0
 shadow/z_offset = 0.001
 shadow/z_slope_scale = 0.0
@@ -433,7 +433,7 @@ params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
-shadow/shadow = false
+shadow/shadow = true
 shadow/darkening = 0.0
 shadow/z_offset = 0.001
 shadow/z_slope_scale = 0.0
