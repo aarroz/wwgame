@@ -57,6 +57,7 @@ func _fixed_process(delta):
 				if (Input.is_mouse_button_pressed(1)):
 					var trans = position.get_global_transform()
 					object.set_global_transform(trans)
+					object.set_rotation(Vector3(0,-X,0))
 					object.set_linear_velocity(Vector3(0, 0, 0))
 				if (Input.is_mouse_button_pressed(2)):
 					var velocity = get_global_transform().origin
