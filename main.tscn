@@ -199,7 +199,6 @@ params/attenuation = 1.0
 
 [node name="Level 3" type="Spatial" parent="World/terrain"]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Stone_Floor" parent="World/terrain/Level 3" instance=ExtResource( 4 )]
@@ -403,7 +402,7 @@ params/attenuation = 1.0
 [node name="OmniLight1" type="OmniLight" parent="World/terrain/Level 3"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.329, 5.83237, 27.1517 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.329, 10.3106, 24.4767 )
 layers = 1
 params/enabled = true
 params/editor_only = false
