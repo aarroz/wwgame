@@ -32,7 +32,7 @@ dof_blur/enabled = true
 dof_blur/blur_passes = 3
 dof_blur/begin = 100.0
 dof_blur/range = 10.0
-hdr/enabled = false
+hdr/enabled = true
 hdr/tonemapper = 0
 hdr/exposure = 0.4
 hdr/white = 1.0
@@ -47,7 +47,7 @@ fog/begin_color = Color( 0.972656, 0.957458, 0.957458, 1 )
 fog/end_color = Color( 0.335938, 0.0393677, 0.0393677, 1 )
 fog/attenuation = 1.0
 fog/bg = true
-bcs/enabled = false
+bcs/enabled = true
 bcs/brightness = 1.0
 bcs/contrast = 1.0
 bcs/saturation = 1.0
@@ -102,7 +102,7 @@ type_mask = 15
 [node name="Camera" type="Camera" parent="."]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25732e-10, 1, -1 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.25732e-10, 1, -0.47546 )
 projection = 0
 fov = 60.0
 near = 0.1
