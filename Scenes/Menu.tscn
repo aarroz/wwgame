@@ -97,7 +97,8 @@ items = [  ]
 
 [node name="Sprite" type="Sprite" parent="VBoxContainer"]
 
-transform/pos = Vector2( 540.612, 372.029 )
+transform/pos = Vector2( 581.902, 410.774 )
+transform/scale = Vector2( 1.04301, 1.07437 )
 z/z = -1
 texture = ExtResource( 4 )
 
