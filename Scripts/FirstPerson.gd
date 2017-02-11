@@ -4,6 +4,7 @@ extends RigidBody
 # Improved Jumping and Object Interaction, thanks to Karroffel
 # Values for speed, sprint, and height are in meters/second
 
+var global = "/root/global"
 # These variables set the camera rotation.
 var X = 0.00
 var Y = 0.00
@@ -82,6 +83,7 @@ func _input(event):
 			Y = -1.5
 	#Show mouse
 	if Input.is_key_pressed(KEY_ESCAPE):
+		get_node(global).setScene("res://Scenes/Menu.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if Input.is_key_pressed(KEY_G):

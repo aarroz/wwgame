@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Images/Fonts/new_theme.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
+[ext_resource path="res://Images/Fonts/Fyodor-Bold.fnt" type="BitmapFont" id=3]
+
+[node name="Menu" type="Node"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+
+editor/display_folded = true
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+theme/theme = ExtResource( 1 )
+margin/left = 420.0
+margin/top = 150.0
+margin/right = 1500.0
+margin/bottom = 870.0
+alignment = 1
+script/script = ExtResource( 2 )
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 1080.0
+margin/bottom = 237.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Play"
+flat = true
+items = [  ]
+
+[node name="MenuButton1" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 241.0
+margin/right = 1080.0
+margin/bottom = 478.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "WIP Level"
+flat = true
+items = [  ]
+
+[node name="MenuButton2" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 482.0
+margin/right = 1080.0
+margin/bottom = 720.0
+custom_fonts/font = ExtResource( 3 )
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Exit"
+flat = true
+items = [  ]
+
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="VBoxContainer" method="_on_MenuButton_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/MenuButton1" to="VBoxContainer" method="_on_MenuButton1_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/MenuButton2" to="VBoxContainer" method="_on_MenuButton2_pressed"]
+
+

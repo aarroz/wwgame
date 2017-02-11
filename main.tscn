@@ -450,6 +450,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.31011, 9.57976, 11.06
 
 [node name="Props" type="Spatial" parent="World"]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Box" parent="World/Props" instance=ExtResource( 8 )]
