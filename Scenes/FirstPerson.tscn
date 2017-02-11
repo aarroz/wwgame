@@ -144,7 +144,7 @@ script/script = ExtResource( 2 )
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, -0.563665 )
 enabled = true
-cast_to = Vector3( 0, -3, 0 )
+cast_to = Vector3( 0, -4, 0 )
 layer_mask = 1
 type_mask = 15
 
