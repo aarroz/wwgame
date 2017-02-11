@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Images/Fonts/new_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=2]
 [ext_resource path="res://Images/Fonts/Fyodor-Bold.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://Images/menuscreen.png" type="Texture" id=4]
 
 [node name="Menu" type="Node"]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 
-editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -21,6 +21,23 @@ margin/bottom = 870.0
 alignment = 1
 script/script = ExtResource( 2 )
 
+[node name="Label" type="Label" parent="VBoxContainer"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 1
+size_flags/vertical = 1
+margin/left = 466.0
+margin/top = 68.0
+margin/right = 613.0
+margin/bottom = 108.0
+text = "WWGame"
+align = 1
+valign = 3
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="MenuButton" type="MenuButton" parent="VBoxContainer"]
 
 focus/ignore_mouse = false
@@ -28,9 +45,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 0.0
+margin/top = 181.0
 margin/right = 1080.0
-margin/bottom = 237.0
+margin/bottom = 358.0
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 click_on_press = true
@@ -47,9 +64,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 241.0
+margin/top = 362.0
 margin/right = 1080.0
-margin/bottom = 478.0
+margin/bottom = 539.0
 custom_fonts/font = ExtResource( 3 )
 toggle_mode = false
 click_on_press = true
@@ -66,7 +83,7 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 482.0
+margin/top = 543.0
 margin/right = 1080.0
 margin/bottom = 720.0
 custom_fonts/font = ExtResource( 3 )
@@ -77,6 +94,12 @@ shortcut = null
 text = "Exit"
 flat = true
 items = [  ]
+
+[node name="Sprite" type="Sprite" parent="VBoxContainer"]
+
+transform/pos = Vector2( 540.612, 372.029 )
+z/z = -1
+texture = ExtResource( 4 )
 
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="VBoxContainer" method="_on_MenuButton_pressed"]
 

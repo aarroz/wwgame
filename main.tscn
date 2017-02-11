@@ -200,6 +200,7 @@ params/attenuation = 1.0
 
 [node name="Level 3" type="Spatial" parent="World/terrain"]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Stone_Floor" parent="World/terrain/Level 3" instance=ExtResource( 4 )]
