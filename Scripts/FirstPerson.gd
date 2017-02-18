@@ -21,9 +21,11 @@ var jumping = false
 onready var ray = get_node("Camera/ray")
 onready var position = get_node("Camera/playerpoint")
 onready var playerfeet = get_node("playerfeet")
+onready var cursor = get_node("Camera/playerpoint/cursor")
 
 #Section of code below controls the player's movement, vars in the begining set the ground detection up for jump.
 func _fixed_process(delta):
+	cursor.hide()
 	var is_on_ground = playerfeet.is_colliding()
 	if (is_on_ground):
 		jumping = false
@@ -49,22 +51,19 @@ func _fixed_process(delta):
 	# This section below controls the object interaction between the player and rigidbody with the node "moveable"
 	if ray.is_colliding():
 		var object = ray.get_collider()
-		#if (object.is_in_group("moveable")):
-			#print("hi")
-			#object.set_translation(ray.get_cast_to())
-		#if (object.is_in_group("moveable") and object.is_allowed_to_move()):
+		var visible = true
 		if (object.is_in_group("moveable")):
-				print("not colliding")
-				if (Input.is_mouse_button_pressed(1)):
-					var trans = position.get_global_transform()
-					object.set_global_transform(trans)
-					object.set_rotation(Vector3(0,-X,0))
-					object.set_linear_velocity(Vector3(0, 0, 0))
-				if (Input.is_mouse_button_pressed(2)):
-					var velocity = get_global_transform().origin
-					print(vel)
-					object.set_linear_velocity(Vector3(20, 0, 0).rotated(Vector3(1, 0, 0), Y*5))
-					#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
+			cursor.show()
+			if (Input.is_mouse_button_pressed(1)):
+				var trans = position.get_global_transform()
+				object.set_global_transform(trans)
+				object.set_rotation(Vector3(0,-X,0))
+				object.set_linear_velocity(Vector3(0, 0, 0))
+			if (Input.is_mouse_button_pressed(2)):
+				var velocity = get_global_transform().origin
+				print(vel)
+				object.set_linear_velocity(Vector3(20, 0, 0).rotated(Vector3(1, 0, 0), Y*5))
+				#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
 
 	#note somebody will find. Expression = value. Statement != value.
 func _input(event):
@@ -100,4 +99,3 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	set_fixed_process(true)
 	set_process_input(true)
-
