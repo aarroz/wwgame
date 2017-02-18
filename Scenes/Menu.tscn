@@ -36,9 +36,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 1
 size_flags/vertical = 1
 margin/left = 566.0
-margin/top = 68.0
+margin/top = 50.0
 margin/right = 713.0
-margin/bottom = 108.0
+margin/bottom = 90.0
 text = "WWGame"
 align = 1
 valign = 3
@@ -53,9 +53,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 181.0
+margin/top = 144.0
 margin/right = 1280.0
-margin/bottom = 358.0
+margin/bottom = 284.0
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 click_on_press = true
@@ -72,9 +72,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 362.0
+margin/top = 288.0
 margin/right = 1280.0
-margin/bottom = 539.0
+margin/bottom = 428.0
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 click_on_press = true
@@ -91,9 +91,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 543.0
+margin/top = 432.0
 margin/right = 1280.0
-margin/bottom = 720.0
+margin/bottom = 572.0
 custom_fonts/font = ExtResource( 4 )
 toggle_mode = false
 click_on_press = true
@@ -103,10 +103,30 @@ text = "Exit"
 flat = true
 items = [  ]
 
+[node name="MenuButton 2" type="MenuButton" parent="VBoxContainer"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 0.0
+margin/top = 576.0
+margin/right = 1280.0
+margin/bottom = 720.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Tilemap"
+flat = true
+items = [  ]
+
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="VBoxContainer" method="_on_MenuButton_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/MenuButton1" to="VBoxContainer" method="_on_MenuButton1_pressed"]
 
 [connection signal="pressed" from="VBoxContainer/MenuButton2" to="VBoxContainer" method="_on_MenuButton2_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/MenuButton 2" to="VBoxContainer" method="_on_MenuButton_2_pressed"]
 
 

@@ -22,4 +22,5 @@ func _on_MenuButton1_pressed():
 func _on_MenuButton2_pressed():
 	get_tree().quit() # replace with function body
 
-
+func _on_MenuButton_2_pressed():
+	get_node(global).setScene("res://Scenes/GridMap.tscn")
