@@ -60,7 +60,7 @@ func _fixed_process(delta):
 				object.set_rotation(Vector3(0,-X,0))
 				object.set_linear_velocity(Vector3(0, 0, 0))
 			if (Input.is_mouse_button_pressed(2)):
-				object.apply_impulse(Vector3(0,0,0),Vector3(0,0,0))
+				object.apply_impulse(Vector3(0,0,0),Vector3(5,0,0))
 				#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
 	#note somebody will find. Expression = value. Statement != value.
 func _input(event):
