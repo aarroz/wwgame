@@ -11,8 +11,8 @@ height = 2.0
 
 [sub_resource type="Environment" id=2]
 
-ambient_light/enabled = true
-ambient_light/color = Color( 0, 0, 0, 1 )
+ambient_light/enabled = false
+ambient_light/color = Color( 0.0050354, 0.020834, 0.257812, 1 )
 ambient_light/energy = 3.0
 fxaa/enabled = true
 background/mode = 1
@@ -28,7 +28,7 @@ glow/blur_strength = 1
 glow/blur_blend_mode = null
 glow/bloom = 0.05
 glow/bloom_treshold = 0.5
-dof_blur/enabled = true
+dof_blur/enabled = false
 dof_blur/blur_passes = 3
 dof_blur/begin = 100.0
 dof_blur/range = 10.0
@@ -41,7 +41,7 @@ hdr/glow_scale = 0.2
 hdr/min_luminance = 0.4
 hdr/max_luminance = 8.0
 hdr/exposure_adj_speed = 0.5
-fog/enabled = false
+fog/enabled = true
 fog/begin = 100.0
 fog/begin_color = Color( 0.972656, 0.957458, 0.957458, 1 )
 fog/end_color = Color( 0.335938, 0.0393677, 0.0393677, 1 )
@@ -133,10 +133,10 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 6.06684
+params/radius = 10.0358
 params/attenuation = 1.0
 params/spot_angle = 30.0
-params/spot_attenuation = 1.0
+params/spot_attenuation = 5.09824
 script/script = ExtResource( 2 )
 
 [node name="ray" type="RayCast" parent="Camera"]
