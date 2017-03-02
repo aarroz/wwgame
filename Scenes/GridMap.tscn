@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Models/Tiles/tiles.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/FirstPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Models/Props/Crate/grate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Models/Props/Box/Box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/Props/Pillar/Pillar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Models/Props/Chair/Chair.tscn" type="PackedScene" id=6]
 
 [node name="GridMap" type="Spatial"]
 
@@ -98,7 +99,7 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 11.6514
+params/radius = 20.0
 params/attenuation = 1.0
 
 [node name="OmniLight2 2" type="OmniLight" parent="Lights"]
@@ -120,7 +121,7 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 13.3356
+params/radius = 20.0
 params/attenuation = 1.0
 
 [node name="OmniLight23" type="OmniLight" parent="Lights"]
@@ -142,7 +143,7 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 13.3356
+params/radius = 20.0
 params/attenuation = 1.0
 
 [node name="OmniLight25" type="OmniLight" parent="Lights"]
@@ -164,7 +165,7 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 13.3356
+params/radius = 20.0
 params/attenuation = 1.0
 
 [node name="OmniLight24" type="OmniLight" parent="Lights"]
@@ -186,7 +187,7 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 22.421
+params/radius = 25.0
 params/attenuation = 1.0
 
 [node name="OmniLight1" type="OmniLight" parent="Lights"]
@@ -208,7 +209,7 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 11.4776
+params/radius = 20.0
 params/attenuation = 1.0
 
 [node name="OmniLight2" type="OmniLight" parent="Lights"]
@@ -230,12 +231,11 @@ shadow/esm_multiplier = 60.0
 shadow/blur_passes = 1.0
 projector = null
 operator = 0
-params/radius = 9.12572
+params/radius = 20.0
 params/attenuation = 1.0
 
 [node name="Map Objects" type="Spatial" parent="."]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="Pillar" parent="Map Objects" instance=ExtResource( 5 )]
@@ -253,5 +253,9 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86039, 11.945, -2.8853
 [node name="Pillar3" parent="Map Objects" instance=ExtResource( 5 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86039, 11.945, -14.9706 )
+
+[node name="Chair" parent="Map Objects" instance=ExtResource( 6 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65948, 15.3093, 19.1536 )
 
 
