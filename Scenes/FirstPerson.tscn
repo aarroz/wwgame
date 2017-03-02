@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Scripts/FirstPerson.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/light.gd" type="Script" id=2]
-[ext_resource path="res://Images/hand_crosshair.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/mouse.gd" type="Script" id=3]
+[ext_resource path="res://Images/hand_crosshair.png" type="Texture" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -146,12 +147,13 @@ transform/local = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0
 enabled = true
 cast_to = Vector3( 0, -4.5, 0 )
 layer_mask = 1
-type_mask = 14
+type_mask = 6
 
 [node name="playerpoint" type="Position3D" parent="Camera"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.04112 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+script/script = ExtResource( 3 )
 
 [node name="cursor" type="Sprite3D" parent="Camera/playerpoint"]
 
@@ -182,7 +184,7 @@ axis = 2
 flags/transparent = true
 flags/shaded = false
 flags/alpha_cut = 0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 vframes = 1
 hframes = 1
 frame = 0

@@ -52,6 +52,7 @@ func _fixed_process(delta):
 	if ray.is_colliding():
 		var object = ray.get_collider()
 		var visible = true
+		#cursor.show()
 		if (object.is_in_group("moveable")):
 			cursor.show()
 			if (Input.is_mouse_button_pressed(1)):
