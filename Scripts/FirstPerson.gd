@@ -27,8 +27,12 @@ onready var cursor = get_node("Camera/playerpoint/cursor")
 func _fixed_process(delta):
 	cursor.hide()
 	var is_on_ground = playerfeet.is_colliding()
+	var on_top_of = playerfeet.get_collider()
 	if (is_on_ground):
 		jumping = false
+		if (on_top_of.is_in_group("death")):
+			get_node(global).setScene("res://Scenes/DeathScreen.tscn")
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#print("hey, it works!")
 	#Player movement
 	if (Input.is_key_pressed(KEY_SHIFT) and Input.is_key_pressed(KEY_W)):
