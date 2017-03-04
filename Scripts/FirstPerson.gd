@@ -35,18 +35,22 @@ func _fixed_process(delta):
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#print("hey, it works!")
 	#Player movement
-	if (Input.is_key_pressed(KEY_SHIFT) and Input.is_key_pressed(KEY_W)):
+	if (Input.is_action_pressed("player_sprint") and Input.is_action_pressed("player_up")):
 		translate(Vector3(0, 0, -sprint*delta))
-	if Input.is_key_pressed(KEY_W):
+	#Movement Forward
+	if Input.is_action_pressed("player_up"):
 		translate(Vector3(0, 0, -speed*delta))
-	if Input.is_key_pressed(KEY_S):
+	#Movement Backwards
+	if Input.is_action_pressed("player_down"):
 		translate(Vector3(0, 0, speed*delta))
-	if Input.is_key_pressed(KEY_A):
+	#Movement Left
+	if Input.is_action_pressed("player_left"):
 		translate(Vector3(-speed*delta, 0, 0))
-	if Input.is_key_pressed(KEY_D):
+	#Movement Right
+	if Input.is_action_pressed("player_right"):
 		translate(Vector3(speed*delta, 0, 0))
 	# Section below controls the use of Jump
-	if (Input.is_key_pressed(KEY_SPACE) and not jumping):
+	if (Input.is_action_pressed("player_jump") and not jumping):
 		var velocity = get_linear_velocity()
 		velocity.y = JUMP_VELOCITY
 		set_linear_velocity(velocity)
@@ -59,12 +63,12 @@ func _fixed_process(delta):
 		#cursor.show()
 		if (object.is_in_group("moveable")):
 			cursor.show()
-			if (Input.is_mouse_button_pressed(1)):
+			if (Input.is_action_pressed("player_grab")):
 				var trans = position.get_global_transform()
 				object.set_global_transform(trans)
 				object.set_rotation(Vector3(0,-X,0))
 				object.set_linear_velocity(Vector3(0, 0, 0))
-			if (Input.is_mouse_button_pressed(2)):
+			if (Input.is_action_pressed("player_throw")):
 				var ray_pos = ray.get_translation()*1.4
 				var ray_rot = ray.get_rotation()
 				object.apply_impulse(Vector3(ray_pos),Vector3(-ray_pos))
