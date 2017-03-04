@@ -88,6 +88,7 @@ func _input(event):
 			get_node("Camera").set_rotation(Vector3(-Y,0,0))
 		else:
 			Y = -1.5
+
 	#Show mouse
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_node(global).setScene("res://Scenes/Menu.tscn")

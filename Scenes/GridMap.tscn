@@ -29,10 +29,12 @@ __meta__ = { "_editor_clip_":0, "_editor_floor_":Vector3( 2, 6, 0 ) }
 
 [node name="FirstPerson" parent="." instance=ExtResource( 2 )]
 
+editor/display_folded = true
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.63685, 0 )
 
 [node name="Props" type="Spatial" parent="."]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="StaticBody" parent="Props" instance=ExtResource( 3 )]
@@ -100,7 +102,7 @@ shadow/blur_passes = 1.0
 projector = null
 operator = 0
 params/radius = 20.0
-params/attenuation = 1.0
+params/attenuation = 2.0
 
 [node name="OmniLight2 2" type="OmniLight" parent="Lights"]
 
