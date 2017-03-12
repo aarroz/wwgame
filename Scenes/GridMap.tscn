@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://Models/Tiles/tiles.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/FirstPerson.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Models/Props/Crate/grate.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Models/Props/Box/Box.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Models/Props/Pillar/Pillar.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Models/Props/Chair/Chair.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Models/Props/Lamp/lamp.scn" type="PackedScene" id=5]
+[ext_resource path="res://Models/Props/Pillar/Pillar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Models/Props/Chair/Chair.tscn" type="PackedScene" id=7]
 
 [node name="GridMap" type="Spatial"]
 
@@ -16,7 +17,7 @@ __meta__ = { "_editor_clip_":0 }
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 theme/theme = ExtResource( 1 )
-theme/bake = false
+theme/bake = true
 lighting/bake = false
 cell/size = 2.0
 cell/octant_size = 4
@@ -76,6 +77,10 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35863, 3.32344, 7.004
 [node name="Box34" parent="Props" instance=ExtResource( 4 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.35863, 5.44949, 7.00437 )
+
+[node name="lamp" parent="Props" instance=ExtResource( 5 )]
+
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19592, 5.38764, 1.67961 )
 
 [node name="Lights" type="Spatial" parent="."]
 
@@ -241,23 +246,23 @@ params/attenuation = 1.0
 editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
-[node name="Pillar" parent="Map Objects" instance=ExtResource( 5 )]
+[node name="Pillar" parent="Map Objects" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7718, 11.945, -3.84533 )
 
-[node name="Pillar1" parent="Map Objects" instance=ExtResource( 5 )]
+[node name="Pillar1" parent="Map Objects" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.7718, 11.945, 13.8355 )
 
-[node name="Pillar2" parent="Map Objects" instance=ExtResource( 5 )]
+[node name="Pillar2" parent="Map Objects" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86039, 11.945, -2.88534 )
 
-[node name="Pillar3" parent="Map Objects" instance=ExtResource( 5 )]
+[node name="Pillar3" parent="Map Objects" instance=ExtResource( 6 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86039, 11.945, -14.9706 )
 
-[node name="Chair" parent="Map Objects" instance=ExtResource( 6 )]
+[node name="Chair" parent="Map Objects" instance=ExtResource( 7 )]
 
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.65948, 15.3093, 19.1536 )
 
