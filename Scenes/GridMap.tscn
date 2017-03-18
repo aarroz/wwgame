@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://Models/Tiles/tiles.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Scenes/FirstPerson.tscn" type="PackedScene" id=2]
@@ -8,10 +8,59 @@
 [ext_resource path="res://Models/Props/Pillar/Pillar.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Models/Props/Chair/Chair.tscn" type="PackedScene" id=7]
 
+[sub_resource type="Environment" id=1]
+
+ambient_light/enabled = true
+ambient_light/color = Color( 0.210569, 0.154205, 0.242188, 1 )
+ambient_light/energy = 1.0
+fxaa/enabled = true
+background/mode = 1
+background/color = Color( 0, 0, 0, 1 )
+background/energy = 1.0
+background/scale = 1.0
+background/glow = 0.0
+background/canvas_max_layer = null
+glow/enabled = false
+glow/blur_passes = 1
+glow/blur_scale = 1
+glow/blur_strength = 1
+glow/blur_blend_mode = 1
+glow/bloom = 1.03
+glow/bloom_treshold = 0.5
+dof_blur/enabled = true
+dof_blur/blur_passes = 3
+dof_blur/begin = 100.0
+dof_blur/range = 10.0
+hdr/enabled = false
+hdr/tonemapper = 0
+hdr/exposure = 0.4
+hdr/white = 1.0
+hdr/glow_treshold = 0.95
+hdr/glow_scale = 0.2
+hdr/min_luminance = 0.4
+hdr/max_luminance = 8.0
+hdr/exposure_adj_speed = 0.5
+fog/enabled = false
+fog/begin = 100.0
+fog/begin_color = Color( 0, 0, 0, 1 )
+fog/end_color = Color( 0, 0, 0, 1 )
+fog/attenuation = 1.0
+fog/bg = true
+bcs/enabled = true
+bcs/brightness = 1.0
+bcs/contrast = 1.0
+bcs/saturation = 1.1
+srgb/enabled = false
+
 [node name="GridMap" type="Spatial"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 __meta__ = { "_editor_clip_":0 }
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+
+_import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+environment = SubResource( 1 )
 
 [node name="GridMap" type="GridMap" parent="."]
 
@@ -35,7 +84,6 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.63685, 0 )
 
 [node name="Props" type="Spatial" parent="."]
 
-editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="StaticBody" parent="Props" instance=ExtResource( 3 )]
@@ -86,15 +134,17 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19592, 5.38764, 1.6796
 
 editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.767, 0 )
+visibility/visible = false
 
 [node name="OmniLight" type="OmniLight" parent="Lights"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.542187, 3.03667, 3.47876 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.542187, 7.99245, 3.47876 )
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
@@ -116,7 +166,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6985, 19.7725, -9.766
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
@@ -138,7 +188,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6985, 19.7725, 18.971
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
@@ -160,7 +210,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1261, 19.7725, 18.971
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
@@ -182,7 +232,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.6387, 19.7725, 4.2958
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
@@ -200,11 +250,11 @@ params/attenuation = 1.0
 [node name="OmniLight1" type="OmniLight" parent="Lights"]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
-transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.542187, 3.03667, -12.2154 )
+transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.542187, 7.9085, -12.2154 )
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
@@ -226,7 +276,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.65771, 7.5239, -9.3795
 layers = 1
 params/enabled = true
 params/editor_only = false
-params/bake_mode = 3
+params/bake_mode = 0
 params/energy = 1.0
 colors/diffuse = Color( 1, 1, 1, 1 )
 colors/specular = Color( 1, 1, 1, 1 )
