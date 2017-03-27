@@ -84,6 +84,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.63685, 0 )
 
 [node name="Props" type="Spatial" parent="."]
 
+editor/display_folded = true
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 
 [node name="StaticBody" parent="Props" instance=ExtResource( 3 )]
