@@ -5,11 +5,11 @@
 [ext_resource path="res://Models/Props/Chair/Chair.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Deathbox.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Models/Tiles/tiles.tres" type="MeshLibrary" id=5]
-[ext_resource path="res://Sounds/main_atmo_01.ogg" type="AudioStream" id=6]
+[ext_resource path="res://Sounds/main_atmo_001.ogg" type="AudioStream" id=6]
 
 [sub_resource type="Environment" id=1]
 
-ambient_light/enabled = true
+ambient_light/enabled = false
 ambient_light/color = Color( 0.269531, 0.269531, 0.269531, 1 )
 ambient_light/energy = 1.0
 fxaa/enabled = false
@@ -19,14 +19,14 @@ background/energy = 1.0
 background/scale = 1.0
 background/glow = 0.0
 background/canvas_max_layer = null
-glow/enabled = false
+glow/enabled = true
 glow/blur_passes = 1
 glow/blur_scale = 1
 glow/blur_strength = 1
 glow/blur_blend_mode = null
 glow/bloom = 0.0
 glow/bloom_treshold = 0.5
-dof_blur/enabled = false
+dof_blur/enabled = true
 dof_blur/blur_passes = 4
 dof_blur/begin = 100.0
 dof_blur/range = 10.0
@@ -207,7 +207,7 @@ stream/volume_db = -18.06
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 50.0
-stream/buffering_ms = 500
+stream/buffering_ms = 361935360
 
 
 [editable path="World/FirstPerson"]
