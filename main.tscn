@@ -182,7 +182,7 @@ transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10.0198, 0 )
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 theme/theme = ExtResource( 5 )
-theme/bake = true
+theme/bake = false
 lighting/bake = false
 cell/size = 2.0
 cell/octant_size = 4
