@@ -14,7 +14,12 @@ height = 2.0
 
 [sub_resource type="SampleLibrary" id=2]
 
-samples/footsteps = { "db":0.0, "pitch":1.0, "sample":ExtResource( 2 ) }
+samples/footsteps = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 2 )
+}
 
 [node name="FirstPerson" type="RigidBody"]
 

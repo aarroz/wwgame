@@ -43,9 +43,6 @@ func _fixed_process(delta):
 	#Movement Forward
 	if Input.is_action_pressed("player_up"):
 		translate(Vector3(0, 0, -speed*delta))
-		moving = false
-	else:
-		moving = true
 	#Movement Backwards
 	if Input.is_action_pressed("player_down"):
 		translate(Vector3(0, 0, speed*delta))
@@ -62,10 +59,10 @@ func _fixed_process(delta):
 		set_linear_velocity(velocity)
 		jumping = true
 
-	if (Input.is_action_pressed("player_movement")):
-		player.play("footsteps", true)
-	else:
-		player.play("footsteps", false)
+	#if (Input.is_action_pressed("player_movement")):
+	#	player.play("footsteps", true)
+	#else:
+	#	player.play("footsteps", false)
 
 	# This section below controls the object interaction between the player and rigidbody with the node "moveable"
 	if ray.is_colliding():
