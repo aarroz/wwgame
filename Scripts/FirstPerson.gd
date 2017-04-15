@@ -17,12 +17,13 @@ var vel = Vector3()
 var interactable = false
 var JUMP_VELOCITY = 12
 var jumping = false
+
+var moving = true
 # The onready vars below define the points of interest for the actions.
 onready var ray = get_node("Camera/ray")
 onready var position = get_node("Camera/playerpoint")
 onready var playerfeet = get_node("playerfeet")
 onready var cursor = get_node("Camera/playerpoint/cursor")
-
 onready var player = get_node("SamplePlayer")
 
 #Section of code below controls the player's movement, vars in the begining set the ground detection up for jump.
@@ -30,7 +31,6 @@ func _fixed_process(delta):
 	cursor.hide()
 	var is_on_ground = playerfeet.is_colliding()
 	var on_top_of = playerfeet.get_collider()
-	var moving = false
 	if (is_on_ground):
 		jumping = false
 		if (on_top_of.is_in_group("death")):
@@ -43,9 +43,9 @@ func _fixed_process(delta):
 	#Movement Forward
 	if Input.is_action_pressed("player_up"):
 		translate(Vector3(0, 0, -speed*delta))
-		moving = true
-	if (not Input.is_action_pressed("player_up")):
 		moving = false
+	else:
+		moving = true
 	#Movement Backwards
 	if Input.is_action_pressed("player_down"):
 		translate(Vector3(0, 0, speed*delta))
@@ -62,9 +62,11 @@ func _fixed_process(delta):
 		set_linear_velocity(velocity)
 		jumping = true
 
-	if (moving):
-		var voiceid_footsteps = player.play("footsteps", true)
-		player.set_volume(voiceid_footsteps, 0.5)
+	if (Input.is_action_pressed("player_movement")):
+		player.play("footsteps", true)
+	else:
+		player.play("footsteps", false)
+
 	# This section below controls the object interaction between the player and rigidbody with the node "moveable"
 	if ray.is_colliding():
 		var object = ray.get_collider()
