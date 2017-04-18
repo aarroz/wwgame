@@ -1,15 +1,16 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://Scripts/FirstPerson.gd" type="Script" id=1]
 [ext_resource path="res://Sounds/Samples/click.wav" type="Sample" id=2]
 [ext_resource path="res://Sounds/Samples/footsteps.wav" type="Sample" id=3]
 [ext_resource path="res://Scripts/playersampler.gd" type="Script" id=4]
-[ext_resource path="res://Models/Props/Flashlight/flashlight.msh" type="Mesh" id=5]
-[ext_resource path="res://Scripts/light.gd" type="Script" id=6]
-[ext_resource path="res://Scripts/mouse.gd" type="Script" id=7]
-[ext_resource path="res://Images/hand_crosshair.png" type="Texture" id=8]
-[ext_resource path="res://Scripts/objectmouse.gd" type="Script" id=9]
-[ext_resource path="res://Sounds/Samples/heatbeat_compressed.ogg" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/EnvironmentalMap_GRID.tres" type="Environment" id=5]
+[ext_resource path="res://Models/Props/Flashlight/flashlight.msh" type="Mesh" id=6]
+[ext_resource path="res://Scripts/light.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/mouse.gd" type="Script" id=8]
+[ext_resource path="res://Images/hand_crosshair.png" type="Texture" id=9]
+[ext_resource path="res://Scripts/objectmouse.gd" type="Script" id=10]
+[ext_resource path="res://Sounds/Samples/heatbeat_compressed.ogg" type="AudioStream" id=11]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -143,7 +144,7 @@ far = 100.0
 keep_aspect = 1
 current = true
 visible_layers = 1048575
-environment = null
+environment = ExtResource( 5 )
 h_offset = 0.0
 v_offset = 0.0
 
@@ -165,7 +166,7 @@ geometry/depth_scale = false
 geometry/visible_in_all_rooms = false
 geometry/use_baked_light = false
 geometry/baked_light_tex_id = 0
-mesh/mesh = ExtResource( 5 )
+mesh/mesh = ExtResource( 6 )
 mesh/skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 
@@ -192,7 +193,7 @@ params/radius = 50.0
 params/attenuation = 1.0
 params/spot_angle = 20.0
 params/spot_attenuation = 5.09824
-script/script = ExtResource( 6 )
+script/script = ExtResource( 7 )
 
 [node name="ray" type="RayCast" parent="Camera"]
 
@@ -207,7 +208,7 @@ type_mask = 6
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
-script/script = ExtResource( 7 )
+script/script = ExtResource( 8 )
 
 [node name="cursor" type="Sprite3D" parent="Camera/playerpoint"]
 
@@ -238,7 +239,7 @@ axis = 2
 flags/transparent = true
 flags/shaded = false
 flags/alpha_cut = 0
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 vframes = 1
 hframes = 1
 frame = 0
@@ -249,11 +250,11 @@ region_rect = Rect2( 0, 0, 0, 0 )
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.355183, -0.284906, -0.214282 )
-script/script = ExtResource( 9 )
+script/script = ExtResource( 10 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 10 )
+stream/stream = ExtResource( 11 )
 stream/play = false
 stream/loop = true
 stream/volume_db = -12.4
