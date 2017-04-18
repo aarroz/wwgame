@@ -83,16 +83,16 @@ func _fixed_process(delta):
 				var ray_rot = ray.get_rotation()
 				object.apply_impulse(Vector3(ray_rot),Vector3(ray_rot))
 				#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
-		if (object.is_in_group("item")):
-			cursor.show()
-			if (Input.is_action_pressed("player_grab")):
-				var held = true
-				Input.action_press("player_grab")
-				if (held):
-					var arm = grabarm.get_global_transform()
-					object.set_global_transform(arm)
-					object.set_rotation(Vector3(0,-X,0))
-					object.set_linear_velocity(Vector3(0, 0, 0))
+		#if (object.is_in_group("item")):
+		#	cursor.show()
+		#	if (Input.is_action_pressed("player_grab")):
+		#		var held = true
+		#		Input.action_press("player_grab")
+		#		if (held):
+		#			var arm = grabarm.get_global_transform()
+		#			object.set_global_transform(arm)
+		#			object.set_rotation(Vector3(0,-X,0))
+		#			object.set_linear_velocity(Vector3(0, 0, 0))
 	#note somebody will find. Expression = value. Statement != value.
 func _input(event):
 	#Camera motion

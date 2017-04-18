@@ -143,7 +143,6 @@ v_offset = 0.0
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 0.598231, 0, -0.0460465, 0, 0.6, 0, 0.0460465, 0, 0.598231, -0.349744, -0.270951, -0.320138 )
-visibility/visible = false
 layers = 2
 geometry/visible = true
 geometry/material_override = null
