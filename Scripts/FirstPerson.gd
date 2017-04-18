@@ -19,7 +19,7 @@ var JUMP_VELOCITY = 12
 var jumping = false
 
 var moving = true
-
+var toggled = false
 # The onready vars below define the points of interest for the actions.
 onready var ray = get_node("Camera/ray")
 onready var position = get_node("Camera/playerpoint")
@@ -27,17 +27,19 @@ onready var playerfeet = get_node("playerfeet")
 onready var cursor = get_node("Camera/playerpoint/cursor")
 onready var player = get_node("SamplePlayer")
 onready var grabarm = get_node("Camera/objectpoint")
+onready var flashlight = get_node("Camera/MeshInstance/DirectionalLight")
 
 #Section of code below controls the player's movement, vars in the begining set the ground detection up for jump.
 func _fixed_process(delta):
 	cursor.hide()
 	var is_on_ground = playerfeet.is_colliding()
 	var on_top_of = playerfeet.get_collider()
+
 	if (is_on_ground):
 		jumping = false
-		if (on_top_of.is_in_group("death")):
-			get_node(global).setScene("res://Scenes/DeathScreen.tscn")
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		#if (on_top_of.is_in_group("death")):
+		#	get_node(global).setScene("res://Scenes/DeathScreen.tscn")
+		#	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#print("hey, it works!")
 	#Player movement
 	if (Input.is_action_pressed("player_sprint") and Input.is_action_pressed("player_up")):
@@ -60,11 +62,6 @@ func _fixed_process(delta):
 		velocity.y = JUMP_VELOCITY
 		set_linear_velocity(velocity)
 		jumping = true
-
-	#if (Input.is_action_pressed("player_movement")):
-	#	player.play("footsteps", true)
-	#else:
-	#	player.play("footsteps", false)
 
 	# This section below controls the object interaction between the player and rigidbody with the node "moveable"
 	if ray.is_colliding():
@@ -109,6 +106,10 @@ func _input(event):
 		else:
 			Y = -1.5
 
+	if Input.is_action_pressed("player_light"):
+		flashlight.set_enabled(not flashlight.is_enabled())
+		player.play("click", true)
+
 	#Show mouse
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_node(global).setScene("res://Scenes/Menu.tscn")
@@ -128,3 +129,8 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	set_fixed_process(true)
 	set_process_input(true)
+
+#	if (Input.is_action_pressed("player_movement")):
+#		player.play("footsteps", true)
+#	else:
+#		player.play("footsteps", false)
