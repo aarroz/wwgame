@@ -105,7 +105,7 @@ func _input(event):
 
 	#Show mouse
 	if Input.is_key_pressed(KEY_ESCAPE):
-		#get_node(global).setScene("res://Scenes/Menu.tscn")
+		get_node(global).setScene("res://Scenes/Menu.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if Input.is_key_pressed(KEY_G):
