@@ -2,7 +2,7 @@
 
 [resource]
 
-ambient_light/enabled = true
+ambient_light/enabled = false
 ambient_light/color = Color( 0.101562, 0.101562, 0.101562, 1 )
 ambient_light/energy = 2.33
 fxaa/enabled = true
