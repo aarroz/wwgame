@@ -38,9 +38,9 @@ func _fixed_process(delta):
 
 	if (is_on_ground):
 		jumping = false
-		#if (on_top_of.is_in_group("death")):
-		#	get_node(global).setScene("res://Scenes/DeathScreen.tscn")
-		#	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		if (on_top_of.is_in_group("death")):
+			get_node(global).setScene("res://Scenes/DeathScreen.tscn")
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		#print("hey, it works!")
 	#Player movement
 	if (Input.is_action_pressed("player_sprint") and Input.is_action_pressed("player_up")):

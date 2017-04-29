@@ -4,7 +4,9 @@
 
 extents = Vector3( 1, 1, 1 )
 
-[node name="DeathBox" type="StaticBody" groups=[ "death" ]]
+[node name="DeathBox" type="StaticBody" groups=[
+"death",
+]]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 input/ray_pickable = true
@@ -20,7 +22,9 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="Area" type="CollisionShape" parent="." groups=[ "death" ]]
+[node name="Area" type="CollisionShape" parent="." groups=[
+"death",
+]]
 
 _import_transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 transform/local = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )

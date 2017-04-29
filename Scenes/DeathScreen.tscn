@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://Images/death.png" type="Texture" id=1]
 [ext_resource path="res://Images/Fonts/new_theme.tres" type="Theme" id=2]
 [ext_resource path="res://Scripts/DeathScreen.gd" type="Script" id=3]
+[ext_resource path="res://Sounds/main_atmo_001.ogg" type="AudioStream" id=4]
 
 [node name="DeathScreen" type="Node"]
 
@@ -81,6 +82,17 @@ shortcut = null
 text = "Return To Menu"
 flat = true
 items = [  ]
+
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 4 )
+stream/play = false
+stream/loop = true
+stream/volume_db = -19.33
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 [connection signal="pressed" from="VBoxContainer/MenuButton" to="VBoxContainer" method="_on_MenuButton_pressed"]
 
