@@ -6,8 +6,8 @@
 [ext_resource path="res://Models/Tiles/bricks_stone/Texture/bricks_stone_2048x_normal.png" type="Texture" id=4]
 [ext_resource path="res://Models/Tiles/bricks_stone/Texture/bricks_stone_2048x_normalmap.png" type="Texture" id=5]
 [ext_resource path="res://Models/Tiles/bricks_stone/Texture/bricks_stone_2048x_specular.png" type="Texture" id=6]
-[ext_resource path="res://Models/Tiles/tile_cement_1/cement_diffuse.png" type="Texture" id=7]
-[ext_resource path="res://Models/Tiles/tile_cement_1/cement_specular.png" type="Texture" id=8]
+[ext_resource path="res://Models/Tiles/tile_cement_1/Texture/stone.png" type="Texture" id=7]
+[ext_resource path="res://Models/Tiles/tile_cement_1/Texture/stone_normalmap.png" type="Texture" id=8]
 [ext_resource path="res://Models/Tiles/wood_tile/Textures/wood.png" type="Texture" id=9]
 [ext_resource path="res://Models/Tiles/wood_tile/Textures/wood_normalmap.png" type="Texture" id=10]
 [ext_resource path="res://Models/Tiles/wood_tile/Textures/wood_specularmap.png" type="Texture" id=11]
@@ -235,14 +235,12 @@ params/point_size = 1.0
 uv_xform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 textures/diffuse = ExtResource( 7 )
 textures/diffuse_tc = 0
-textures/detail = ExtResource( 7 )
 textures/detail_tc = 0
-textures/specular = ExtResource( 8 )
 textures/specular_tc = 0
 textures/emission_tc = 0
 textures/specular_exp_tc = 0
 textures/glow_tc = 0
-textures/normal = ExtResource( 7 )
+textures/normal = ExtResource( 8 )
 textures/normal_tc = 0
 textures/shade_param_tc = 0
 
@@ -420,6 +418,7 @@ lossy_quality = 0.7
 
 [resource]
 
+resource/name = "Material_003"
 item/0/name = "stone"
 item/0/mesh = SubResource( 2 )
 item/0/shape = SubResource( 4 )
