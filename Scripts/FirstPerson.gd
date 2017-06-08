@@ -79,9 +79,7 @@ func _fixed_process(delta):
 			if (Input.is_action_pressed("player_throw")):
 				var ray_pos = ray.get_translation()*1.4
 				var ray_rot = ray.get_rotation()
-				object.apply_impulse(Vector3(ray_rot),Vector3(ray_rot))
-				#object.set_linear_velocity((velocity - get_global_transform().origin)*10)
-
+				object.apply_impulse(Vector3(-ray_rot),Vector3(-ray_rot))
 
 	#note somebody will find. Expression = value. Statement != value.
 func _input(event):
@@ -122,8 +120,3 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	set_fixed_process(true)
 	set_process_input(true)
-
-#	if (Input.is_action_pressed("player_movement")):
-#		player.play("footsteps", true)
-#	else:
-#		player.play("footsteps", false)
