@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/pillar.obj-a790c528f04ea8b29772246c153b2897.mesh"
+
+[deps]
+
+files=[ "res://.import/pillar.obj-a790c528f04ea8b29772246c153b2897.mesh" ]
+
+source_file="res://assets/Models/Props/Pillar/pillar.obj"
+source_md5="dab1859651bd7f23ed41302ee73cac07"
+
+dest_files=[ "res://.import/pillar.obj-a790c528f04ea8b29772246c153b2897.mesh", "res://.import/pillar.obj-a790c528f04ea8b29772246c153b2897.mesh" ]
+dest_md5="15fd141ec0b679d9fd3e7a25ea6d5d26"
+
+[params]
+
+generate_tangents=true

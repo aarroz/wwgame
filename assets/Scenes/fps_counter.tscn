@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Images/Nobile/mainmenufont.theme" type="Theme" id=1]
+[ext_resource path="res://assets/Scripts/fps_counter.gd" type="Script" id=2]
+
+[node name="FPS Counter" type="Label"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1013.0
+margin_top = 20.0
+margin_right = 1245.0
+margin_bottom = 94.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 1 )
+text = "60 FPS"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 2 )
+_sections_unfolded = [ "Theme" ]
+
+

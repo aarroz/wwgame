@@ -1,0 +1,227 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone.material" type="Material" id=1]
+[ext_resource path="res://assets/Models/Tiles/tile_bricks_stone/tile_stone_bricks.material" type="Material" id=2]
+[ext_resource path="res://assets/Models/Tiles/tile_cement_1/tile_cement.material" type="Material" id=3]
+[ext_resource path="res://assets/Models/Tiles/tile_whitepad/tile_whitepad.material" type="Material" id=4]
+[ext_resource path="res://assets/Models/Tiles/tile_wood/tile_wood.material" type="Material" id=5]
+
+
+
+
+[sub_resource type="CubeMesh" id=1]
+
+material = ExtResource( 1 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 1, 1, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+material = ExtResource( 2 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="CubeMesh" id=4]
+
+material = ExtResource( 3 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="CubeMesh" id=5]
+
+material = ExtResource( 4 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="CubeMesh" id=6]
+
+material = ExtResource( 5 )
+size = Vector3( 2, 2, 2 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[node name="mesh_library" type="Spatial"]
+
+[node name="tile_stone" type="MeshInstance" parent="." index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 1 )
+_sections_unfolded = [ "material" ]
+
+[node name="StaticBody" type="StaticBody" parent="tile_stone" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="tile_stone/StaticBody" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="tile_stone_bricks" type="MeshInstance" parent="." index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 2 )
+_sections_unfolded = [ "Geometry", "material" ]
+
+[node name="StaticBody" type="StaticBody" parent="tile_stone_bricks" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="tile_stone_bricks/StaticBody" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="tile_cement" type="MeshInstance" parent="." index="2"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 4 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 3 )
+_sections_unfolded = [ "material" ]
+
+[node name="StaticBody" type="StaticBody" parent="tile_cement" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="tile_cement/StaticBody" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="tile_whitepad" type="MeshInstance" parent="." index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 5 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 4 )
+_sections_unfolded = [ "material" ]
+
+[node name="StaticBody" type="StaticBody" parent="tile_whitepad" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="tile_whitepad/StaticBody" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="tile_wood" type="MeshInstance" parent="." index="4"]
+
+editor/display_folded = true
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 6 )
+skeleton = NodePath("..")
+material/0 = ExtResource( 5 )
+_sections_unfolded = [ "material" ]
+
+[node name="StaticBody" type="StaticBody" parent="tile_wood" index="0"]
+
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="tile_wood/StaticBody" index="0"]
+
+shape = SubResource( 2 )
+disabled = false
+
+

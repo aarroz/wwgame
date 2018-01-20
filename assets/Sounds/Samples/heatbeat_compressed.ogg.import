@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/heatbeat_compressed.ogg-8a2824af179622f31006d957042447a9.oggstr"
+
+[deps]
+
+source_file="res://assets/Sounds/Samples/heatbeat_compressed.ogg"
+source_md5="125e8b6a4a36f25a16f61a2c640dff3e"
+
+dest_files=[ "res://.import/heatbeat_compressed.ogg-8a2824af179622f31006d957042447a9.oggstr" ]
+dest_md5="4cd3aca69fe8443cccd8bdc4d6c5d449"
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,81 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Models/Props/Torch/Material_001.material" type="Material" id=1]
+[ext_resource path="res://assets/Models/Props/Torch/Material_002.material" type="Material" id=2]
+
+[sub_resource type="ArrayMesh" id=1]
+
+resource_name = "Cube.001"
+blend_shape_mode = 1
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+surfaces/0 = {
+"aabb": AABB( -1, -1, -1, 2, 1.84566, 2.00001 ),
+"array_data": PoolByteArray( 0, 188, 190, 58, 0, 60, 0, 60, 129, 0, 0, 0, 0, 188, 0, 188, 0, 188, 0, 60, 129, 0, 0, 0, 0, 188, 0, 188, 0, 60, 0, 60, 129, 0, 0, 0, 0, 188, 0, 188, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 173, 58, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 0, 188, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 173, 58, 0, 188, 0, 60, 127, 0, 0, 0, 0, 60, 0, 188, 0, 60, 0, 60, 127, 0, 0, 0, 0, 60, 0, 188, 0, 188, 0, 60, 127, 0, 0, 0, 0, 60, 195, 58, 0, 60, 0, 60, 0, 0, 127, 0, 154, 59, 193, 58, 0, 60, 0, 60, 0, 0, 127, 0, 0, 60, 0, 188, 0, 60, 0, 60, 0, 0, 127, 0, 0, 60, 0, 188, 0, 188, 0, 60, 0, 129, 0, 0, 0, 188, 0, 188, 0, 60, 0, 60, 0, 129, 0, 0, 0, 188, 0, 188, 0, 188, 0, 60, 0, 129, 0, 0, 0, 188, 195, 58, 0, 188, 0, 60, 129, 0, 0, 0, 0, 188, 195, 58, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 195, 58, 0, 60, 0, 60, 127, 0, 0, 0, 0, 188, 0, 188, 0, 60, 0, 60, 0, 0, 127, 0, 0, 188, 190, 58, 0, 60, 0, 60, 0, 0, 127, 0, 0, 60, 0, 188, 0, 60, 0, 60, 0, 129, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0, 6, 0, 8, 0, 7, 0, 9, 0, 11, 0, 10, 0, 12, 0, 14, 0, 13, 0, 0, 0, 1, 0, 15, 0, 3, 0, 4, 0, 16, 0, 6, 0, 7, 0, 17, 0, 18, 0, 10, 0, 11, 0, 10, 0, 18, 0, 19, 0, 12, 0, 13, 0, 20, 0 ),
+"blend_shape_data": [  ],
+"format": 98051,
+"index_count": 33,
+"material": ExtResource( 1 ),
+"name": "Material_001",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 21
+}
+surfaces/1 = {
+"aabb": AABB( -1, 0.83461, -1, 2, 0.1654, 2 ),
+"array_data": PoolByteArray( 0, 188, 0, 60, 0, 188, 0, 60, 0, 127, 0, 0, 0, 60, 0, 60, 0, 60, 0, 60, 0, 127, 0, 0, 0, 60, 0, 60, 0, 188, 0, 60, 0, 127, 0, 0, 0, 188, 195, 58, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 0, 60, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 173, 58, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 195, 58, 0, 60, 0, 60, 127, 0, 0, 0, 0, 60, 0, 60, 0, 188, 0, 60, 127, 0, 0, 0, 0, 60, 0, 60, 0, 60, 0, 60, 127, 0, 0, 0, 154, 59, 193, 58, 0, 60, 0, 60, 0, 0, 127, 0, 0, 60, 0, 60, 0, 60, 0, 60, 0, 0, 127, 0, 0, 188, 0, 60, 0, 60, 0, 60, 0, 0, 127, 0, 0, 188, 195, 58, 0, 188, 0, 60, 129, 0, 0, 0, 0, 188, 0, 60, 0, 60, 0, 60, 129, 0, 0, 0, 0, 188, 0, 60, 0, 188, 0, 60, 129, 0, 0, 0, 0, 188, 0, 60, 0, 60, 0, 60, 0, 127, 0, 0, 0, 188, 0, 60, 0, 188, 0, 60, 0, 0, 129, 0, 0, 60, 173, 58, 0, 188, 0, 60, 127, 0, 0, 0, 0, 188, 190, 58, 0, 60, 0, 60, 0, 0, 127, 0, 0, 60, 195, 58, 0, 60, 0, 60, 0, 0, 127, 0, 0, 188, 190, 58, 0, 60, 0, 60, 129, 0, 0, 0 ),
+"array_index_data": PoolByteArray( 0, 0, 2, 0, 1, 0, 3, 0, 5, 0, 4, 0, 6, 0, 8, 0, 7, 0, 9, 0, 11, 0, 10, 0, 12, 0, 14, 0, 13, 0, 0, 0, 1, 0, 15, 0, 3, 0, 4, 0, 16, 0, 6, 0, 7, 0, 17, 0, 11, 0, 9, 0, 18, 0, 9, 0, 10, 0, 19, 0, 12, 0, 13, 0, 20, 0 ),
+"blend_shape_data": [  ],
+"format": 98051,
+"index_count": 33,
+"material": ExtResource( 2 ),
+"name": "Material_002",
+"primitive": 4,
+"skeleton_aabb": [  ],
+"vertex_count": 21
+}
+_sections_unfolded = [ "surface_1", "surface_2" ]
+
+[node name="torch" type="Spatial"]
+
+[node name="Cube" type="MeshInstance" parent="." index="0"]
+
+transform = Transform( 0.1, 0, 0, 0, 1, 0, 0, 0, 0.1, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = true
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+material/1 = null
+
+[node name="OmniLight" type="OmniLight" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1691, 0 )
+layers = 1
+light_color = Color( 1, 0.837921, 0.558594, 1 )
+light_energy = 1.0
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 5.0
+omni_attenuation = 2.0
+omni_shadow_mode = 0
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni", "Shadow" ]
+
+

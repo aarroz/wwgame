@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crate.obj-9a8bd1e4fc527dd87c1ebe66f876ab9f.mesh"
+
+[deps]
+
+files=[ "res://.import/crate.obj-9a8bd1e4fc527dd87c1ebe66f876ab9f.mesh" ]
+
+source_file="res://assets/Models/Props/Crate/crate.obj"
+source_md5="7e8def1cde4979e26b0ed89eac157e14"
+
+dest_files=[ "res://.import/crate.obj-9a8bd1e4fc527dd87c1ebe66f876ab9f.mesh", "res://.import/crate.obj-9a8bd1e4fc527dd87c1ebe66f876ab9f.mesh" ]
+dest_md5="6957c36453ac0f29695c40b4c7e5cd44"
+
+[params]
+
+generate_tangents=true

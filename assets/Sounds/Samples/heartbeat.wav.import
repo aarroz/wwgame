@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/heartbeat.wav-c488e01e5d332f88a55c681faef693f1.sample"
+
+[deps]
+
+source_file="res://assets/Sounds/Samples/heartbeat.wav"
+source_md5="105963c061455e1c2bde95e7001b938c"
+
+dest_files=[ "res://.import/heartbeat.wav-c488e01e5d332f88a55c681faef693f1.sample" ]
+dest_md5="64151153a9f63cd34305451bed5fe0b6"
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
