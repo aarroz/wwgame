@@ -37,11 +37,6 @@ func _process(delta):
 	#Section for jumping
 	if is_on_ground:
 		jumping = false
-	if Input.is_key_pressed(KEY_SPACE) and not jumping:
-		var velocity = get_linear_velocity()
-		velocity.y = JUMP_VEL
-		set_linear_velocity(velocity)
-		jumping = true
 	#Section for basic movement.
 	if Input.is_key_pressed(KEY_W):
 		translate(Vector3(0, 0, speed*delta))
@@ -51,8 +46,3 @@ func _process(delta):
 		translate(Vector3(speed*delta, 0, 0))
 	if Input.is_key_pressed(KEY_D):
 		translate(Vector3(-speed*delta, 0, 0))
-#	if ray.is_colliding():
-#		var object = ray.get_collider()
-#		visible = true
-#		if object.is_in_group("prop"):
-#			pass
