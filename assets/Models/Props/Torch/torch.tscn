@@ -36,7 +36,7 @@ surfaces/1 = {
 }
 _sections_unfolded = [ "surface_1", "surface_2" ]
 
-[node name="torch" type="Spatial"]
+[node name="torch" type="Spatial" index="0"]
 
 [node name="Cube" type="MeshInstance" parent="." index="0"]
 
@@ -61,7 +61,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1691, 0 )
 layers = 1
 light_color = Color( 1, 0.837921, 0.558594, 1 )
 light_energy = 1.0
-light_indirect_energy = 1.0
+light_indirect_energy = 1.3
 light_negative = false
 light_specular = 0.5
 light_bake_mode = 1
