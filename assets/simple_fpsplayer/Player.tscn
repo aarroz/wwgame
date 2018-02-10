@@ -19,7 +19,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation.x = clamp(rotation.x - event.relative.y*MOUSESPEED, deg2rad(-90), deg2rad(90))"
 
-[node name="Player" type="RigidBody"]
+[node name="Player" type="RigidBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -150,5 +150,11 @@ collision_mask = 1
 _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="FPS Counter" parent="." index="3" instance=ExtResource( 3 )]
+
+grow_vertical = 0
+size_flags_horizontal = 2
+align = 1
+valign = 1
+_sections_unfolded = [ "Grow Direction", "Margin", "Size Flags", "Theme" ]
 
 
