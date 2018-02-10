@@ -9,4 +9,4 @@ Version of Godot being used: 3.0 Stable
 
 Current objectives of the project
 
-Listed on [Projects](https://github.com/aarroz/wwgame/projects)
+Listed on [Projects](https://github.com/aarroz/wwgame/projects/1)
