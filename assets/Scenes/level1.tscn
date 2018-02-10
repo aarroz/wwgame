@@ -21,7 +21,7 @@ propagation = 0.7
 interior = false
 compress = false
 
-[node name="level1" type="Node" index="0"]
+[node name="level1" type="Node"]
 
 [node name="GridMap" type="GridMap" parent="." index="0"]
 

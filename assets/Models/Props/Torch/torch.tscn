@@ -36,7 +36,7 @@ surfaces/1 = {
 }
 _sections_unfolded = [ "surface_1", "surface_2" ]
 
-[node name="torch" type="Spatial" index="0"]
+[node name="torch" type="Spatial"]
 
 [node name="Cube" type="MeshInstance" parent="." index="0"]
 
