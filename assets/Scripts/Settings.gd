@@ -1,19 +1,12 @@
 extends Panel
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+onready var aliasing = get_node("Anti-Aliasing/OptionButton")
+onready var ssao = get_node("SSAO/OptionButton")
+onready var anistropic = get_node("Anistropic Filter/OptionButton")
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
 	pass
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
 
-
-func _on_OptionButton_item_selected( ID ):
-	pass # replace with function body
+func _on_Back_pressed():
+	hide()

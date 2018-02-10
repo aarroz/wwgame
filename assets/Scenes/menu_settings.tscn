@@ -1,12 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/Images/Nobile/Nobile-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/Scripts/Settings.gd" type="Script" id=2]
+[ext_resource path="res://assets/Images/Nobile/menu_settings.theme" type="Theme" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 16
-use_mipmaps = false
+use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 1 )
 _sections_unfolded = [ "Font", "Settings" ]
@@ -36,6 +37,7 @@ _sections_unfolded = [ "Anchor", "Margin", "Material", "Theme", "Visibility" ]
 
 [node name="Anti-Aliasing" type="HBoxContainer" parent="." index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -47,8 +49,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 alignment = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -81,9 +84,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 277.0
-margin_top = 36.0
+margin_top = 32.0
 margin_right = 551.0
-margin_bottom = 61.0
+margin_bottom = 66.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -95,10 +98,11 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Off"
 flat = false
 align = 1
-selected = -1
-items = [  ]
+selected = 0
+items = [ "Off", null, false, -1, null, "2x", null, false, -1, null, "4x", null, false, -1, null, "8x", null, false, -1, null, "16x", null, false, -1, null ]
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="SSAO" type="HBoxContainer" parent="." index="1"]
@@ -116,8 +120,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 alignment = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -150,9 +155,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 277.0
-margin_top = 36.0
+margin_top = 32.0
 margin_right = 551.0
-margin_bottom = 61.0
+margin_bottom = 66.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -164,15 +169,15 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Off"
 flat = false
 align = 1
-selected = -1
-items = [  ]
+selected = 0
+items = [ "Off", null, false, -1, null, "Low", null, false, -1, null, "Medium", null, false, -1, null, "High", null, false, -1, null ]
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="Anistropic Filter" type="HBoxContainer" parent="." index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -185,8 +190,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 alignment = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -219,9 +225,9 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 277.0
-margin_top = 36.0
+margin_top = 32.0
 margin_right = 551.0
-margin_bottom = 61.0
+margin_bottom = 66.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
@@ -233,14 +239,16 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
+text = "Item 0"
 flat = false
 align = 1
-selected = -1
-items = [  ]
+selected = 0
+items = [ "1x", null, false, -1, null, "2x", null, false, -1, null, "4x", null, false, -1, null, "8x", null, false, -1, null, "16x", null, false, -1, null ]
 _sections_unfolded = [ "Size Flags" ]
 
 [node name="Bloom" type="HBoxContainer" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -253,8 +261,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 alignment = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -287,16 +296,16 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 277.0
-margin_top = 35.0
+margin_top = 31.0
 margin_right = 551.0
-margin_bottom = 62.0
+margin_bottom = 67.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-toggle_mode = false
+toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
@@ -308,6 +317,7 @@ _sections_unfolded = [ "Size Flags" ]
 
 [node name="SS Reflection" type="HBoxContainer" parent="." index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -320,8 +330,9 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 alignment = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Theme" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -342,6 +353,7 @@ size_flags_vertical = 1
 text = "Screen-Space Reflections"
 align = 1
 valign = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -354,16 +366,16 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 277.0
-margin_top = 35.0
+margin_top = 31.0
 margin_right = 551.0
-margin_bottom = 62.0
+margin_bottom = 67.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 3
 size_flags_vertical = 4
-toggle_mode = false
+toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
@@ -397,6 +409,33 @@ text = "Back"
 flat = false
 align = 1
 
-[connection signal="item_selected" from="Anti-Aliasing/OptionButton" to="." method="_on_OptionButton_item_selected"]
+[node name="Warning" type="Label" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 730.0
+margin_top = 60.0
+margin_right = 917.0
+margin_bottom = 100.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 3 )
+text = "Not Functional"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
 
 
