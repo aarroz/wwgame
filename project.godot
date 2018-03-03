@@ -37,6 +37,8 @@ common/fixed_fps=180
 
 threads/thread_model=2
 quality/filters/use_nearest_mipmap_filter=true
+quality/shadows/filter_mode=2
+quality/subsurface_scattering/follow_surface=true
 quality/voxel_cone_tracing/high_quality=false
 quality/filters/msaa=2
 environment/default_environment="res://assets/Scenes/mainmenu_environment.tres"

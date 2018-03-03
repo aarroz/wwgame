@@ -19,7 +19,7 @@ func _input(event):
 	if event is InputEventMouseMotion:
 		rotation.x = clamp(rotation.x - event.relative.y*MOUSESPEED, deg2rad(-90), deg2rad(90))"
 
-[node name="Player" type="RigidBody" index="0"]
+[node name="Player" type="RigidBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
