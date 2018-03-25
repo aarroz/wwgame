@@ -1,9 +1,9 @@
 [gd_resource type="MeshLibrary" load_steps=22 format=2]
 
-[ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone.material" type="Material" id=1]
-[ext_resource path="res://assets/Models/Tiles/tile_bricks_stone/tile_stone_bricks.material" type="Material" id=2]
+[ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone_512x.material" type="Material" id=1]
+[ext_resource path="res://assets/Models/Tiles/tile_bricks_stone/tile_stone_bricks_512x.material" type="Material" id=2]
 [ext_resource path="res://assets/Models/Tiles/tile_cement_1/tile_cement.material" type="Material" id=3]
-[ext_resource path="res://assets/Models/Tiles/tile_whitepad/tile_whitepad.material" type="Material" id=4]
+[ext_resource path="res://assets/Models/Tiles/tile_whitepad/tile_whitepad_512x.material" type="Material" id=4]
 [ext_resource path="res://assets/Models/Tiles/tile_wood/tile_wood.material" type="Material" id=5]
 
 [sub_resource type="CubeMesh" id=1]
@@ -167,5 +167,5 @@ item/4/name = "tile_wood"
 item/4/mesh = SubResource( 14 )
 item/4/shapes = [ SubResource( 4 ), Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 ) ]
 item/4/preview = SubResource( 16 )
-_sections_unfolded = [ "item", "item/0" ]
+_sections_unfolded = [ "item", "item/0", "item/1", "item/2", "item/3" ]
 

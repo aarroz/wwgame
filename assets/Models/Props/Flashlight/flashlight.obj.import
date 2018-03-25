@@ -17,3 +17,4 @@ dest_md5="5bbf2f680956658b1f1846a2fd2866fd"
 [params]
 
 generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
