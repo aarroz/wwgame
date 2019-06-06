@@ -73,10 +73,9 @@ common/fixed_fps=180
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 threads/thread_model=2
 quality/filters/use_nearest_mipmap_filter=true
-quality/filters/msaa=1
-environment/default_environment="res://assets/Scenes/mainmenu_environment.tres"
 quality/subsurface_scattering/follow_surface=true
 quality/voxel_cone_tracing/high_quality=false
+quality/filters/msaa=1
+environment/default_environment="res://assets/Scenes/mainmenu_environment.tres"
