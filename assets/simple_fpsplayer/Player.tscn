@@ -36,4 +36,3 @@ enabled = true
 cast_to = Vector3( 0, -2.2, 0 )
 
 [node name="FPS Counter" parent="." instance=ExtResource( 2 )]
-

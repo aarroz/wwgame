@@ -116,3 +116,7 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
+	
+	if Input.is_key_pressed(KEY_Q):
+		get_node("/root/global").setScene("res://assets/mainmenu.tscn")
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
