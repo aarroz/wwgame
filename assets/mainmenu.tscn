@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/Scripts/mainmenu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Models/Tiles/tile_bricks_stone/tile_stone_bricks.material" type="Material" id=2]
 [ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone.material" type="Material" id=3]
-[ext_resource path="res://assets/Models/Tiles/wwgame_meshlibrary.tres" type="MeshLibrary" id=4]
-[ext_resource path="res://assets/Scenes/mainmenu_environment.tres" type="Environment" id=5]
-[ext_resource path="res://assets/Images/Nobile/mainmenufont.theme" type="Theme" id=6]
-[ext_resource path="res://assets/Scenes/menu_settings.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/Sounds/menu_Loop.ogg" type="AudioStream" id=8]
-[ext_resource path="res://assets/Scenes/fps_counter.tscn" type="PackedScene" id=9]
-[ext_resource path="res://assets/Models/Props/Crate/Box.material" type="Material" id=10]
-[ext_resource path="res://assets/Models/Props/Lamp/lamp.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/Scenes/mainmenu_environment.tres" type="Environment" id=4]
+[ext_resource path="res://assets/Images/Nobile/mainmenufont.theme" type="Theme" id=5]
+[ext_resource path="res://assets/Scenes/menu_settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Sounds/menu_Loop.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/Scenes/fps_counter.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/Models/Props/Crate/Box.material" type="Material" id=9]
+[ext_resource path="res://assets/Models/Props/Lamp/lamp.tscn" type="PackedScene" id=10]
 
 [sub_resource type="GIProbeData" id=1]
 
@@ -22,7 +21,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97559,
 "index_count": 11568,
-"material": ExtResource( 10 ),
+"material": ExtResource( 9 ),
 "primitive": 4,
 "skeleton_aabb": [  ],
 "vertex_count": 5838
@@ -57,21 +56,6 @@ height = 3.05232
 depth = 18.0
 material = ExtResource( 3 )
 
-[node name="GridMap" type="GridMap" parent="."]
-visible = false
-mesh_library = ExtResource( 4 )
-data = {
-"cells": PoolIntArray( 0, 1, 1610612737, 1, 1, 1, 2, 1, 1, 65534, 1, 1610612737, 65535, 1, 1610612737, 65536, 1, 1, 65537, 1, -536870911, 65538, 1, 1, 131070, 1, 1, 131071, 1, 1, 131072, 1, 1, 131073, 1, 1, 131074, 1, -1610612735, 196606, 1, 1, 196607, 1, 1, 196608, 1, -1610612735, 196609, 1, 1, 196610, 1, 1, 262142, 1, -536870911, 262143, 1, 1, 3, 2, 1, 65533, 2, 1, 65539, 2, -536870911, 131069, 2, 1, 131075, 2, 1, 196605, 2, 1, 196611, 2, 1, 262141, 2, 1, 262144, 2, 0, 262145, 2, 0, 262146, 2, 0, 327678, 2, 536870912, 327679, 2, -2147483648, -65536, 2, -536870912, -65535, 2, 0, -65534, 2, 0, -2, 2, 0, -1, 2, -536870912, 3, 3, -536870911, 65533, 3, -536870911, 65539, 3, 1, 131069, 3, -536870911, 131075, 3, 1, 196605, 3, -536870911, 196611, 3, 1, 262141, 3, -1610612735, 262144, 3, 0, 262145, 3, 0, 262146, 3, 0, 327678, 3, 0, 327679, 3, 0, -65536, 3, -536870912, -65535, 3, 0, -65534, 3, 0, -2, 3, 0, -1, 3, 0, 3, 4, 1, 65533, 4, 1, 65539, 4, 1, 131069, 4, 1, 131075, 4, 1, 196605, 4, 1, 196611, 4, 1, 262141, 4, -1610612735, 262144, 4, 0, 262145, 4, 0, 262146, 4, 0, 327678, 4, 0, 327679, 4, 0, -65536, 4, 0, -65535, 4, 0, -65534, 4, 0, -2, 4, 0, -1, 4, -1610612736, 3, 5, -1610612735, 65533, 5, 1, 65539, 5, -536870911, 131069, 5, -536870911, 131075, 5, -536870911, 196605, 5, 1, 196611, 5, 1, 262141, 5, 1, 262144, 5, 0, 262145, 5, -536870912, 262146, 5, 0, 327678, 5, 0, 327679, 5, -1610612736, -65536, 5, 0, -65535, 5, 0, -65534, 5, -536870912, -2, 5, -536870912, -1, 5, 0, 3, 6, 1, 65533, 6, -536870911, 65539, 6, -536870911, 131069, 6, 1, 131075, 6, 1, 196605, 6, 1, 196611, 6, 1, 262141, 6, 1, 262144, 6, -536870912, 262145, 6, 0, 262146, 6, 0, 327678, 6, 0, 327679, 6, 0, -65536, 6, 0, -65535, 6, 0, -65534, 6, 0, -2, 6, -536870912, -1, 6, 0, 0, 7, 1, 1, 7, 1, 2, 7, 1, 3, 7, 1, 65534, 7, -536870911, 65535, 7, 1, 65536, 7, -536870911, 65537, 7, 1, 65538, 7, -2147483647, 65539, 7, 1, 131070, 7, 1, 131071, 7, 1, 131072, 7, 1, 131073, 7, 1, 131074, 7, 1, 131075, 7, 1, 196606, 7, 1, 196607, 7, 1, 196608, 7, 1, 196609, 7, -536870911, 196610, 7, -536870911, 196611, 7, -1610612735, 262142, 7, 1, 262143, 7, 1 )
-}
-__meta__ = {
-"_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, 4, 0 )
-}
-
-[node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 10, 0 )
-visible = false
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 639.459, 358.247 )
 scale = Vector2( 20.9831, 12.1952 )
@@ -80,7 +64,7 @@ smoothing_enabled = true
 
 [node name="Camera" type="Camera" parent="Camera2D"]
 transform = Transform( -0.707107, 0.122788, -0.696364, 0, 0.984808, 0.173648, 0.707107, 0.122788, -0.696364, -2, 2, 6 )
-environment = ExtResource( 5 )
+environment = ExtResource( 4 )
 
 [node name="GIProbe" type="GIProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 9 )
@@ -93,7 +77,7 @@ data = SubResource( 1 )
 [node name="MainMenu" type="VBoxContainer" parent="."]
 margin_right = 1280.0
 margin_bottom = 720.0
-theme = ExtResource( 6 )
+theme = ExtResource( 5 )
 alignment = 1
 __meta__ = {
 "_edit_lock_": true
@@ -134,16 +118,16 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 text = "Quit"
 
-[node name="Settings" parent="." instance=ExtResource( 7 )]
+[node name="Settings" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 8 )
+stream = ExtResource( 7 )
 autoplay = true
 mix_target = 1
 bus = "Music"
 
-[node name="FPS Counter" parent="." instance=ExtResource( 9 )]
+[node name="FPS Counter" parent="." instance=ExtResource( 8 )]
 size_flags_vertical = 1
 align = 2
 
@@ -195,20 +179,20 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Props/Box3"]
 shape = SubResource( 3 )
 
-[node name="Lamp" parent="Props/Box3" instance=ExtResource( 11 )]
+[node name="Lamp" parent="Props/Box3" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47425, 0 )
 
 [node name="OmniLight" type="OmniLight" parent="Props/Box3/Lamp"]
 omni_range = 6.88482
 
-[node name="Lamp2" parent="Props/Box3" instance=ExtResource( 11 )]
+[node name="Lamp2" parent="Props/Box3" instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77323, -0.332239, -5.94605 )
 
 [node name="OmniLight" type="OmniLight" parent="Props/Box3/Lamp2"]
 omni_range = 6.88482
-[connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_Play_pressed"]
-[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Settings" to="MainMenu" method="_on_Settings_pressed"]
-[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
