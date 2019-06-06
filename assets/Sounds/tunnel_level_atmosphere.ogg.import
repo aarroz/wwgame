@@ -7,10 +7,7 @@ path="res://.import/tunnel_level_atmosphere.ogg-c4ed3e0a2a0288506be8b587d28f14f5
 [deps]
 
 source_file="res://assets/Sounds/tunnel_level_atmosphere.ogg"
-source_md5="3f4dcf8af7159dd0f1dd643f3189cc24"
-
 dest_files=[ "res://.import/tunnel_level_atmosphere.ogg-c4ed3e0a2a0288506be8b587d28f14f5.oggstr" ]
-dest_md5="4a9cba328951abad97a49050e95b8c9a"
 
 [params]
 

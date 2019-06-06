@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/wood_specularmap_512x.png-3a649df804e113695a42a749e6e56da3.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_wood/Textures/wood_512x/wood_specularmap_512x.png"
-source_md5="4ccb02e902dcb178bc810cbc94daa334"
-
 dest_files=[ "res://.import/wood_specularmap_512x.png-3a649df804e113695a42a749e6e56da3.stex" ]
-dest_md5="8a9829727e946a06cfae091e1ec71959"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

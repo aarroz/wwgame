@@ -4,20 +4,22 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/bricks_stone_512x_albedo.png-cce679054c2e84012d905f246b2a169d.s3tc.stex"
 path.etc2="res://.import/bricks_stone_512x_albedo.png-cce679054c2e84012d905f246b2a169d.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_bricks_stone/Texture/bricks_stone_512x/bricks_stone_512x_albedo.png"
-source_md5="951c7b1f29dc0e2bb81e68d74be193a0"
-
 dest_files=[ "res://.import/bricks_stone_512x_albedo.png-cce679054c2e84012d905f246b2a169d.s3tc.stex", "res://.import/bricks_stone_512x_albedo.png-cce679054c2e84012d905f246b2a169d.etc2.stex" ]
-dest_md5="1a1867b4a65a5d183cfc8d8e10654f7a"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
@@ -27,6 +29,7 @@ flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

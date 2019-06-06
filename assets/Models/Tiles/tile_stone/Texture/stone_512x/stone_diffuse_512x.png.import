@@ -4,20 +4,22 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/stone_diffuse_512x.png-b85e254b001ea908be01e30e51bfdbd6.s3tc.stex"
 path.etc2="res://.import/stone_diffuse_512x.png-b85e254b001ea908be01e30e51bfdbd6.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_stone/Texture/stone_512x/stone_diffuse_512x.png"
-source_md5="b0c4e8774cdf55216308ac1dee9148bd"
-
 dest_files=[ "res://.import/stone_diffuse_512x.png-b85e254b001ea908be01e30e51bfdbd6.s3tc.stex", "res://.import/stone_diffuse_512x.png-b85e254b001ea908be01e30e51bfdbd6.etc2.stex" ]
-dest_md5="f69ef9360a61fef20877a1280c9f2b6b"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
@@ -27,6 +29,7 @@ flags/srgb=1
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

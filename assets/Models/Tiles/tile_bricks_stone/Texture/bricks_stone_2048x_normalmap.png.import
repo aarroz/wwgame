@@ -4,20 +4,22 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/bricks_stone_2048x_normalmap.png-76fe03b632feaca7d35a6502c6487e8e.s3tc.stex"
 path.etc2="res://.import/bricks_stone_2048x_normalmap.png-76fe03b632feaca7d35a6502c6487e8e.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_bricks_stone/Texture/bricks_stone_2048x_normalmap.png"
-source_md5="0e651d32682bd4f73d2d282def6b6081"
-
 dest_files=[ "res://.import/bricks_stone_2048x_normalmap.png-76fe03b632feaca7d35a6502c6487e8e.s3tc.stex", "res://.import/bricks_stone_2048x_normalmap.png-76fe03b632feaca7d35a6502c6487e8e.etc2.stex" ]
-dest_md5="038567e706476fdeb3de5baae513d971"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=1
 flags/repeat=true
 flags/filter=true
@@ -27,6 +29,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

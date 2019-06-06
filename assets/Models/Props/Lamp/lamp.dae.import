@@ -7,10 +7,7 @@ path="res://.import/lamp.dae-ccb4184346cee4548534832ed0b67c04.scn"
 [deps]
 
 source_file="res://assets/Models/Props/Lamp/lamp.dae"
-source_md5="03f92ae477fcd2dfec202af144280e89"
-
 dest_files=[ "res://.import/lamp.dae-ccb4184346cee4548534832ed0b67c04.scn" ]
-dest_md5="0b057207223092453e3245ced6de2d5f"
 
 [params]
 

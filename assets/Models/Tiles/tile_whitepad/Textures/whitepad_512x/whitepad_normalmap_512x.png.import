@@ -4,20 +4,22 @@ importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/whitepad_normalmap_512x.png-08016f72174a814bea14f7bf16df40bf.s3tc.stex"
 path.etc2="res://.import/whitepad_normalmap_512x.png-08016f72174a814bea14f7bf16df40bf.etc2.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc2" ],
+"vram_texture": true
+}
 
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_whitepad/Textures/whitepad_512x/whitepad_normalmap_512x.png"
-source_md5="83b410b156cdf1ecade582229309d1d7"
-
 dest_files=[ "res://.import/whitepad_normalmap_512x.png-08016f72174a814bea14f7bf16df40bf.s3tc.stex", "res://.import/whitepad_normalmap_512x.png-08016f72174a814bea14f7bf16df40bf.etc2.stex" ]
-dest_md5="1571045aa28f7f80a0e710163600984e"
 
 [params]
 
 compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=1
 flags/repeat=true
 flags/filter=true
@@ -27,6 +29,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=false

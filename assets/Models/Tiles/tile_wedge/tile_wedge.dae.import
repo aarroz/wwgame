@@ -7,10 +7,7 @@ path="res://.import/tile_wedge.dae-b639af94fcdef20e8965c383f583ac86.scn"
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_wedge/tile_wedge.dae"
-source_md5="fe972c5c22a583692228ef37a4172055"
-
 dest_files=[ "res://.import/tile_wedge.dae-b639af94fcdef20e8965c383f583ac86.scn" ]
-dest_md5="a49bf06bc3160c4867d113978b2eb15f"
 
 [params]
 

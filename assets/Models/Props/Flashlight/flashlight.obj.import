@@ -9,12 +9,10 @@ path="res://.import/flashlight.obj-91716baace545dddc7cac75c12039b99.mesh"
 files=[ "res://.import/flashlight.obj-91716baace545dddc7cac75c12039b99.mesh" ]
 
 source_file="res://assets/Models/Props/Flashlight/flashlight.obj"
-source_md5="48593caef3ec520a2159d5c120952997"
-
 dest_files=[ "res://.import/flashlight.obj-91716baace545dddc7cac75c12039b99.mesh", "res://.import/flashlight.obj-91716baace545dddc7cac75c12039b99.mesh" ]
-dest_md5="5bbf2f680956658b1f1846a2fd2866fd"
 
 [params]
 
 generate_tangents=true
 scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

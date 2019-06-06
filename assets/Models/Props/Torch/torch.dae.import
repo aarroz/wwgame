@@ -7,10 +7,7 @@ path="res://.import/torch.dae-f6b503fae46df08df387446fad1dce71.scn"
 [deps]
 
 source_file="res://assets/Models/Props/Torch/torch.dae"
-source_md5="2eebadfb7fa7acb049ab5aa2ed334ed9"
-
 dest_files=[ "res://.import/torch.dae-f6b503fae46df08df387446fad1dce71.scn" ]
-dest_md5="481791ec8afbefec39b6555249003c58"
 
 [params]
 

@@ -7,10 +7,7 @@ path="res://.import/tile_glass_2.dae-458d512ea646062d22f73f923b7821ee.scn"
 [deps]
 
 source_file="res://assets/Models/Tiles/tile_glass_2/tile_glass_2.dae"
-source_md5="8325cb9658c575f2d2ec6e6d3afd160e"
-
 dest_files=[ "res://.import/tile_glass_2.dae-458d512ea646062d22f73f923b7821ee.scn" ]
-dest_md5="aea6927743001d7768ca7c53cf96bbfd"
 
 [params]
 

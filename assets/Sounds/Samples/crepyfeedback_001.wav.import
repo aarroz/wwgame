@@ -7,10 +7,7 @@ path="res://.import/crepyfeedback_001.wav-4ee1321d081c6b136467036a51878d8d.sampl
 [deps]
 
 source_file="res://assets/Sounds/Samples/crepyfeedback_001.wav"
-source_md5="c38ac228c38daaf384ca3468f590ed73"
-
 dest_files=[ "res://.import/crepyfeedback_001.wav-4ee1321d081c6b136467036a51878d8d.sample" ]
-dest_md5="82852fa749bdf852d747ca6e7f229492"
 
 [params]
 

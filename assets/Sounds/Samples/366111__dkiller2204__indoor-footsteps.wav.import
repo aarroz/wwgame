@@ -7,10 +7,7 @@ path="res://.import/366111__dkiller2204__indoor-footsteps.wav-856a04416ae0449ff3
 [deps]
 
 source_file="res://assets/Sounds/Samples/366111__dkiller2204__indoor-footsteps.wav"
-source_md5="68eea6fa57ecdbf6cce229a9e8648259"
-
 dest_files=[ "res://.import/366111__dkiller2204__indoor-footsteps.wav-856a04416ae0449ff3d57214a71d36b0.sample" ]
-dest_md5="816850043fefc6b1d987ca342388398b"
 
 [params]
 

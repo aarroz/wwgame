@@ -7,10 +7,7 @@ path="res://.import/menu_Loop.ogg-6a9609bb103c11a30f97559c7a47bf44.oggstr"
 [deps]
 
 source_file="res://assets/Sounds/menu_Loop.ogg"
-source_md5="71c74e13290d8fa1449f722ce45f1cb0"
-
 dest_files=[ "res://.import/menu_Loop.ogg-6a9609bb103c11a30f97559c7a47bf44.oggstr" ]
-dest_md5="ff3c0a801e70fc421e83e18a958cb2e5"
 
 [params]
 
