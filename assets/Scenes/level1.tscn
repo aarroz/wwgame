@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Sounds/tunnel_level_atmosphere.ogg" type="AudioStream" id=2]
 [ext_resource path="res://assets/Models/Props/Lamp/lamp.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone.material" type="Material" id=4]
-[ext_resource path="res://assets/Models/Props/Crate/Crate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Models/Tiles/tile_whitepad/tile_whitepad.material" type="Material" id=5]
+[ext_resource path="res://assets/Models/Props/Crate/Crate.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0, 0.137255, 0.215686, 1 )
@@ -21,7 +22,7 @@ glow_bicubic_upscale = true
 [node name="level1" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 17, 3, 0 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
@@ -58,31 +59,76 @@ depth = 8.0
 material = ExtResource( 4 )
 
 [node name="CSGBox3" type="CSGBox" parent="Maze"]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 5.02059, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.4509, 5.02059, 0 )
 operation = 2
 width = 48.0
 height = 10.0
 depth = 8.0
 material = ExtResource( 4 )
 
+[node name="CSGBox4" type="CSGBox" parent="Maze"]
+transform = Transform( 1, 0, 1.06581e-14, 0, 1, 0, -1.06581e-14, 0, 1, -5.40174, 5.02059, -19 )
+operation = 2
+width = 22.1918
+height = 10.0
+depth = 8.0
+material = ExtResource( 4 )
+
+[node name="TileStep" type="CSGBox" parent="Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5803, 1.2425, -15.7652 )
+height = 0.485276
+material = ExtResource( 5 )
+
+[node name="TileStep3" type="CSGBox" parent="Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.58031, 3.2425, -15.7652 )
+height = 0.485276
+material = ExtResource( 5 )
+
+[node name="TileStep2" type="CSGBox" parent="Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.58031, 2.2425, -21.7652 )
+height = 0.485276
+material = ExtResource( 5 )
+
+[node name="TileStep4" type="CSGBox" parent="Maze"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.58031, 4.2425, -21.7652 )
+height = 0.485276
+material = ExtResource( 5 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
-[node name="Crate" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7112, 3.0243, 0 )
+[node name="Crate" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2888, 3.0243, -1.49945 )
 
-[node name="Crate2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7112, 3.0243, 0 )
+[node name="Crate9" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.2888, 3.0243, 1.50055 )
 
-[node name="Crate5" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7112, 3.0243, 0 )
+[node name="Crate2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2888, 3.0243, -1.49945 )
 
-[node name="Crate3" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.7112, 6.0243, 0 )
+[node name="Crate8" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2888, 3.0243, 1.50055 )
 
-[node name="Crate4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7112, 6.0243, 0 )
+[node name="Crate5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 3.0243, -1.49945 )
 
-[node name="Crate6" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.7112, 9.0243, 0 )
+[node name="Crate10" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 3.0243, 1.50055 )
 
+[node name="Crate3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2888, 6.0243, -1.49945 )
+
+[node name="Crate7" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2888, 6.0243, 1.50055 )
+
+[node name="Crate4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 6.0243, -1.49945 )
+
+[node name="Crate12" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 6.0243, 1.50055 )
+
+[node name="Crate6" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 9.0243, -1.49945 )
+
+[node name="Crate11" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 9.0243, 1.50055 )
