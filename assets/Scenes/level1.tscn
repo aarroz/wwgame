@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Sounds/tunnel_level_atmosphere.ogg" type="AudioStream" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone.material" type="Material" id=4]
 [ext_resource path="res://assets/Models/Tiles/tile_whitepad/tile_whitepad.material" type="Material" id=5]
 [ext_resource path="res://assets/Models/Props/Crate/Crate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Models/Props/Barrel/Barrel.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0, 0.137255, 0.215686, 1 )
@@ -132,3 +133,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 9.0243, -1.49945 )
 
 [node name="Crate11" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.2888, 9.0243, 1.50055 )
+
+[node name="Barrel" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.2943, 15.9549, 5.00409 )
