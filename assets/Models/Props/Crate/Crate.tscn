@@ -19,7 +19,9 @@ surfaces/0 = {
 
 [sub_resource type="BoxShape" id=2]
 
-[node name="Crate" type="RigidBody"]
+[node name="Crate" type="RigidBody" groups=[
+"moveable",
+]]
 continuous_cd = true
 can_sleep = false
 
@@ -29,4 +31,3 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 2 )
-

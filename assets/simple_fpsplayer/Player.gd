@@ -15,6 +15,8 @@ const MAX_SLOPE_ANGLE = 40
 
 var camera
 var rotation_helper
+var ray
+var position
 
 var MOUSE_SENSITIVITY = 0.05
 
@@ -23,11 +25,15 @@ const SPRINT_ACCEL = 18
 var is_sprinting = false
 
 var flashlight
+var icon_move
 
 func _ready():
 	camera = $rotation_helper/Camera
 	rotation_helper = $rotation_helper
 	flashlight = $rotation_helper/Flashlight
+	ray = $rotation_helper/Camera/rayarm
+	icon_move = $rotation_helper/Camera/interact_moveable
+	position = $rotation_helper/Camera/point
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -84,6 +90,22 @@ func process_input(delta):
 		else:
 			flashlight.show()
 # ----------------------------------
+func _process(delta):
+
+# Interaction
+	if ray.is_colliding():
+		var object = $rotation_helper/Camera/rayarm.get_collider()
+		if object.is_in_group("moveable"):
+			icon_move.show()
+			if Input.is_mouse_button_pressed(BUTTON_LEFT):
+				print("grabby")
+				var trans = position.get_global_transform()
+				object.set_global_transform(trans)
+				object.set_linear_velocity(Vector3(0, 0, 0))
+	else:
+		icon_move.hide()
+	
+
 
 func process_movement(delta):
 	dir.y = 0

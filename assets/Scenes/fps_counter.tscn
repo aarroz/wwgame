@@ -11,4 +11,3 @@ margin_bottom = 94.0
 theme = ExtResource( 1 )
 text = "60 FPS"
 script = ExtResource( 2 )
-
