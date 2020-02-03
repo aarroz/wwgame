@@ -196,9 +196,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.77323, -0.439647, -5.94605 )
 
 [node name="OmniLight" type="OmniLight" parent="Props/Box3/Lamp2"]
 omni_range = 6.88482
-[connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="MainMenu/Settings" to="MainMenu" method="_on_Settings_pressed"]
+[connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="MainMenu" method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_Quit_pressed"]

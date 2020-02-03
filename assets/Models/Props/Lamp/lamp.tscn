@@ -36,7 +36,7 @@ surfaces/1 = {
 radius = 0.9
 
 [node name="Lamp" type="RigidBody"]
-continuous_cd = true
+mode = 1
 can_sleep = false
 
 [node name="OmniLight" type="OmniLight" parent="."]
