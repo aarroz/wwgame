@@ -8,8 +8,9 @@
 height = 2.0
 
 [node name="Player" type="KinematicBody"]
-input_ray_pickable = false
 script = ExtResource( 1 )
+
+[node name="FPS Counter" parent="." instance=ExtResource( 3 )]
 
 [node name="collision_body" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
@@ -48,5 +49,3 @@ spot_angle = 16.079
 [node name="playerfeet" type="RayCast" parent="."]
 enabled = true
 cast_to = Vector3( 0, -2.2, 0 )
-
-[node name="FPS Counter" parent="." instance=ExtResource( 3 )]

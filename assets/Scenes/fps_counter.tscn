@@ -4,10 +4,14 @@
 [ext_resource path="res://assets/Scripts/fps_counter.gd" type="Script" id=2]
 
 [node name="FPS Counter" type="Label"]
-margin_left = 1013.0
-margin_top = 20.0
-margin_right = 1245.0
-margin_bottom = 94.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.50734
+margin_bottom = -1.50732
 theme = ExtResource( 1 )
 text = "60 FPS"
+align = 2
 script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
