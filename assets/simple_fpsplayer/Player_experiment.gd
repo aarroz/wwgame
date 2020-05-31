@@ -102,6 +102,7 @@ func _process(delta):
 				var trans = position.get_global_transform()
 				object.set_global_transform(trans)
 				object.set_linear_velocity(Vector3(0, 0, 0))
+				#object.set_rotation()
 			
 	else:
 		icon_move.hide()

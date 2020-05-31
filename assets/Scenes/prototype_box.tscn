@@ -61,6 +61,34 @@ material_override = SubResource( 7 )
 mesh = SubResource( 8 )
 material/0 = null
 
+[node name="test_box2" type="RigidBody" parent="." groups=[
+"moveable",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42322, 0 )
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="test_box2"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="test_box2"]
+material_override = SubResource( 7 )
+mesh = SubResource( 8 )
+material/0 = null
+
+[node name="test_box3" type="RigidBody" parent="." groups=[
+"moveable",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79708, 4.42322, 0 )
+can_sleep = false
+
+[node name="CollisionShape" type="CollisionShape" parent="test_box3"]
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="test_box3"]
+material_override = SubResource( 7 )
+mesh = SubResource( 8 )
+material/0 = null
+
 [node name="Player" type="KinematicBody" parent="." groups=[
 "Player",
 ]]
