@@ -27,6 +27,8 @@ var is_sprinting = false
 var flashlight
 var icon_move
 
+signal beep
+
 func _ready():
 	camera = $rotation_helper/Camera
 	rotation_helper = $rotation_helper
@@ -89,6 +91,10 @@ func process_input(delta):
 			flashlight.hide()
 		else:
 			flashlight.show()
+# ----------------------------------
+# Calling interact
+	if Input.is_key_pressed(KEY_E):
+		emit_signal("beep")
 # ----------------------------------
 func _process(delta):
 

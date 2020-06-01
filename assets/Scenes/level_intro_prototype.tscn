@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/Models/Tiles/prototype_materials/prop_prototype.material" type="Material" id=1]
 [ext_resource path="res://assets/Models/Tiles/prototype_materials/wall_prototype.material" type="Material" id=2]
 [ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Scripts/level_intro_prototype.gd" type="Script" id=4]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.717647, 0.87451, 0.960784, 1 )
@@ -13,18 +14,59 @@ background_mode = 2
 background_sky = SubResource( 1 )
 tonemap_mode = 2
 
+[sub_resource type="GDScript" id=5]
+script/source = "extends Area
+
+
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.811765, 0, 0, 1 )
+
+[sub_resource type="BoxShape" id=6]
+
 [node name="level_intro_prototype" type="Spatial"]
+script = ExtResource( 4 )
 
 [node name="spawn_room" type="CSGCombiner" parent="."]
 material_override = ExtResource( 2 )
 use_collision = true
 
-[node name="CSGBox" type="CSGBox" parent="spawn_room"]
+[node name="spawn" type="CSGBox" parent="spawn_room"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
 invert_faces = true
 width = 20.0
 height = 8.0
 depth = 10.0
+
+[node name="hall" type="CSGBox" parent="spawn_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9352, 2, 3 )
+invert_faces = true
+width = 8.0
+height = 8.0
+depth = 16.0
+
+[node name="door" type="CSGBox" parent="spawn_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4103, 0.917865, 0 )
+visible = false
+height = 5.0
+depth = 2.5
 
 [node name="spawn_props" type="Spatial" parent="."]
 
@@ -221,3 +263,27 @@ environment = SubResource( 2 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5, 0, 0 )
+
+[node name="door_level" type="Area" parent="."]
+script = SubResource( 5 )
+
+[node name="model_level" type="CSGCombiner" parent="door_level"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5 )
+
+[node name="CSGBox" type="CSGBox" parent="door_level/model_level"]
+width = 0.5
+height = 1.0
+depth = 0.2
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="door_level/model_level"]
+transform = Transform( 1, 0, 0, 0, 0.887864, 0.460107, 0, -0.460107, 0.887864, 0, 0.136385, -0.153348 )
+radius = 0.1
+height = 0.6
+material = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="door_level"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 4.72445 )
+shape = SubResource( 6 )
+[connection signal="beep" from="Player" to="." method="_on_Player_beep"]
+[connection signal="body_entered" from="door_level" to="." method="_on_door_level_body_entered"]
