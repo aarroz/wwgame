@@ -17,15 +17,15 @@ background_mode = 2
 background_sky = SubResource( 1 )
 tonemap_mode = 2
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.458824, 0.458824, 0.458824, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.811765, 0, 0, 1 )
 
-[sub_resource type="BoxShape" id=6]
+[sub_resource type="BoxShape" id=5]
 
-[sub_resource type="BoxShape" id=7]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 4, 3, 1 )
 
 [node name="level_intro_prototype" type="Spatial"]
@@ -80,6 +80,64 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 4.35066, 23 )
 invert_faces = true
 width = 12.0
 height = 4.0
+depth = 8.0
+
+[node name="hole" type="CSGBox" parent="spawn_room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 5.55681, 23 )
+operation = 2
+width = 6.0
+depth = 6.0
+
+[node name="spawn_room2" type="CSGCombiner" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18, 0 )
+material_override = ExtResource( 2 )
+use_collision = true
+
+[node name="spawn" type="CSGBox" parent="spawn_room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+invert_faces = true
+width = 20.0
+height = 8.0
+depth = 10.0
+
+[node name="spawn2" type="CSGBox" parent="spawn_room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 13 )
+invert_faces = true
+width = 20.0
+height = 8.0
+depth = 10.0
+
+[node name="hall" type="CSGBox" parent="spawn_room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9352, 2, 11 )
+invert_faces = true
+width = 8.0
+height = 8.0
+depth = 32.0
+
+[node name="door" type="CSGBox" parent="spawn_room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4103, 0.917865, 0 )
+visible = false
+height = 5.0
+depth = 2.5
+
+[node name="door2" type="CSGBox" parent="spawn_room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4103, 0.917866, 13 )
+visible = false
+height = 5.0
+depth = 2.5
+
+[node name="hall2" type="CSGBox" parent="spawn_room2"]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.0648, 1.99128, 28 )
+invert_faces = true
+width = 8.0
+height = 8.0
+depth = 40.0
+
+[node name="CSGBox" type="CSGBox" parent="spawn_room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 11.3639, 23 )
+invert_faces = true
+width = 8.0
+height = 25.0
 depth = 8.0
 
 [node name="spawn_props" type="Spatial" parent="."]
@@ -287,17 +345,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 5 )
 width = 0.5
 height = 1.0
 depth = 0.2
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="door_level/model_level"]
 transform = Transform( 1, 0, 0, 0, 0.887864, 0.460107, 0, -0.460107, 0.887864, 0, 0.136385, -0.153348 )
 radius = 0.1
 height = 0.6
-material = SubResource( 5 )
+material = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="door_level"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.982688 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="notify" type="AudioStreamPlayer3D" parent="door_level"]
 stream = ExtResource( 6 )
@@ -313,19 +371,72 @@ transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, 0, 
 width = 0.5
 height = 1.0
 depth = 0.2
-material = SubResource( 4 )
+material = SubResource( 3 )
 
 [node name="CSGCylinder" type="CSGCylinder" parent="door_level2/model_level"]
 transform = Transform( 1, 0, 0, 0, 0.887864, 0.460107, 0, -0.460107, 0.887864, 0, 0.136385, -0.153348 )
 radius = 0.1
 height = 0.6
-material = SubResource( 5 )
+material = SubResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="door_level2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.922227 )
-shape = SubResource( 6 )
+shape = SubResource( 5 )
 
 [node name="notify2" type="AudioStreamPlayer3D" parent="door_level2"]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00965691, 0, -0.349934 )
+stream = ExtResource( 6 )
+max_distance = 10.0
+doppler_tracking = 1
+
+[node name="door_level4" type="Area" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, -18, -3 )
+
+[node name="model_level" type="CSGCombiner" parent="door_level4"]
+
+[node name="CSGBox" type="CSGBox" parent="door_level4/model_level"]
+width = 0.5
+height = 1.0
+depth = 0.2
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="door_level4/model_level"]
+transform = Transform( 1, 0, 0, 0, 0.887864, 0.460107, 0, -0.460107, 0.887864, 0, 0.136385, -0.153348 )
+radius = 0.1
+height = 0.6
+material = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="door_level4"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.982688 )
+shape = SubResource( 5 )
+
+[node name="notify" type="AudioStreamPlayer3D" parent="door_level4"]
+stream = ExtResource( 6 )
+max_distance = 10.0
+doppler_tracking = 1
+
+[node name="door_level3" type="Area" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 11, -18, 10 )
+
+[node name="model_level" type="CSGCombiner" parent="door_level3"]
+
+[node name="CSGBox" type="CSGBox" parent="door_level3/model_level"]
+width = 0.5
+height = 1.0
+depth = 0.2
+material = SubResource( 3 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="door_level3/model_level"]
+transform = Transform( 1, 0, 0, 0, 0.887864, 0.460107, 0, -0.460107, 0.887864, 0, 0.136385, -0.153348 )
+radius = 0.1
+height = 0.6
+material = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="door_level3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.922227 )
+shape = SubResource( 5 )
+
+[node name="notify2" type="AudioStreamPlayer3D" parent="door_level3"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00965691, 0, -0.349934 )
 stream = ExtResource( 6 )
 max_distance = 10.0
@@ -390,7 +501,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, 11 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9669, 2, 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="event_triggers/event1_trigger"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
@@ -400,4 +511,6 @@ bus = "Music"
 [connection signal="beep" from="Player" to="." method="_on_Player_beep"]
 [connection signal="body_entered" from="door_level" to="." method="_on_door_level_body_entered"]
 [connection signal="body_entered" from="door_level2" to="." method="_on_door_level2_body_entered"]
+[connection signal="body_entered" from="door_level4" to="." method="_on_door_level4_body_entered"]
+[connection signal="body_entered" from="door_level3" to="." method="_on_door_level3_body_entered"]
 [connection signal="body_entered" from="event_triggers/event1_trigger" to="." method="_on_event1_trigger_body_entered"]
