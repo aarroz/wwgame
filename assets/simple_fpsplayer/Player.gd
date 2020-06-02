@@ -91,11 +91,7 @@ func process_input(delta):
 			flashlight.hide()
 		else:
 			flashlight.show()
-# ----------------------------------
-# Calling interact
-	if Input.is_key_pressed(KEY_E):
-		emit_signal("beep")
-# ----------------------------------
+
 func _process(delta):
 
 # Interaction
@@ -104,7 +100,7 @@ func _process(delta):
 		if object.is_in_group("moveable"):
 			icon_move.show()
 			if Input.is_mouse_button_pressed(BUTTON_LEFT):
-				print("grabby")
+				#print("grabby")
 				var trans = position.get_global_transform()
 				object.set_global_transform(trans)
 				object.set_linear_velocity(Vector3(0, 0, 0))
@@ -142,8 +138,14 @@ func _input(event):
 		self.rotate_y(deg2rad(event.relative.x * MOUSE_SENSITIVITY * -1))
 
 		var camera_rot = rotation_helper.rotation_degrees
-		camera_rot.x = clamp(camera_rot.x, -70, 70)
+		camera_rot.x = clamp(camera_rot.x, -85, 85)
 		rotation_helper.rotation_degrees = camera_rot
+	
+# ----------------------------------
+# Calling interact
+	if Input.is_key_pressed(KEY_E):
+		emit_signal("beep")
+# ----------------------------------
 	
 	if Input.is_key_pressed(KEY_Q):
 		get_node("/root/global").setScene("res://assets/mainmenu.tscn")
