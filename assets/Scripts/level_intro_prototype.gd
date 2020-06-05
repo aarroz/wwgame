@@ -23,8 +23,8 @@ func _ready():
 	door4 = $spawn_room/door4
 	door1_sound = $door_level/notify
 	door2_sound = $door_level2/notify2
-	door3_sound = $door_level4/notify
-	door4_sound = $door_level3/notify2
+	door3_sound = $door_level3/notify2
+	door4_sound = $door_level4/notify
 	level1 = false
 	level2 = false
 	level3 = false
