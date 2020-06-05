@@ -19,8 +19,8 @@ var script_1_done
 func _ready():
 	door1 = $spawn_room/door
 	door2 = $spawn_room/door2
-	door3 = $spawn_room2/door2
-	door4 = $spawn_room2/door
+	door3 = $spawn_room/door3
+	door4 = $spawn_room/door4
 	door1_sound = $door_level/notify
 	door2_sound = $door_level2/notify2
 	door3_sound = $door_level4/notify

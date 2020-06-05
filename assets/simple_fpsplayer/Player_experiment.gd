@@ -98,7 +98,7 @@ func _process(delta):
 		if object.is_in_group("moveable"):
 			icon_move.show()
 			if Input.is_mouse_button_pressed(BUTTON_LEFT):
-				print("grabby")
+				#print("grabby")
 				var trans = position.get_global_transform()
 				object.set_global_transform(trans)
 				object.set_linear_velocity(Vector3(0, 0, 0))
