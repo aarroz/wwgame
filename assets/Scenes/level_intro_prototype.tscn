@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/Models/Tiles/prototype_materials/prop_prototype.material" type="Material" id=1]
 [ext_resource path="res://assets/Models/Tiles/prototype_materials/wall_prototype.material" type="Material" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Models/Props/Crate/Crate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Sounds/boing.wav" type="AudioStream" id=6]
 [ext_resource path="res://assets/Sounds/tunnel_level_atmosphere.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/Models/Props/Key/model_key.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.717647, 0.87451, 0.960784, 1 )
@@ -15,7 +16,11 @@ sun_latitude = 70.0
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 1 )
-tonemap_mode = 2
+tonemap_mode = 3
+ssao_quality = 0
+dof_blur_far_distance = 30.0
+dof_blur_far_quality = 0
+dof_blur_near_quality = 0
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.458824, 0.458824, 0.458824, 1 )
@@ -322,6 +327,9 @@ operation = 2
 radius = 0.8
 height = 2.8
 sides = 16
+
+[node name="model_key" parent="spawn_props" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24464, -1.66963, -0.239982 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
