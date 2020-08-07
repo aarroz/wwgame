@@ -46,11 +46,11 @@ align = 1
 valign = 1
 autowrap = true
 
-[node name="VSync_button" type="CheckBox" parent="VSync"]
+[node name="VSync_button" type="CheckButton" parent="VSync"]
 margin_left = 272.0
-margin_top = 31.0
+margin_top = 29.0
 margin_right = 541.0
-margin_bottom = 67.0
+margin_bottom = 69.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 action_mode = 0
@@ -87,7 +87,8 @@ margin_right = 820.0
 margin_bottom = 190.0
 alignment = 1
 __meta__ = {
-"_edit_group_": true
+"_edit_group_": true,
+"_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="Fullscreen"]
@@ -100,11 +101,11 @@ text = "Fullscreen"
 align = 1
 valign = 1
 
-[node name="Fullscreen_button" type="CheckBox" parent="Fullscreen"]
+[node name="Fullscreen_button" type="CheckButton" parent="Fullscreen"]
 margin_left = 272.0
-margin_top = 32.0
+margin_top = 30.0
 margin_right = 540.0
-margin_bottom = 68.0
+margin_bottom = 70.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme = ExtResource( 3 )

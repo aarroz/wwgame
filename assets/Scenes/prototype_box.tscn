@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://assets/Models/Tiles/Light/texture_07.png" type="Texture" id=1]
 [ext_resource path="res://assets/Models/Tiles/Light/texture_08.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://assets/Scripts/test_box.gd" type="Script" id=4]
 [ext_resource path="res://assets/Scenes/fps_counter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/simple_fpsplayer/Player_experiment.gd" type="Script" id=6]
+[ext_resource path="res://assets/Scenes/prototype_box.gd" type="Script" id=7]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -33,12 +34,29 @@ uv1_triplanar = true
 [sub_resource type="CapsuleShape" id=9]
 height = 2.0
 
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 0.968627, 0.113725, 0.113725, 1 )
+
+[sub_resource type="CapsuleMesh" id=11]
+material = SubResource( 10 )
+mid_height = 2.0
+
+[sub_resource type="SpatialMaterial" id=12]
+albedo_color = Color( 0.192157, 0.317647, 1, 1 )
+
+[sub_resource type="CapsuleMesh" id=13]
+material = SubResource( 12 )
+mid_height = 2.0
+
 [node name="prototype_box" type="Spatial"]
+pause_mode = 2
+script = ExtResource( 7 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
 [node name="Floor" type="StaticBody" parent="."]
+pause_mode = 2
 transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
@@ -95,6 +113,7 @@ material/0 = null
 [node name="Player" type="KinematicBody" parent="." groups=[
 "Player",
 ]]
+pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0 )
 script = ExtResource( 6 )
 
@@ -103,6 +122,11 @@ script = ExtResource( 6 )
 [node name="collision_body" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 9 )
+
+[node name="body" type="MeshInstance" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 11 )
+material/0 = null
 
 [node name="rotation_helper" type="Spatial" parent="Player"]
 
@@ -137,3 +161,56 @@ spot_angle = 16.079
 [node name="playerfeet" type="RayCast" parent="Player"]
 enabled = true
 cast_to = Vector3( 0, -2.2, 0 )
+
+[node name="Player2" type="KinematicBody" parent="." groups=[
+"Player",
+]]
+pause_mode = 1
+process_priority = 1
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, 0 )
+script = ExtResource( 6 )
+
+[node name="FPS Counter" parent="Player2" instance=ExtResource( 5 )]
+
+[node name="collision_body" type="CollisionShape" parent="Player2"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
+shape = SubResource( 9 )
+
+[node name="rotation_helper" type="Spatial" parent="Player2"]
+
+[node name="Camera" type="Camera" parent="Player2/rotation_helper"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 1, 0 )
+keep_aspect = 0
+doppler_tracking = 2
+current = true
+fov = 90.0
+
+[node name="rayarm" type="RayCast" parent="Player2/rotation_helper/Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -4 )
+
+[node name="point" type="Position3D" parent="Player2/rotation_helper/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+
+[node name="interact_moveable" type="Sprite3D" parent="Player2/rotation_helper/Camera"]
+transform = Transform( 0.025, 0, 0, 0, 0.025, 0, 0, 0, 1, 0, 0, -0.5 )
+layers = 1024
+texture = ExtResource( 3 )
+
+[node name="Flashlight" type="SpotLight" parent="Player2/rotation_helper"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, 0 )
+visible = false
+light_energy = 10.0
+light_bake_mode = 0
+shadow_enabled = true
+spot_range = 17.0579
+spot_angle = 16.079
+
+[node name="playerfeet" type="RayCast" parent="Player2"]
+enabled = true
+cast_to = Vector3( 0, -2.2, 0 )
+
+[node name="body" type="MeshInstance" parent="Player2"]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+mesh = SubResource( 13 )
+material/0 = null

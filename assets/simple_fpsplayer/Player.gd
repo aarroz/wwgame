@@ -44,6 +44,10 @@ func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
 
+func foot_step():
+	pass
+	#get_node("audio_player").play()
+
 func process_input(delta):
 
 	# ----------------------------------
@@ -66,6 +70,11 @@ func process_input(delta):
 
 	dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
 	dir += cam_xform.basis.x.normalized() * input_movement_vector.x
+	
+	if input_movement_vector.y != 0:
+		foot_step()
+		pass
+	
 	# ----------------------------------
 
 	# ----------------------------------

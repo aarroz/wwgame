@@ -69,6 +69,7 @@ file_logging/enable_file_logging=true
 [physics]
 
 3d/physics_engine="Bullet"
+3d/smooth_trimesh_collision=true
 common/fixed_fps=180
 
 [rendering]
@@ -76,5 +77,4 @@ common/fixed_fps=180
 threads/thread_model=2
 quality/filters/use_nearest_mipmap_filter=true
 quality/subsurface_scattering/follow_surface=true
-quality/filters/msaa=1
 environment/default_environment="res://assets/Scenes/mainmenu_environment.tres"

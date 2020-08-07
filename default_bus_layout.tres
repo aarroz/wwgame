@@ -5,6 +5,9 @@ resource_name = "Limiter"
 
 [sub_resource type="AudioEffectReverb" id=2]
 resource_name = "Reverb"
+room_size = 0.5
+spread = 0.5
+hipass = 0.41
 
 [resource]
 bus/0/effect/0/effect = SubResource( 1 )
@@ -13,7 +16,7 @@ bus/1/name = "Music"
 bus/1/solo = false
 bus/1/mute = false
 bus/1/bypass_fx = false
-bus/1/volume_db = 0.0
+bus/1/volume_db = -4.25003
 bus/1/send = "Master"
 bus/2/name = "Ambience"
 bus/2/solo = false

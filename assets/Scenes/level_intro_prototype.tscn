@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/Scripts/level_intro_prototype.gd" type="Script" id=4]
 [ext_resource path="res://assets/Models/Props/Crate/Crate.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Sounds/boing.wav" type="AudioStream" id=6]
-[ext_resource path="res://assets/Sounds/tunnel_level_atmosphere.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/Sounds/music/opening_r1.ogg" type="AudioStream" id=7]
 [ext_resource path="res://assets/Models/Props/Key/model_key.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ProceduralSky" id=1]
@@ -329,7 +329,7 @@ height = 2.8
 sides = 16
 
 [node name="model_key" parent="spawn_props" instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24464, -1.66963, -0.239982 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24464, -1.66963, 2.76002 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
@@ -361,6 +361,7 @@ shape = SubResource( 5 )
 [node name="notify" type="AudioStreamPlayer3D" parent="door_level"]
 stream = ExtResource( 6 )
 max_distance = 10.0
+bus = "Ambience"
 doppler_tracking = 1
 
 [node name="door_level2" type="Area" parent="."]
@@ -388,6 +389,7 @@ shape = SubResource( 5 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00965691, 0, -0.349934 )
 stream = ExtResource( 6 )
 max_distance = 10.0
+bus = "Ambience"
 doppler_tracking = 1
 
 [node name="door_level4" type="Area" parent="."]
@@ -415,6 +417,7 @@ shape = SubResource( 5 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.444442 )
 stream = ExtResource( 6 )
 max_distance = 10.0
+bus = "Ambience"
 doppler_tracking = 1
 
 [node name="door_level3" type="Area" parent="."]
@@ -442,6 +445,7 @@ shape = SubResource( 5 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.00965691, 0, -0.349934 )
 stream = ExtResource( 6 )
 max_distance = 10.0
+bus = "Ambience"
 doppler_tracking = 1
 
 [node name="physics_objects" type="Spatial" parent="."]
