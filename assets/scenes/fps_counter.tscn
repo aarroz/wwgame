@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/scripts/fps_counter.gd" type="Script" id=2]
+
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://assets/Images/Nobile/Nobile-Bold.ttf"
+
+[sub_resource type="DynamicFont" id=3]
+size = 64
+use_mipmaps = true
+use_filter = true
+font_data = SubResource( 4 )
+
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 3 )
+
+[node name="FPS Counter" type="Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.50734
+margin_bottom = -1.50732
+theme = SubResource( 5 )
+text = "60 FPS"
+align = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

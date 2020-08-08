@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/scripts/fps_counter.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/Nobile/mainmenufont.theme" type="Theme" id=2]
+
+[node name="fps_overlay" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Margin" type="MarginContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -391.0
+margin_bottom = 74.0
+mouse_filter = 2
+custom_constants/margin_right = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Margin"]
+margin_right = 381.0
+margin_bottom = 74.0
+size_flags_horizontal = 5
+theme = ExtResource( 2 )
+text = " FPS"
+align = 1
+valign = 1
+uppercase = true
+script = ExtResource( 1 )

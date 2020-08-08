@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/crepyfeedback_001.ogg-8d8771a4fb61c18bd4a2f25cae90c7e2.oggstr"
+
+[deps]
+
+source_file="res://assets/sounds/Samples/crepyfeedback_001.ogg"
+dest_files=[ "res://.import/crepyfeedback_001.ogg-8d8771a4fb61c18bd4a2f25cae90c7e2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
