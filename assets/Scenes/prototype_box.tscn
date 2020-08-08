@@ -66,7 +66,7 @@ environment = SubResource( 2 )
 
 [node name="Floor" type="StaticBody" parent="."]
 pause_mode = 2
-transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
+transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
 mesh = SubResource( 3 )
@@ -78,7 +78,7 @@ shape = SubResource( 5 )
 [node name="test_box" type="RigidBody" parent="." groups=[
 "moveable",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 2, 0 )
 mass = 50.0
 can_sleep = false
 
@@ -99,7 +99,7 @@ texture = SubResource( 9 )
 [node name="test_box2" type="RigidBody" parent="." groups=[
 "moveable",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42322, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4.42322, 0 )
 mass = 25.0
 can_sleep = false
 
@@ -120,7 +120,7 @@ texture = SubResource( 10 )
 [node name="test_box3" type="RigidBody" parent="." groups=[
 "moveable",
 ]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79708, 4.42322, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.79708, 4.42322, 0 )
 mass = 10.0
 can_sleep = false
 
@@ -142,7 +142,7 @@ texture = SubResource( 11 )
 "Player",
 ]]
 pause_mode = 2
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 0 )
 script = ExtResource( 6 )
 
 [node name="FPS Counter" parent="Player" instance=ExtResource( 5 )]
@@ -284,6 +284,3 @@ size_flags_horizontal = 3
 theme = ExtResource( 4 )
 text = "10kg"
 align = 1
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.5
