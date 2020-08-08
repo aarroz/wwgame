@@ -1,20 +1,19 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://assets/Scripts/mainmenu.gd" type="Script" id=1]
-[ext_resource path="res://assets/Models/Tiles/tile_stone/tile_stone_512x.material" type="Material" id=2]
-[ext_resource path="res://assets/Models/Props/Lamp/Material_001.material" type="Material" id=3]
-[ext_resource path="res://assets/Scenes/mainmenu_environment.tres" type="Environment" id=4]
-[ext_resource path="res://assets/Images/Nobile/mainmenufont.theme" type="Theme" id=5]
-[ext_resource path="res://assets/Scenes/menu_settings.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/Sounds/menu_Loop.ogg" type="AudioStream" id=7]
-[ext_resource path="res://assets/Scenes/fps_overlay.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/Models/Props/Crate/Box.material" type="Material" id=9]
-[ext_resource path="res://assets/Models/Props/Lamp/Material_002.material" type="Material" id=10]
-[ext_resource path="res://assets/Scenes/mainmenu_lightmaps/Circle.001.png" type="Texture" id=11]
-[ext_resource path="res://assets/Scenes/mainmenu_lightmaps/LightMap2.png" type="Texture" id=12]
-[ext_resource path="res://assets/Scenes/mainmenu_lightmaps/Circle.0012.png" type="Texture" id=13]
-[ext_resource path="res://assets/Scenes/mainmenu_lightmaps/LightMap.png" type="Texture" id=14]
-[ext_resource path="res://assets/Scenes/mainmenu_lightmaps/LightMap3.png" type="Texture" id=15]
+[ext_resource path="res://assets/scripts/mainmenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/models/Tiles/tile_stone/tile_stone_512x.material" type="Material" id=2]
+[ext_resource path="res://assets/models/Props/Lamp/Material_001.material" type="Material" id=3]
+[ext_resource path="res://assets/scenes/mainmenu_environment.tres" type="Environment" id=4]
+[ext_resource path="res://assets/textures/Nobile/mainmenufont.theme" type="Theme" id=5]
+[ext_resource path="res://assets/scenes/menu_settings.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/sounds/menu_Loop.ogg" type="AudioStream" id=7]
+[ext_resource path="res://assets/models/Props/Crate/Box.material" type="Material" id=9]
+[ext_resource path="res://assets/models/Props/Lamp/Material_002.material" type="Material" id=10]
+[ext_resource path="res://assets/scenes/mainmenu_lightmaps/Circle.001.png" type="Texture" id=11]
+[ext_resource path="res://assets/scenes/mainmenu_lightmaps/LightMap2.png" type="Texture" id=12]
+[ext_resource path="res://assets/scenes/mainmenu_lightmaps/Circle.0012.png" type="Texture" id=13]
+[ext_resource path="res://assets/scenes/mainmenu_lightmaps/LightMap.png" type="Texture" id=14]
+[ext_resource path="res://assets/scenes/mainmenu_lightmaps/LightMap3.png" type="Texture" id=15]
 
 [sub_resource type="ArrayMesh" id=1]
 lightmap_size_hint = Vector2( 132, 132 )
@@ -143,8 +142,6 @@ text = "Quit"
 [node name="Settings" parent="." instance=ExtResource( 6 )]
 visible = false
 
-[node name="fps_overlay" parent="." instance=ExtResource( 8 )]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
 autoplay = true
@@ -265,9 +262,9 @@ extents = Vector3( 4.95098, 5.12113, 5.03203 )
 box_projection = true
 enable_shadows = true
 interior_enable = true
-[connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Play" to="MainMenu" method="_on_Play_pressed"]
-[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed"]
+[connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="MainMenu/Settings" to="MainMenu" method="_on_Settings_pressed"]
-[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]

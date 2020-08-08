@@ -2,6 +2,7 @@ extends KinematicBody
 #Variables
 var global = "root/global"
 
+#This sets the variables for the fake physics.
 const GRAVITY = -32.8
 var vel = Vector3()
 const MAX_SPEED = 10
@@ -27,9 +28,11 @@ var is_sprinting = false
 var flashlight
 var icon_move
 
+# This set's our signal to call interactable nodes in the scene.
 signal beep
 
 func _ready():
+	# Defines our variables
 	camera = $rotation_helper/Camera
 	rotation_helper = $rotation_helper
 	flashlight = $rotation_helper/Flashlight
@@ -44,19 +47,14 @@ func _physics_process(delta):
 	process_input(delta)
 	process_movement(delta)
 
-func foot_step():
-	pass
-	#get_node("audio_player").play()
 
 func process_input(delta):
-
-	# ----------------------------------
-	# Walking
+	# Processes how the character walks
 	dir = Vector3()
 	var cam_xform = camera.get_global_transform()
 
 	var input_movement_vector = Vector2()
-
+	# Everytime we press an action. The movement vector changes by 1 on it's respective axis.
 	if Input.is_action_pressed("movement_forward"):
 		input_movement_vector.y += 1
 	if Input.is_action_pressed("movement_backward"):
@@ -70,22 +68,15 @@ func process_input(delta):
 
 	dir += -cam_xform.basis.z.normalized() * input_movement_vector.y
 	dir += cam_xform.basis.x.normalized() * input_movement_vector.x
-	
-	if input_movement_vector.y != 0:
-		foot_step()
-		pass
-	
-	# ----------------------------------
 
 	# ----------------------------------
 	# Jumping
 	if is_on_floor():
 		if Input.is_action_just_pressed("movement_jump"):
 			vel.y = JUMP_SPEED
-	# ----------------------------------
 
 	# ----------------------------------
-	# Capturing/Freeing the cursor
+	# Capturing/Freeing the cursor (Used for debugging)
 	if Input.is_action_just_pressed("ui_cancel"):
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -102,14 +93,13 @@ func process_input(delta):
 			flashlight.show()
 
 func _process(delta):
-
-# Interaction
+# Interaction method. It checks to see if raycast collides with a "moveable" physics prop and holds it where the transform's coordinates are.
+# Is this the best way to do this? Of course not. But this breaks everytime I try to improve it, so I don't change it anymore.
 	if ray.is_colliding():
 		var object = $rotation_helper/Camera/rayarm.get_collider()
 		if object.is_in_group("moveable"):
 			icon_move.show()
 			if Input.is_mouse_button_pressed(BUTTON_LEFT):
-				#print("grabby")
 				var trans = position.get_global_transform()
 				object.set_global_transform(trans)
 				object.set_linear_velocity(Vector3(0, 0, 0))
@@ -117,7 +107,7 @@ func _process(delta):
 		icon_move.hide()
 	
 
-
+# Processes the movement using the physics variables we have set.
 func process_movement(delta):
 	dir.y = 0
 	dir = dir.normalized()
@@ -141,6 +131,7 @@ func process_movement(delta):
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE), false)
 
+# Processes camera movement, interact with buttons, and quitting to menu
 func _input(event):
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotation_helper.rotate_x(deg2rad(event.relative.y * MOUSE_SENSITIVITY))
@@ -150,12 +141,11 @@ func _input(event):
 		camera_rot.x = clamp(camera_rot.x, -85, 85)
 		rotation_helper.rotation_degrees = camera_rot
 	
-# ----------------------------------
-# Calling interact
+	# Calling interact on interactable
 	if Input.is_key_pressed(KEY_E):
 		emit_signal("beep")
-# ----------------------------------
 	
+	# Returns to menu
 	if Input.is_key_pressed(KEY_Q):
 		get_node("/root/global").setScene("res://assets/mainmenu.tscn")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
