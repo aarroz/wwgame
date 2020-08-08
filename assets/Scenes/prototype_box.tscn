@@ -1,9 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/Models/Tiles/Light/texture_07.png" type="Texture" id=1]
 [ext_resource path="res://assets/Models/Tiles/Light/texture_08.png" type="Texture" id=2]
 [ext_resource path="res://assets/Images/hand_crosshair.png" type="Texture" id=3]
-[ext_resource path="res://assets/Scripts/test_box.gd" type="Script" id=4]
+[ext_resource path="res://assets/Images/Nobile/mainmenufont.theme" type="Theme" id=4]
 [ext_resource path="res://assets/Scenes/fps_counter.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/simple_fpsplayer/Player_experiment.gd" type="Script" id=6]
 [ext_resource path="res://assets/Scenes/prototype_box.gd" type="Script" id=7]
@@ -31,21 +31,30 @@ uv1_triplanar = true
 
 [sub_resource type="CubeMesh" id=8]
 
-[sub_resource type="CapsuleShape" id=9]
+[sub_resource type="ViewportTexture" id=9]
+viewport_path = NodePath("50kg")
+
+[sub_resource type="ViewportTexture" id=10]
+viewport_path = NodePath("25kg")
+
+[sub_resource type="ViewportTexture" id=11]
+viewport_path = NodePath("10kg")
+
+[sub_resource type="CapsuleShape" id=12]
 height = 2.0
 
-[sub_resource type="SpatialMaterial" id=10]
+[sub_resource type="SpatialMaterial" id=13]
 albedo_color = Color( 0.968627, 0.113725, 0.113725, 1 )
 
-[sub_resource type="CapsuleMesh" id=11]
-material = SubResource( 10 )
+[sub_resource type="CapsuleMesh" id=14]
+material = SubResource( 13 )
 mid_height = 2.0
 
-[sub_resource type="SpatialMaterial" id=12]
+[sub_resource type="SpatialMaterial" id=15]
 albedo_color = Color( 0.192157, 0.317647, 1, 1 )
 
-[sub_resource type="CapsuleMesh" id=13]
-material = SubResource( 12 )
+[sub_resource type="CapsuleMesh" id=16]
+material = SubResource( 15 )
 mid_height = 2.0
 
 [node name="prototype_box" type="Spatial"]
@@ -70,9 +79,8 @@ shape = SubResource( 5 )
 "moveable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0 )
-mass = 45.0
+mass = 50.0
 can_sleep = false
-script = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="test_box"]
 shape = SubResource( 6 )
@@ -82,10 +90,17 @@ material_override = SubResource( 7 )
 mesh = SubResource( 8 )
 material/0 = null
 
+[node name="Sprite3D" type="Sprite3D" parent="test_box"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.51467, 0 )
+flip_v = true
+billboard = 1
+texture = SubResource( 9 )
+
 [node name="test_box2" type="RigidBody" parent="." groups=[
 "moveable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.42322, 0 )
+mass = 25.0
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="test_box2"]
@@ -96,10 +111,17 @@ material_override = SubResource( 7 )
 mesh = SubResource( 8 )
 material/0 = null
 
+[node name="Sprite3D" type="Sprite3D" parent="test_box2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.58661, 0 )
+flip_v = true
+billboard = 1
+texture = SubResource( 10 )
+
 [node name="test_box3" type="RigidBody" parent="." groups=[
 "moveable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79708, 4.42322, 0 )
+mass = 10.0
 can_sleep = false
 
 [node name="CollisionShape" type="CollisionShape" parent="test_box3"]
@@ -109,6 +131,12 @@ shape = SubResource( 6 )
 material_override = SubResource( 7 )
 mesh = SubResource( 8 )
 material/0 = null
+
+[node name="Sprite3D" type="Sprite3D" parent="test_box3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.598256, 0 )
+flip_v = true
+billboard = 1
+texture = SubResource( 11 )
 
 [node name="Player" type="KinematicBody" parent="." groups=[
 "Player",
@@ -121,11 +149,11 @@ script = ExtResource( 6 )
 
 [node name="collision_body" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 12 )
 
 [node name="body" type="MeshInstance" parent="Player"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-mesh = SubResource( 11 )
+mesh = SubResource( 14 )
 material/0 = null
 
 [node name="rotation_helper" type="Spatial" parent="Player"]
@@ -174,7 +202,7 @@ script = ExtResource( 6 )
 
 [node name="collision_body" type="CollisionShape" parent="Player2"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 12 )
 
 [node name="rotation_helper" type="Spatial" parent="Player2"]
 
@@ -212,5 +240,50 @@ cast_to = Vector3( 0, -2.2, 0 )
 
 [node name="body" type="MeshInstance" parent="Player2"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-mesh = SubResource( 13 )
+mesh = SubResource( 16 )
 material/0 = null
+
+[node name="50kg" type="Viewport" parent="."]
+size = Vector2( 256, 256 )
+transparent_bg = true
+disable_3d = true
+
+[node name="Label" type="Label" parent="50kg"]
+margin_top = 10.0
+margin_right = 256.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+theme = ExtResource( 4 )
+text = "50kg"
+align = 1
+
+[node name="25kg" type="Viewport" parent="."]
+size = Vector2( 256, 256 )
+transparent_bg = true
+disable_3d = true
+
+[node name="Label" type="Label" parent="25kg"]
+margin_top = 10.0
+margin_right = 256.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+theme = ExtResource( 4 )
+text = "25kg"
+align = 1
+
+[node name="10kg" type="Viewport" parent="."]
+size = Vector2( 256, 256 )
+transparent_bg = true
+disable_3d = true
+
+[node name="Label" type="Label" parent="10kg"]
+margin_top = 10.0
+margin_right = 256.0
+margin_bottom = 256.0
+size_flags_horizontal = 3
+theme = ExtResource( 4 )
+text = "10kg"
+align = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5

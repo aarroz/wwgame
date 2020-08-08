@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/Scripts/shaders/dissolve.material" type="Material" id=1]
+[ext_resource path="res://assets/Scripts/shaders/ColorRect_dissolve.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Blink"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:material:shader_param/transition_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0.26, -0.25, 0, 0.25, 0, -0.25, -0.25, 0, 0.25, 0, 0.26, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.5, 1 )
+}
+
+[node name="ColorRect" type="ColorRect"]
+material = ExtResource( 1 )
+margin_right = 1280.0
+margin_bottom = 720.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Blink = SubResource( 1 )
