@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CylinderShape" id=12]
+radius = 1.5
+height = 0.5
+
+[node name="Button6" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -3, 3 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+use_in_baked_light = true
+use_collision = true
+
+[node name="button" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.668211, 0 )
+height = 0.25
+sides = 16
+
+[node name="base" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+radius = 1.5
+height = 0.5
+sides = 16
+
+[node name="button_1" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="button_1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
+shape = SubResource( 12 )
