@@ -24,7 +24,7 @@ shape = SubResource( 1 )
 
 [node name="model_body" type="MeshInstance" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-use_in_baked_light = true
+cast_shadow = 0
 mesh = SubResource( 2 )
 material/0 = null
 

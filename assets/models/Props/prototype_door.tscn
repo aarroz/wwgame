@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[sub_resource type="GDScript" id=16]
+[sub_resource type="GDScript" id=25]
 script/source = "extends Spatial
 
 onready var animation = $AnimationPlayer
@@ -18,13 +18,13 @@ func _on_button_1_body_exited(body):
 	animation.play(\"door_close\")
 "
 
-[sub_resource type="CubeMesh" id=17]
+[sub_resource type="CubeMesh" id=21]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="BoxShape" id=18]
+[sub_resource type="BoxShape" id=22]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=23]
 resource_name = "door_close"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
@@ -57,7 +57,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=24]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -91,7 +91,7 @@ tracks/2/keys = {
 
 [node name="Door1" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
-script = SubResource( 16 )
+script = SubResource( 25 )
 
 [node name="doorway" type="CSGCombiner" parent="."]
 
@@ -110,12 +110,12 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="door"]
-mesh = SubResource( 17 )
+mesh = SubResource( 21 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="door"]
-shape = SubResource( 18 )
+shape = SubResource( 22 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/door_close = SubResource( 19 )
-anims/door_open = SubResource( 20 )
+anims/door_close = SubResource( 23 )
+anims/door_open = SubResource( 24 )
