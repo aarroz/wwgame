@@ -75,5 +75,5 @@ common/fixed_fps=180
 [rendering]
 
 threads/thread_model=2
-quality/filters/use_nearest_mipmap_filter=true
+quality/filters/msaa=1
 environment/default_environment="res://assets/scenes/mainmenu_environment.tres"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/scripts/level_intro_prototype.gd" type="Script" id=2]
@@ -36,6 +36,9 @@ albedo_color = Color( 0.811765, 0, 0, 1 )
 
 [sub_resource type="BoxShape" id=7]
 extents = Vector3( 4, 3, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 4, 1, 4 )
 
 [node name="level_intro_prototype" type="Spatial"]
 script = ExtResource( 2 )
@@ -551,6 +554,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9669, 2, 6 )
 [node name="CollisionShape" type="CollisionShape" parent="event_triggers/event1_trigger"]
 shape = SubResource( 7 )
 
+[node name="next_level" type="Area" parent="event_triggers"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, 23 )
+
+[node name="CollisionShape" type="CollisionShape" parent="event_triggers/next_level"]
+shape = SubResource( 8 )
+
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
 autoplay = true
@@ -577,3 +586,4 @@ spot_angle = 36.1108
 [connection signal="body_entered" from="door_level4" to="." method="_on_door_level4_body_entered"]
 [connection signal="body_entered" from="door_level3" to="." method="_on_door_level3_body_entered"]
 [connection signal="body_entered" from="event_triggers/event1_trigger" to="." method="_on_event1_trigger_body_entered"]
+[connection signal="body_entered" from="event_triggers/next_level" to="." method="_on_next_level_body_entered"]

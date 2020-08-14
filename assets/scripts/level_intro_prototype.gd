@@ -18,6 +18,7 @@ var script_1_done
 
 # For the teleport mechanic
 onready var Effect_teleport = preload("res://assets/scripts/shaders/ColorRect_dissolve.tscn")
+var global = "/root/global"
 
 onready var Play_1 = $Player
 onready var Cam_1 = $Player/rotation_helper/Camera
@@ -128,3 +129,8 @@ func _on_door_level4_body_entered(body):
 		level4 = true
 	else:
 		level4 = false
+
+
+func _on_next_level_body_entered(body):
+	if body.is_in_group("Player"):
+		get_node(global).setScene("res://assets/scenes/level1.tscn")
