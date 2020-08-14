@@ -1016,7 +1016,9 @@ shape = SubResource( 16 )
 "moveable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -16 )
+mass = 10.0
 can_sleep = false
+axis_lock_angular_y = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Box"]
 mesh = SubResource( 17 )
@@ -1029,7 +1031,9 @@ shape = SubResource( 18 )
 "moveable",
 ]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -4 )
+mass = 10.0
 can_sleep = false
+axis_lock_angular_y = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Box2"]
 mesh = SubResource( 17 )
