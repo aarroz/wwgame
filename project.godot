@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 global="*res://assets/scripts/global.gd"
 
+[debug]
+
+settings/stdout/print_fps=true
+
 [display]
 
 window/size/width=1280
@@ -76,4 +80,3 @@ common/fixed_fps=180
 
 threads/thread_model=2
 quality/filters/msaa=1
-environment/default_environment="res://assets/scenes/mainmenu_environment.tres"
