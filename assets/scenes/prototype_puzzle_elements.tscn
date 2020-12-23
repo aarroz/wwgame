@@ -11,46 +11,35 @@
 background_mode = 2
 background_sky = SubResource( 1 )
 
-[sub_resource type="GDScript" id=30]
+[sub_resource type="GDScript" id=3]
 script/source = "extends \"res://assets/scenes/puzzles/elements/puzzle_door_func.gd\"
 
-var closed = true
-
-func _ready():
-	pass
-
 func _on_button_for_firstdoor_body_entered(body):
-	if body.is_in_group(\"Player\") and closed:
+	if body.is_in_group(\"Player\"):
 		door_open()
-		closed = false
-	else:
-		pass
-
 
 func _on_button_for_firstdoor_body_exited(body):
 	if body.is_in_group(\"Player\"):
 		door_close()
-		closed = true
 "
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_texture = ExtResource( 4 )
 uv1_triplanar = true
 
-[sub_resource type="CubeMesh" id=31]
+[sub_resource type="CubeMesh" id=5]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=6]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 albedo_texture = ExtResource( 5 )
 uv1_scale = Vector3( 1.464, 1.5, 1 )
 uv1_offset = Vector3( -0.23, 0.252, 0 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=7]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "door_close"
+[sub_resource type="Animation" id=8]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -82,7 +71,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -114,7 +103,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="CylinderShape" id=28]
+[sub_resource type="CylinderShape" id=10]
 radius = 1.5
 height = 0.5
 
@@ -138,10 +127,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 0 )
 
 [node name="Door1" type="Spatial" parent="door_and_button"]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 4, -10 )
-script = SubResource( 30 )
+script = SubResource( 3 )
 
 [node name="doorway" type="CSGCombiner" parent="door_and_button/Door1"]
-material_override = SubResource( 6 )
+material_override = SubResource( 4 )
 use_in_baked_light = true
 use_collision = true
 
@@ -160,15 +149,15 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="door_and_button/Door1/door"]
-mesh = SubResource( 31 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 5 )
+material/0 = SubResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="door_and_button/Door1/door"]
-shape = SubResource( 3 )
+shape = SubResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="door_and_button/Door1"]
-anims/door_close = SubResource( 4 )
-anims/door_open = SubResource( 5 )
+anims/door_close = SubResource( 8 )
+anims/door_open = SubResource( 9 )
 
 [node name="Button6" type="Spatial" parent="door_and_button"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
@@ -192,6 +181,6 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="door_and_button/Button6/button_for_firstdoor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 28 )
+shape = SubResource( 10 )
 [connection signal="body_entered" from="door_and_button/Button6/button_for_firstdoor" to="door_and_button/Door1" method="_on_button_for_firstdoor_body_entered"]
 [connection signal="body_exited" from="door_and_button/Button6/button_for_firstdoor" to="door_and_button/Door1" method="_on_button_for_firstdoor_body_exited"]
