@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/models/Tiles/prototype_materials/wall_prototype.material" type="Material" id=1]
 [ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://assets/textures/decal_controls.png" type="Texture" id=5]
 [ext_resource path="res://assets/models/Tiles/prototype_materials/prop_prototype.material" type="Material" id=6]
 [ext_resource path="res://assets/sounds/Samples/positive.wav" type="AudioStream" id=7]
+[ext_resource path="res://assets/models/Tiles/Light/texture_02.png" type="Texture" id=8]
+[ext_resource path="res://assets/models/Tiles/Light/texture_10.png" type="Texture" id=9]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_color = Color( 0.85098, 0.996078, 0.854902, 1 )
@@ -16,7 +18,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = true
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="GDScript" id=29]
 script/source = "extends Spatial
 
 onready var action = $AnimationPlayer
@@ -27,6 +29,11 @@ func door_open():
 func door_close():
 	action.play_backwards(\"door_open\")
 
+# Example wiring
+#func _on_button_1_body_entered(body):
+#	if body.is_in_group(\"Player\"):
+#		door_open()
+
 func _on_button_1_body_entered(body):
 	if body.is_in_group(\"Player\"):
 		door_open()
@@ -36,13 +43,23 @@ func _on_button_1_body_exited(body):
 		door_close()
 "
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 8 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=31]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="BoxShape" id=4]
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+albedo_texture = ExtResource( 9 )
+uv1_scale = Vector3( 1.464, 1.5, 1 )
+uv1_offset = Vector3( -0.23, 0.252, 0 )
+
+[sub_resource type="BoxShape" id=3]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 resource_name = "door_close"
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
@@ -75,7 +92,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -107,7 +124,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=30]
 script/source = "extends Spatial
 
 onready var animation = $AnimationPlayer
@@ -537,6 +554,10 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
+[sub_resource type="CylinderShape" id=28]
+radius = 1.5
+height = 0.5
+
 [sub_resource type="CylinderShape" id=27]
 radius = 1.5
 height = 0.5
@@ -800,10 +821,12 @@ omni_range = 16.0
 
 [node name="Door1" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
-script = SubResource( 2 )
+script = SubResource( 29 )
 
 [node name="doorway" type="CSGCombiner" parent="Door1"]
+material_override = SubResource( 6 )
 use_in_baked_light = true
+use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="Door1/doorway"]
 width = 1.0
@@ -820,22 +843,23 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door1/door"]
-mesh = SubResource( 3 )
-material/0 = null
+mesh = SubResource( 31 )
+material/0 = SubResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Door1/door"]
-shape = SubResource( 4 )
+shape = SubResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door1"]
-anims/door_close = SubResource( 5 )
-anims/door_open = SubResource( 6 )
+anims/door_close = SubResource( 4 )
+anims/door_open = SubResource( 5 )
 
 [node name="Door2" type="Spatial" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, 0 )
-script = SubResource( 7 )
+script = SubResource( 30 )
 
 [node name="doorway" type="CSGCombiner" parent="Door2"]
 use_in_baked_light = true
+use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="Door2/doorway"]
 width = 1.0
@@ -1056,6 +1080,7 @@ script = SubResource( 19 )
 
 [node name="doorway" type="CSGCombiner" parent="Door4"]
 use_in_baked_light = true
+use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="Door4/doorway"]
 width = 1.0
@@ -1088,6 +1113,7 @@ script = SubResource( 24 )
 
 [node name="doorway" type="CSGCombiner" parent="Door5"]
 use_in_baked_light = true
+use_collision = true
 
 [node name="CSGBox" type="CSGBox" parent="Door5/doorway"]
 width = 1.0
@@ -1115,7 +1141,7 @@ anims/door_close = SubResource( 25 )
 anims/door_open = SubResource( 26 )
 
 [node name="Button6" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -49, -3, -10 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -3, -10 )
 
 [node name="CSGCombiner" type="CSGCombiner" parent="Button6"]
 use_in_baked_light = true
@@ -1136,7 +1162,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button6/button_for_firstdoor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 27 )
+shape = SubResource( 28 )
 
 [node name="Button7" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -3, -17 )
@@ -1169,8 +1195,8 @@ shape = SubResource( 27 )
 [connection signal="body_exited" from="Button3/button_3" to="you_win" method="_on_button_3_body_exited"]
 [connection signal="body_entered" from="Button4/button_4" to="you_win" method="_on_button_4_body_entered"]
 [connection signal="body_exited" from="Button4/button_4" to="you_win" method="_on_button_4_body_exited"]
-[connection signal="body_entered" from="Button5/active_range2" to="Door2" method="_on_active_range2_body_entered"]
 [connection signal="body_entered" from="Button5/active_range2" to="Door3" method="_on_active_range2_body_entered"]
+[connection signal="body_entered" from="Button5/active_range2" to="Door2" method="_on_active_range2_body_entered"]
 [connection signal="body_entered" from="Button6/button_for_firstdoor" to="Door5" method="_on_button_for_firstdoor_body_entered"]
 [connection signal="body_exited" from="Button6/button_for_firstdoor" to="Door5" method="_on_button_for_firstdoor_body_exited"]
 [connection signal="body_entered" from="Button7/button_for_seconddoor" to="Door4" method="_on_button_for_seconddoor_body_entered"]

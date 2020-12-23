@@ -1,0 +1,144 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/models/Tiles/Light/texture_02.png" type="Texture" id=1]
+[ext_resource path="res://assets/models/Tiles/Light/texture_10.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=29]
+script/source = "extends Spatial
+
+onready var action = $AnimationPlayer
+
+func door_open():
+	action.play(\"door_open\")
+
+func door_close():
+	action.play_backwards(\"door_open\")
+
+# Example wiring
+#func _on_button_1_body_entered(body):
+#	if body.is_in_group(\"Player\"):
+#		door_open()
+
+func _on_button_1_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		door_open()
+
+func _on_button_1_body_exited(body):
+	if body.is_in_group(\"Player\"):
+		door_close()
+"
+
+[sub_resource type="SpatialMaterial" id=6]
+albedo_texture = ExtResource( 1 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=31]
+size = Vector3( 0.5, 6, 4 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 1.464, 1.5, 1 )
+uv1_offset = Vector3( -0.23, 0.252, 0 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 0.5, 3, 2 )
+
+[sub_resource type="Animation" id=4]
+resource_name = "door_close"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( -4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="Animation" id=5]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[node name="Door1" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
+script = SubResource( 29 )
+
+[node name="doorway" type="CSGCombiner" parent="."]
+material_override = SubResource( 6 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="doorway"]
+width = 1.0
+height = 10.0
+depth = 20.0
+
+[node name="CSGBox2" type="CSGBox" parent="doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03178, 0 )
+operation = 2
+height = 6.0
+depth = 4.0
+
+[node name="door" type="StaticBody" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="door"]
+mesh = SubResource( 31 )
+material/0 = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="door"]
+shape = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/door_close = SubResource( 4 )
+anims/door_open = SubResource( 5 )

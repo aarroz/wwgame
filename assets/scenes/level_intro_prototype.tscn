@@ -14,7 +14,8 @@ size = Vector3( 1, 0.5, 10 )
 
 [sub_resource type="ProceduralSky" id=2]
 sky_top_color = Color( 0.717647, 0.87451, 0.960784, 1 )
-sun_latitude = 70.0
+sun_latitude = 13.53
+sun_longitude = 88.24
 
 [sub_resource type="Environment" id=3]
 background_mode = 2
