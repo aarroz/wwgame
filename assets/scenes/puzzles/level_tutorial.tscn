@@ -18,7 +18,7 @@ emission_energy = 1.0
 emission_operator = 0
 emission_on_uv2 = true
 
-[sub_resource type="GDScript" id=29]
+[sub_resource type="GDScript" id=2]
 script/source = "extends Spatial
 
 onready var action = $AnimationPlayer
@@ -43,24 +43,23 @@ func _on_button_1_body_exited(body):
 		door_close()
 "
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 8 )
 uv1_triplanar = true
 
-[sub_resource type="CubeMesh" id=31]
+[sub_resource type="CubeMesh" id=4]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="SpatialMaterial" id=7]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 albedo_texture = ExtResource( 9 )
 uv1_scale = Vector3( 1.464, 1.5, 1 )
 uv1_offset = Vector3( -0.23, 0.252, 0 )
 
-[sub_resource type="BoxShape" id=3]
+[sub_resource type="BoxShape" id=6]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "door_close"
+[sub_resource type="Animation" id=7]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -92,7 +91,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -124,7 +123,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="GDScript" id=30]
+[sub_resource type="GDScript" id=9]
 script/source = "extends Spatial
 
 onready var animation = $AnimationPlayer
@@ -162,13 +161,13 @@ func _on_active_range2_body_entered(body):
 		Input2 = false
 "
 
-[sub_resource type="CubeMesh" id=8]
+[sub_resource type="CubeMesh" id=10]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="BoxShape" id=9]
+[sub_resource type="BoxShape" id=11]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=12]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -199,54 +198,6 @@ tracks/2/keys = {
 "points": PoolRealArray( -4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
-
-[sub_resource type="Animation" id=11]
-tracks/0/type = "bezier"
-tracks/0/path = NodePath("door:translation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
-}
-tracks/1/type = "bezier"
-tracks/1/path = NodePath("door:translation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
-}
-tracks/2/type = "bezier"
-tracks/2/path = NodePath("door:translation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0, 1 )
-}
-
-[sub_resource type="GDScript" id=12]
-script/source = "extends Spatial
-
-onready var action = $AnimationPlayer
-
-func door_open():
-	action.play(\"door_open\")
-
-func door_close():
-	action.play_backwards(\"door_open\")
-
-func _on_active_range2_body_entered(body):
-	if body.is_in_group(\"Player\"):
-		door_open()
-"
 
 [sub_resource type="Animation" id=13]
 tracks/0/type = "bezier"
@@ -276,11 +227,59 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="GDScript" id=14]
+script/source = "extends Spatial
+
+onready var action = $AnimationPlayer
+
+func door_open():
+	action.play(\"door_open\")
+
+func door_close():
+	action.play_backwards(\"door_open\")
+
+func _on_active_range2_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		door_open()
+"
+
+[sub_resource type="Animation" id=15]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "points": PoolRealArray( -4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=16]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -312,16 +311,16 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="CylinderShape" id=15]
+[sub_resource type="CylinderShape" id=17]
 radius = 1.5
 height = 0.5
 
-[sub_resource type="CubeMesh" id=16]
+[sub_resource type="CubeMesh" id=18]
 material = ExtResource( 6 )
 
-[sub_resource type="BoxShape" id=17]
+[sub_resource type="BoxShape" id=19]
 
-[sub_resource type="GDScript" id=18]
+[sub_resource type="GDScript" id=20]
 script/source = "extends Spatial
 
 var button_4
@@ -376,7 +375,7 @@ func _on_button_3_body_exited(body):
 		pass
 "
 
-[sub_resource type="GDScript" id=19]
+[sub_resource type="GDScript" id=21]
 script/source = "extends Spatial
 
 onready var action = $AnimationPlayer
@@ -395,14 +394,13 @@ func _on_button_for_seconddoor_body_exited(body):
 	door_close()
 "
 
-[sub_resource type="CubeMesh" id=20]
+[sub_resource type="CubeMesh" id=22]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="BoxShape" id=21]
+[sub_resource type="BoxShape" id=23]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=22]
-resource_name = "door_close"
+[sub_resource type="Animation" id=24]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -434,7 +432,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=23]
+[sub_resource type="Animation" id=25]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -466,7 +464,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="GDScript" id=24]
+[sub_resource type="GDScript" id=26]
 script/source = "extends Spatial
 
 onready var action = $AnimationPlayer
@@ -489,8 +487,7 @@ func _on_button_for_firstdoor_body_exited(body):
 	pass
 "
 
-[sub_resource type="Animation" id=25]
-resource_name = "door_close"
+[sub_resource type="Animation" id=27]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -522,7 +519,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="Animation" id=26]
+[sub_resource type="Animation" id=28]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -554,11 +551,11 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[sub_resource type="CylinderShape" id=28]
+[sub_resource type="CylinderShape" id=29]
 radius = 1.5
 height = 0.5
 
-[sub_resource type="CylinderShape" id=27]
+[sub_resource type="CylinderShape" id=30]
 radius = 1.5
 height = 0.5
 
@@ -821,10 +818,10 @@ omni_range = 16.0
 
 [node name="Door1" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
-script = SubResource( 29 )
+script = SubResource( 2 )
 
 [node name="doorway" type="CSGCombiner" parent="Door1"]
-material_override = SubResource( 6 )
+material_override = SubResource( 3 )
 use_in_baked_light = true
 use_collision = true
 
@@ -843,19 +840,19 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door1/door"]
-mesh = SubResource( 31 )
-material/0 = SubResource( 7 )
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Door1/door"]
-shape = SubResource( 3 )
+shape = SubResource( 6 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door1"]
-anims/door_close = SubResource( 4 )
-anims/door_open = SubResource( 5 )
+anims/door_close = SubResource( 7 )
+anims/door_open = SubResource( 8 )
 
 [node name="Door2" type="Spatial" parent="."]
 transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10, 0, 0 )
-script = SubResource( 30 )
+script = SubResource( 9 )
 
 [node name="doorway" type="CSGCombiner" parent="Door2"]
 use_in_baked_light = true
@@ -876,19 +873,19 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door2/door"]
-mesh = SubResource( 8 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Door2/door"]
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door2"]
-anims/door_close = SubResource( 10 )
-anims/door_open = SubResource( 11 )
+anims/door_close = SubResource( 12 )
+anims/door_open = SubResource( 13 )
 
 [node name="Door3" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10 )
-script = SubResource( 12 )
+script = SubResource( 14 )
 
 [node name="doorway" type="CSGCombiner" parent="Door3"]
 visible = false
@@ -908,15 +905,15 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door3/door"]
-mesh = SubResource( 8 )
+mesh = SubResource( 10 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Door3/door"]
-shape = SubResource( 9 )
+shape = SubResource( 11 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door3"]
-anims/door_close = SubResource( 13 )
-anims/door_open = SubResource( 14 )
+anims/door_close = SubResource( 15 )
+anims/door_open = SubResource( 16 )
 
 [node name="Button1" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, -3, 3 )
@@ -940,7 +937,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button1/button_1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 
 [node name="Button2" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, -3, -5 )
@@ -964,7 +961,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button2/active_range"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 
 [node name="Button3" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, -3, 10 )
@@ -988,7 +985,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button3/button_3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 
 [node name="Button4" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, -3, 10 )
@@ -1012,7 +1009,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button4/button_4"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 
 [node name="Button5" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, -3, 10 )
@@ -1036,7 +1033,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button5/active_range2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 15 )
+shape = SubResource( 17 )
 
 [node name="Box" type="RigidBody" parent="." groups=[
 "moveable",
@@ -1047,11 +1044,11 @@ can_sleep = false
 axis_lock_angular_y = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Box"]
-mesh = SubResource( 16 )
+mesh = SubResource( 18 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Box"]
-shape = SubResource( 17 )
+shape = SubResource( 19 )
 
 [node name="Box2" type="RigidBody" parent="." groups=[
 "moveable",
@@ -1062,21 +1059,21 @@ can_sleep = false
 axis_lock_angular_y = true
 
 [node name="MeshInstance" type="MeshInstance" parent="Box2"]
-mesh = SubResource( 16 )
+mesh = SubResource( 18 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Box2"]
-shape = SubResource( 17 )
+shape = SubResource( 19 )
 
 [node name="you_win" type="Spatial" parent="."]
-script = SubResource( 18 )
+script = SubResource( 20 )
 
 [node name="positive_sound" type="AudioStreamPlayer" parent="you_win"]
 stream = ExtResource( 7 )
 
 [node name="Door4" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -10 )
-script = SubResource( 19 )
+script = SubResource( 21 )
 
 [node name="doorway" type="CSGCombiner" parent="Door4"]
 use_in_baked_light = true
@@ -1097,19 +1094,19 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door4/door"]
-mesh = SubResource( 20 )
+mesh = SubResource( 22 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Door4/door"]
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door4"]
-anims/door_close = SubResource( 22 )
-anims/door_open = SubResource( 23 )
+anims/door_close = SubResource( 24 )
+anims/door_open = SubResource( 25 )
 
 [node name="Door5" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -10 )
-script = SubResource( 24 )
+script = SubResource( 26 )
 
 [node name="doorway" type="CSGCombiner" parent="Door5"]
 use_in_baked_light = true
@@ -1130,15 +1127,15 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Door5/door"]
-mesh = SubResource( 20 )
+mesh = SubResource( 22 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Door5/door"]
-shape = SubResource( 21 )
+shape = SubResource( 23 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Door5"]
-anims/door_close = SubResource( 25 )
-anims/door_open = SubResource( 26 )
+anims/door_close = SubResource( 27 )
+anims/door_open = SubResource( 28 )
 
 [node name="Button6" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -51, -3, -10 )
@@ -1162,7 +1159,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button6/button_for_firstdoor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 28 )
+shape = SubResource( 29 )
 
 [node name="Button7" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, -3, -17 )
@@ -1186,7 +1183,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Button7/button_for_seconddoor"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 27 )
+shape = SubResource( 30 )
 [connection signal="body_entered" from="Button1/button_1" to="Door1" method="_on_button_1_body_entered"]
 [connection signal="body_exited" from="Button1/button_1" to="Door1" method="_on_button_1_body_exited"]
 [connection signal="body_entered" from="Button2/active_range" to="Door2" method="_on_active_range_body_entered"]
@@ -1195,8 +1192,8 @@ shape = SubResource( 27 )
 [connection signal="body_exited" from="Button3/button_3" to="you_win" method="_on_button_3_body_exited"]
 [connection signal="body_entered" from="Button4/button_4" to="you_win" method="_on_button_4_body_entered"]
 [connection signal="body_exited" from="Button4/button_4" to="you_win" method="_on_button_4_body_exited"]
-[connection signal="body_entered" from="Button5/active_range2" to="Door3" method="_on_active_range2_body_entered"]
 [connection signal="body_entered" from="Button5/active_range2" to="Door2" method="_on_active_range2_body_entered"]
+[connection signal="body_entered" from="Button5/active_range2" to="Door3" method="_on_active_range2_body_entered"]
 [connection signal="body_entered" from="Button6/button_for_firstdoor" to="Door5" method="_on_button_for_firstdoor_body_entered"]
 [connection signal="body_exited" from="Button6/button_for_firstdoor" to="Door5" method="_on_button_for_firstdoor_body_exited"]
 [connection signal="body_entered" from="Button7/button_for_seconddoor" to="Door4" method="_on_button_for_seconddoor_body_entered"]

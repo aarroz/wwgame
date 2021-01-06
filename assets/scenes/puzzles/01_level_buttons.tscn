@@ -1,0 +1,401 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://assets/models/Tiles/prototype_materials/wall_prototype.material" type="Material" id=1]
+[ext_resource path="res://assets/simple_fpsplayer/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/models/Tiles/Light/texture_02.png" type="Texture" id=3]
+[ext_resource path="res://assets/models/Tiles/Light/texture_10.png" type="Texture" id=4]
+[ext_resource path="res://assets/scenes/puzzles/elements/animation_door_01.tres" type="Animation" id=5]
+
+[sub_resource type="GDScript" id=9]
+script/source = "extends \"res://assets/scenes/puzzles/elements/puzzle_door_func.gd\"
+
+var is_closed = true
+
+func _on_activate_door1_body_entered(body):
+	if body.is_in_group(\"Player\") and is_closed:
+		door_open()
+		is_closed = false
+	else:
+		pass
+"
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 0.5, 6, 4 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 1.464, 1.5, 1 )
+uv1_offset = Vector3( -0.23, 0.252, 0 )
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.5, 3, 2 )
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -4.1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="CylinderShape" id=8]
+radius = 1.5
+height = 0.5
+
+[sub_resource type="GDScript" id=10]
+script/source = "extends \"res://assets/scenes/puzzles/elements/puzzle_door_func.gd\"
+
+var is_closed = true
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+"
+
+[sub_resource type="SpatialMaterial" id=11]
+albedo_texture = ExtResource( 3 )
+uv1_triplanar = true
+
+[sub_resource type="CubeMesh" id=12]
+size = Vector3( 0.5, 6, 4 )
+
+[sub_resource type="SpatialMaterial" id=13]
+albedo_color = Color( 0.8, 0.8, 0.8, 1 )
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 1.464, 1.5, 1 )
+uv1_offset = Vector3( -0.23, 0.252, 0 )
+
+[sub_resource type="BoxShape" id=14]
+extents = Vector3( 0.5, 3, 2 )
+
+[sub_resource type="Animation" id=15]
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("door:translation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("door:translation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -1, -0.25, 0, 0.25, 0, -1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("door:translation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, -4.1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+
+[sub_resource type="CylinderShape" id=16]
+radius = 1.5
+height = 0.5
+
+[sub_resource type="SpatialMaterial" id=17]
+emission_enabled = true
+emission = Color( 1, 1, 1, 1 )
+emission_energy = 2.0
+emission_operator = 0
+emission_on_uv2 = false
+
+[sub_resource type="Environment" id=18]
+ambient_light_color = Color( 0.27451, 0.27451, 0.27451, 1 )
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 3
+glow_enabled = true
+glow_bloom = 0.3
+glow_bicubic_upscale = true
+
+[node name="01_level_buttons" type="Spatial"]
+
+[node name="world" type="Spatial" parent="."]
+
+[node name="level_layout" type="CSGCombiner" parent="world"]
+material_override = ExtResource( 1 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="Room" type="CSGBox" parent="world/level_layout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11 )
+use_in_baked_light = true
+use_collision = true
+invert_faces = true
+width = 20.0
+height = 8.0
+depth = 40.0
+
+[node name="Door1" type="Spatial" parent="world/level_layout/Room"]
+transform = Transform( 1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0, 0, -1 )
+script = SubResource( 9 )
+
+[node name="doorway" type="CSGCombiner" parent="world/level_layout/Room/Door1"]
+material_override = SubResource( 2 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="world/level_layout/Room/Door1/doorway"]
+width = 1.0
+height = 10.0
+depth = 20.0
+
+[node name="CSGBox2" type="CSGBox" parent="world/level_layout/Room/Door1/doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03178, 0 )
+operation = 2
+height = 6.0
+depth = 4.0
+
+[node name="door" type="StaticBody" parent="world/level_layout/Room/Door1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="world/level_layout/Room/Door1/door"]
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="world/level_layout/Room/Door1/door"]
+shape = SubResource( 5 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="world/level_layout/Room/Door1"]
+anims/animation_door_01 = ExtResource( 5 )
+anims/door_close = ExtResource( 5 )
+anims/door_open = SubResource( 7 )
+
+[node name="Button1" type="Spatial" parent="world/level_layout/Room"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3, -6 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="world/level_layout/Room/Button1"]
+use_in_baked_light = true
+use_collision = true
+
+[node name="button" type="CSGCylinder" parent="world/level_layout/Room/Button1/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.668211, 0 )
+height = 0.25
+sides = 16
+
+[node name="base" type="CSGCylinder" parent="world/level_layout/Room/Button1/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+radius = 1.5
+height = 0.5
+sides = 16
+
+[node name="activate_door1" type="Area" parent="world/level_layout/Room/Button1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="world/level_layout/Room/Button1/activate_door1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
+shape = SubResource( 8 )
+
+[node name="Room2" type="CSGBox" parent="world/level_layout"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, 21 )
+invert_faces = true
+width = 40.0
+height = 8.0
+depth = 20.0
+
+[node name="Door2" type="Spatial" parent="world/level_layout/Room2"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.90735e-06, 0, -1.90735e-06 )
+script = SubResource( 10 )
+
+[node name="doorway" type="CSGCombiner" parent="world/level_layout/Room2/Door2"]
+material_override = SubResource( 11 )
+use_in_baked_light = true
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="world/level_layout/Room2/Door2/doorway"]
+width = 1.0
+height = 10.0
+depth = 20.0
+
+[node name="CSGBox2" type="CSGBox" parent="world/level_layout/Room2/Door2/doorway"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.03178, 0 )
+operation = 2
+height = 6.0
+depth = 4.0
+
+[node name="door" type="StaticBody" parent="world/level_layout/Room2/Door2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="world/level_layout/Room2/Door2/door"]
+mesh = SubResource( 12 )
+material/0 = SubResource( 13 )
+
+[node name="CollisionShape" type="CollisionShape" parent="world/level_layout/Room2/Door2/door"]
+shape = SubResource( 14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="world/level_layout/Room2/Door2"]
+anims/door_close = ExtResource( 5 )
+anims/door_open = SubResource( 15 )
+
+[node name="Button2" type="Spatial" parent="world/level_layout/Room2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, -3, 0 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="world/level_layout/Room2/Button2"]
+use_in_baked_light = true
+use_collision = true
+
+[node name="button" type="CSGCylinder" parent="world/level_layout/Room2/Button2/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.668211, 0 )
+height = 0.25
+sides = 16
+
+[node name="base" type="CSGCylinder" parent="world/level_layout/Room2/Button2/CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+radius = 1.5
+height = 0.5
+sides = 16
+
+[node name="button_for_firstdoor" type="Area" parent="world/level_layout/Room2/Button2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="world/level_layout/Room2/Button2/button_for_firstdoor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
+shape = SubResource( 16 )
+
+[node name="props" type="Spatial" parent="world"]
+
+[node name="ceiling_light" type="CSGCombiner" parent="world/props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87764, 0 )
+material_override = SubResource( 17 )
+cast_shadow = 0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="world/props/ceiling_light"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="world/props/ceiling_light"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, -0.19543 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="world/props/ceiling_light"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0.19638 )
+radius = 0.1
+height = 4.0
+
+[node name="OmniLight" type="OmniLight" parent="world/props/ceiling_light"]
+shadow_reverse_cull_face = true
+omni_range = 15.0
+
+[node name="ceiling_light2" type="CSGCombiner" parent="world/props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.87764, 21 )
+material_override = SubResource( 17 )
+cast_shadow = 0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="world/props/ceiling_light2"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="world/props/ceiling_light2"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, -0.19543 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="world/props/ceiling_light2"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0.19638 )
+radius = 0.1
+height = 4.0
+
+[node name="OmniLight" type="OmniLight" parent="world/props/ceiling_light2"]
+shadow_reverse_cull_face = true
+omni_range = 15.0
+
+[node name="ceiling_light3" type="CSGCombiner" parent="world/props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 3.87764, 21 )
+material_override = SubResource( 17 )
+cast_shadow = 0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="world/props/ceiling_light3"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="world/props/ceiling_light3"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, -0.19543 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="world/props/ceiling_light3"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0.19638 )
+radius = 0.1
+height = 4.0
+
+[node name="OmniLight" type="OmniLight" parent="world/props/ceiling_light3"]
+shadow_reverse_cull_face = true
+omni_range = 15.0
+
+[node name="ceiling_light4" type="CSGCombiner" parent="world/props"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.87764, 21 )
+material_override = SubResource( 17 )
+cast_shadow = 0
+
+[node name="CSGCylinder" type="CSGCylinder" parent="world/props/ceiling_light4"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="world/props/ceiling_light4"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, -0.19543 )
+radius = 0.1
+height = 4.0
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="world/props/ceiling_light4"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 0, 0, 0.19638 )
+radius = 0.1
+height = 4.0
+
+[node name="OmniLight" type="OmniLight" parent="world/props/ceiling_light4"]
+shadow_reverse_cull_face = true
+omni_range = 15.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="world"]
+environment = SubResource( 18 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
+[connection signal="body_entered" from="world/level_layout/Room/Button1/activate_door1" to="world/level_layout/Room/Door1" method="_on_activate_door1_body_entered"]
