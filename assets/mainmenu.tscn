@@ -333,10 +333,10 @@ __meta__ = {
 "_edit_group_": true
 }
 [connection signal="pressed" from="MainMenu/Play" to="." method="_on_Play_pressed"]
-[connection signal="pressed" from="MainMenu/Settings" to="MainMenu" method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainMenu/Settings" to="." method="_on_Settings_pressed"]
-[connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Settings" to="MainMenu" method="_on_Settings_pressed"]
 [connection signal="pressed" from="MainMenu/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="MainMenu/Quit" to="MainMenu" method="_on_Quit_pressed"]
 [connection signal="pressed" from="Level_Select/VBoxContainer/Option 1" to="." method="_on_Option_1_pressed"]
 [connection signal="pressed" from="Level_Select/VBoxContainer/Option 2" to="." method="_on_Option_2_pressed"]
 [connection signal="pressed" from="Level_Select/VBoxContainer/Option 3" to="." method="_on_Option_3_pressed"]

@@ -5,23 +5,23 @@
 [ext_resource path="res://assets/scenes/puzzles/elements/puzzle_door_func.gd" type="Script" id=3]
 [ext_resource path="res://assets/scenes/puzzles/elements/animation_door_01.tres" type="Animation" id=4]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 1 )
 uv1_triplanar = true
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="CubeMesh" id=2]
 size = Vector3( 0.5, 6, 4 )
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.8, 0.8, 0.8, 1 )
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 1.464, 1.5, 1 )
 uv1_offset = Vector3( -0.23, 0.252, 0 )
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=4]
 extents = Vector3( 0.5, 3, 2 )
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=5]
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("door:translation:x")
 tracks/0/interp = 1
@@ -53,12 +53,12 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 1 )
 }
 
-[node name="Door1" type="Spatial"]
+[node name="Door" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10 )
 script = ExtResource( 3 )
 
 [node name="doorway" type="CSGCombiner" parent="."]
-material_override = SubResource( 2 )
+material_override = SubResource( 1 )
 use_in_baked_light = true
 use_collision = true
 
@@ -77,12 +77,12 @@ depth = 4.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="door"]
-mesh = SubResource( 3 )
-material/0 = SubResource( 4 )
+mesh = SubResource( 2 )
+material/0 = SubResource( 3 )
 
 [node name="CollisionShape" type="CollisionShape" parent="door"]
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/door_close = ExtResource( 4 )
-anims/door_open = SubResource( 7 )
+anims/door_open = SubResource( 5 )

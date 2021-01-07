@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="CylinderShape" id=28]
+[sub_resource type="CylinderShape" id=1]
 radius = 1.5
 height = 0.5
 
-[node name="Button6" type="Spatial"]
+[node name="Button" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
@@ -22,8 +22,8 @@ radius = 1.5
 height = 0.5
 sides = 16
 
-[node name="button_for_firstdoor" type="Area" parent="."]
+[node name="button_for" type="Area" parent="."]
 
-[node name="CollisionShape" type="CollisionShape" parent="button_for_firstdoor"]
+[node name="CollisionShape" type="CollisionShape" parent="button_for"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 28 )
+shape = SubResource( 1 )
