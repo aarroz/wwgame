@@ -11,7 +11,6 @@ sun_color = Color( 0.238281, 0.238281, 0.238281, 1 )
 sun_energy = 16.0
 
 [resource]
-background_mode = 2
 background_sky = SubResource( 1 )
 ambient_light_color = Color( 0.109375, 0.109375, 0.109375, 1 )
 fog_color = Color( 0.0261993, 0.030597, 0.0664062, 1 )
@@ -22,11 +21,8 @@ fog_height_enabled = true
 fog_height_max = 300.0
 tonemap_mode = 3
 ssao_quality = 0
-dof_blur_far_enabled = true
 dof_blur_far_quality = 0
-dof_blur_near_enabled = true
 dof_blur_near_quality = 0
-glow_enabled = true
 glow_intensity = 0.1
 glow_bloom = 1.0
 glow_blend_mode = 0

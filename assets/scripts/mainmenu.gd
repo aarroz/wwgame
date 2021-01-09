@@ -1,11 +1,11 @@
 extends Node
 
 var global = "/root/global"
-onready var level_tutorial = preload("res://assets/scenes/puzzles/level_tutorial.tscn")
+onready var level_tutorial = preload("res://assets/scenes/puzzles/01_level_buttons.tscn")
 
 func _on_Play_pressed():
 	#get_node("Level_Select").show()
-	get_node(global).setScene("res://assets/scenes/puzzles/level_tutorial.tscn")
+	get_node(global).setScene("res://assets/scenes/puzzles/01_level_buttons.tscn")
 
 func _on_Settings_pressed():
 	get_node("Settings").show()
