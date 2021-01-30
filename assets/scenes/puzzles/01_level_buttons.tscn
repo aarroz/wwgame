@@ -641,7 +641,7 @@ smooth_faces = false
 material = SubResource( 30 )
 
 [node name="Room3" type="CSGBox" parent="world/level_layout"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, 21 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -60, 0, 21 )
 invert_faces = true
 width = 20.0
 height = 8.0
@@ -722,7 +722,7 @@ shadow_reverse_cull_face = true
 omni_range = 15.0
 
 [node name="ceiling_light4" type="CSGCombiner" parent="world/props"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.87764, 21 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -60, 3.87764, 21 )
 material_override = SubResource( 31 )
 cast_shadow = 0
 
@@ -746,7 +746,7 @@ shadow_reverse_cull_face = true
 omni_range = 15.0
 
 [node name="ceiling_light5" type="CSGCombiner" parent="world/props"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.87764, 31 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -70, 3.87764, 21 )
 material_override = SubResource( 31 )
 cast_shadow = 0
 
@@ -770,7 +770,7 @@ shadow_reverse_cull_face = true
 omni_range = 15.0
 
 [node name="ceiling_light6" type="CSGCombiner" parent="world/props"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.87764, 41 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -80, 3.87764, 21 )
 material_override = SubResource( 31 )
 cast_shadow = 0
 
@@ -794,7 +794,7 @@ shadow_reverse_cull_face = true
 omni_range = 15.0
 
 [node name="ceiling_light7" type="CSGCombiner" parent="world/props"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.87764, 1 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -40, 3.87764, 21 )
 material_override = SubResource( 31 )
 cast_shadow = 0
 
@@ -818,7 +818,7 @@ shadow_reverse_cull_face = true
 omni_range = 15.0
 
 [node name="ceiling_light8" type="CSGCombiner" parent="world/props"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 3.87764, 11 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -50, 3.87764, 21 )
 material_override = SubResource( 31 )
 cast_shadow = 0
 
@@ -846,8 +846,8 @@ environment = SubResource( 32 )
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
-[connection signal="body_entered" from="world/level_layout/Room/Button1/activate_door1" to="world/level_layout/Room/Door1" method="_on_activate_door1_body_entered"]
 [connection signal="body_entered" from="world/level_layout/Room/Button1/activate_door1" to="world/level_layout/Room/Indicator_01" method="_on_activate_door1_body_entered"]
+[connection signal="body_entered" from="world/level_layout/Room/Button1/activate_door1" to="world/level_layout/Room/Door1" method="_on_activate_door1_body_entered"]
 [connection signal="body_entered" from="world/level_layout/Room2/Button2/button_for_firstdoor" to="world/level_layout/Room2/Indicator_02" method="_on_button_for_firstdoor_body_entered"]
 [connection signal="body_entered" from="world/level_layout/Room2/Button2/button_for_firstdoor" to="world/level_layout/Room2/Door2" method="_on_button_for_firstdoor_body_entered"]
 [connection signal="body_exited" from="world/level_layout/Room2/Button2/button_for_firstdoor" to="world/level_layout/Room2/Indicator_02" method="_on_button_for_firstdoor_body_exited"]
@@ -856,7 +856,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
 [connection signal="body_entered" from="world/level_layout/Room2/Button3/button_for_03" to="world/level_layout/Room2/Indicator_03" method="_on_button_for_03_body_entered"]
 [connection signal="body_exited" from="world/level_layout/Room2/Button3/button_for_03" to="world/level_layout/Room2/Door3" method="_on_button_for_03_body_exited"]
 [connection signal="body_exited" from="world/level_layout/Room2/Button3/button_for_03" to="world/level_layout/Room2/Indicator_03" method="_on_button_for_03_body_exited"]
-[connection signal="body_entered" from="world/level_layout/Room2/Button3_1/button_for_03_01" to="world/level_layout/Room2/Indicator_03_1" method="_on_button_for_03_01_body_entered"]
 [connection signal="body_entered" from="world/level_layout/Room2/Button3_1/button_for_03_01" to="world/level_layout/Room2/Door3" method="_on_button_for_03_01_body_entered"]
-[connection signal="body_exited" from="world/level_layout/Room2/Button3_1/button_for_03_01" to="world/level_layout/Room2/Indicator_03_1" method="_on_button_for_03_01_body_exited"]
+[connection signal="body_entered" from="world/level_layout/Room2/Button3_1/button_for_03_01" to="world/level_layout/Room2/Indicator_03_1" method="_on_button_for_03_01_body_entered"]
 [connection signal="body_exited" from="world/level_layout/Room2/Button3_1/button_for_03_01" to="world/level_layout/Room2/Door3" method="_on_button_for_03_01_body_exited"]
+[connection signal="body_exited" from="world/level_layout/Room2/Button3_1/button_for_03_01" to="world/level_layout/Room2/Indicator_03_1" method="_on_button_for_03_01_body_exited"]

@@ -81,11 +81,11 @@ surfaces/0 = {
 
 [sub_resource type="BoxShape" id=7]
 
-[sub_resource type="CylinderShape" id=9]
+[sub_resource type="CylinderShape" id=8]
 radius = 1.5
 height = 0.5
 
-[sub_resource type="BakedLightmapData" id=8]
+[sub_resource type="BakedLightmapData" id=9]
 bounds = AABB( -21, -7, -11, 42, 14, 22 )
 cell_space_transform = Transform( 4, 0, 0, 0, 4, 0, 0, 0, 4, 84, 28, 44 )
 cell_subdiv = 9
@@ -287,7 +287,7 @@ sides = 16
 
 [node name="CollisionShape" type="CollisionShape" parent="Props/Button/button_for"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.779329, 0 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="BakedLightmap" type="BakedLightmap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
@@ -296,7 +296,7 @@ bake_mode = 1
 bake_hdr = true
 bake_extents = Vector3( 21, 7, 11 )
 image_path = "res://assets/scenes/mainmenu_lightmaps"
-light_data = SubResource( 8 )
+light_data = SubResource( 9 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
