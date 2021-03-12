@@ -1,5 +1,7 @@
 # wwgame
 
+### Update: Project on hiatus until further notice. (2021/03/21)
+
 Project wwgame is my attempt at making a 3D game using the Godot Engine.
 Currently the project is focused on interactive player mechanics for a singleplayer experience.
 The objective of this project is for me to make a base for interactable FPS games using Godot.
